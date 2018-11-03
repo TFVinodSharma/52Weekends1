@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    android:id="@id/container"
+    android:background="@color/white"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <android.support.design.widget.AppBarLayout
+        android:theme="@style/MyAppTheme.AppBarOverlay"
+        android:id="@id/appBarLayout"
+        android:visibility="gone"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/profiletoolbar"
+            android:background="?colorPrimary"
+            android:layout_width="fill_parent"
+            android:layout_height="?actionBarSize" />
+
+    </android.support.design.widget.AppBarLayout>
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <ProgressBar
+            android:id="@id/pb_loading"
+            android:visibility="gone"
+            android:layout_width="fill_parent"
+
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal" />
+
+
+        <TextView
+            android:textColor="@color/colorPrimary"
+            android:gravity="center"
+            android:id="@id/txt_sync"
+            android:padding="5.0dip"
+            android:visibility="gone"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="data syncing" />
+
+    </LinearLayout>
+
+
+    <FrameLayout android:id="@id/content"
+        android:layout_width="fill_parent"
+        android:layout_height="0.0dip"
+        android:layout_weight="1.0">
+
+        <include layout="@layout/fragment_profile_new" />
+
+    </FrameLayout>
+
+    <include layout="@layout/app_bottom_bar" />
+
+</LinearLayout>

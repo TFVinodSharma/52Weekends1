@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical"
+    android:background="#ffe8e8e8"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:weightSum="1.0"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+<!--
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/hotlesearchtoolbar"
+        app:titleTextColor="@color/white"
+        android:background="@color/colorPrimary"
+        >
+
+    </android.support.v7.widget.Toolbar>
+-->
+    <android.support.design.widget.AppBarLayout
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:orientation="vertical"
+        android:id="@+id/appbar"
+        android:layout_width="fill_parent"
+        android:layout_height="0.0dip"
+        android:layout_weight="0.2">
+
+        <android.support.v7.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/hotlesearchtoolbar"
+            app:titleTextColor="@color/white"
+            android:background="@color/colorPrimary"
+            >
+
+        </android.support.v7.widget.Toolbar>
+       <!--<include android:id="@+id/toolbar"
+            layout="@layout/toolbar" />-->
+    </android.support.design.widget.AppBarLayout>
+
+    <ScrollView android:id="@id/scrollView"
+        android:layout_width="fill_parent"
+        android:layout_height="0.0dip"
+        android:layout_weight="0.8">
+
+        <LinearLayout
+            android:padding="20.0dip"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20.0dip"
+            android:layout_marginTop="30.0dip"
+            android:layout_marginRight="20.0dip">
+
+            <android.support.v7.widget.CardView
+                android:orientation="vertical"
+                android:background="@color/white"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/login_title"
+                app:cardElevation="4.0dip">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:padding="@dimen/margin_10"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:textSize="14.0dip"
+                            android:textColor="#ff333333"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_4"
+                            android:text="City/Area/Hotel Name" />
+
+                        <LinearLayout
+                            android:layout_gravity="center_horizontal"
+                            android:orientation="vertical"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_4">
+
+                            <TextView
+                                android:textAppearance="?android:textAppearanceLarge"
+                                android:textSize="20.0dip"
+                                android:textStyle="bold"
+                                android:gravity="center_vertical"
+                                android:layout_gravity="center_horizontal"
+                                android:id="@+id/txt_loc_from"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/margin_4"
+                                android:text="New Delhi"/>
+                              <!--  android:layout_below="@id/txt_adult" />
+                            -->
+                            <TextView
+                                android:textSize="14.0dip"
+                                android:textColor="#ff333333"
+                                android:gravity="center_vertical"
+                                android:layout_gravity="center_horizontal"
+                                android:id="@+id/txt_city_from"
+                                android:layout_width="wrap_content"
+                                android:layout_height="fill_parent"
+                                android:text="India" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <View
+                        android:background="@color/gray"
+                        android:layout_width="fill_parent"
+                        android:layout_height="1.0dip" />
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:padding="@dimen/margin_10"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_4"
+                        android:weightSum="2.0">
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="0.0dip"
+                            android:layout_height="fill_parent"
+                            android:layout_marginLeft="10.0dip"
+                            android:layout_weight="0.95">
+
+                            <LinearLayout
+                                android:layout_gravity="center_horizontal"
+                                android:orientation="horizontal"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <ImageView
+                                    android:layout_width="16.0dip"
+                                    android:layout_height="16.0dip"
+                                    android:src="@drawable/ic_calendar" />
+
+                                <TextView
+                                    android:textSize="12.0dip"
+                                    android:textColor="#ff333333"
+                                    android:gravity="center_vertical"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="fill_parent"
+                                    android:layout_marginLeft="5.0dip"
+                                    android:text="CHECK-IN" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:textAppearance="?android:textAppearanceLarge"
+                                android:textSize="24.0dip"
+                                android:textStyle="bold"
+                                android:layout_gravity="center_horizontal"
+                                android:id="@+id/txt_checkin_date"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10.0dip"
+                                android:text="20 SEP" />
+
+                            <TextView
+                                android:textSize="12.0dip"
+                                android:textStyle="bold"
+                                android:textColor="#ff333333"
+                                android:layout_gravity="center_horizontal"
+                                android:id="@+id/txt_checkin_day"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Tuesday, 2016" />
+
+<!--
+                            <TextView
+                                android:id="@+id/check_in"
+                                android:visibility="gone"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+-->
+                        </LinearLayout>
+
+                        <View
+                            android:background="@color/gray"
+                            android:layout_width="1.0dip"
+                            android:layout_height="fill_parent" />
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="0.0dip"
+                            android:layout_height="fill_parent"
+                            android:layout_marginRight="@dimen/margin_10"
+                            android:layout_weight="0.95">
+
+                            <LinearLayout
+                                android:layout_gravity="center_horizontal"
+                                android:orientation="horizontal"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <ImageView
+                                    android:layout_width="16.0dip"
+                                    android:layout_height="16.0dip"
+                                    android:src="@drawable/ic_calendar" />
+
+                                <TextView
+                                    android:textSize="12.0dip"
+                                    android:textColor="#ff333333"
+                                    android:gravity="center_vertical"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="fill_parent"
+                                    android:layout_marginLeft="5.0dip"
+                                    android:text="CHECK-OUT" />
+                            </LinearLayout>
+                            <TextView
+                                android:textAppearance="?android:textAppearanceLarge"
+                                android:textSize="24.0dip"
+                                android:textStyle="bold"
+                                android:layout_gravity="center_horizontal"
+                                android:id="@+id/txt_checkout_date"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10.0dip"
+                                android:text="20 SEP" />
+                            <TextView android:textSize="12.0dip"
+                                android:textStyle="bold"
+                                android:textColor="#ff333333"
+                                android:layout_gravity="center_horizontal"
+                                android:id="@+id/txt_checkout_day"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Tuesday, 2016" />
+                            <TextView android:id="@+id/check_out"
+                                android:visibility="gone"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <View android:background="@color/gray"
+                        android:layout_width="fill_parent"
+                        android:layout_height="1.0dip"
+                        android:layout_marginTop="@dimen/margin_4" />
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:padding="@dimen/margin_10"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_4"
+                        android:weightSum="2.0">
+
+
+                        <!--selection of guest-->
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="0.0dip"
+                            android:id="@+id/selectguest"
+                            android:layout_height="fill_parent"
+                            android:layout_marginLeft="10.0dip"
+                            android:layout_weight="0.95">
+
+                            <LinearLayout
+                                android:layout_gravity="center_horizontal"
+                                android:orientation="horizontal"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <ImageView
+                                    android:layout_width="16.0dip"
+                                    android:layout_height="16.0dip"
+                                    android:src="@drawable/ic_bed" />
+
+                                <TextView
+                                    android:textSize="12.0dip"
+                                    android:textColor="#ff333333"
+                                    android:gravity="center_vertical"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="fill_parent"
+                                    android:layout_marginLeft="5.0dip"
+                                    android:text="GUESTS" />
+                            </LinearLayout>
+                            <TextView
+                                android:textAppearance="?android:textAppearanceLarge"
+                                android:textSize="24.0dip"
+                                android:textStyle="bold"
+                                android:layout_gravity="center_horizontal"
+                                android:id="@+id/txt_no_guest"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0 "
+                                 />
+                          <!--  <TextView
+                                android:textAppearance="?android:textAppearanceLarge"
+                                android:textSize="24.0dip"
+                                android:textStyle="bold"
+                                android:layout_gravity="center_horizontal"
+                                android:id="@+id/txt_no_guest"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0 "
+                                style="@style/myspstyle" />-->
+                        </LinearLayout>
+
+                        <View
+                            android:background="@color/gray"
+                            android:layout_width="1.0dip"
+                            android:layout_height="fill_parent" />
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="0.0dip"
+                            android:layout_height="fill_parent"
+                            android:layout_marginRight="@dimen/margin_10"
+                            android:layout_weight="0.95">
+
+                            <LinearLayout
+                                android:layout_gravity="center_horizontal"
+                                android:orientation="horizontal"
+                                android:id="@+id/roomssearch"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <ImageView
+                                    android:layout_width="16.0dip"
+                                    android:layout_height="16.0dip"
+                                    android:src="@drawable/ic_tourist" />
+
+                                <TextView
+                                    android:textSize="12.0dip"
+                                    android:textColor="#ff333333"
+                                    android:gravity="center_vertical"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="fill_parent"
+                                    android:layout_marginLeft="5.0dip"
+                                    android:text="ROOMS" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:textAppearance="?android:textAppearanceLarge"
+                                android:textSize="24.0dip"
+                                android:textStyle="bold"
+                                android:layout_gravity="center_horizontal"
+                                android:id="@+id/txt_no_room"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10.0dip"
+                                android:text="0" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <View android:background="@color/gray"
+                        android:layout_width="fill_parent"
+                        android:layout_height="1.0dip"
+                        android:layout_marginTop="@dimen/margin_4" />
+
+                    <android.support.v7.widget.RecyclerView
+                        android:layout_gravity="center"
+                        android:id="@+id/recycle_add_room"
+                        android:visibility="gone"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10.0dip"
+                        android:layout_marginTop="10.0dip"
+                        android:layout_marginRight="10.0dip" />
+
+                   <!-- <android.support.design.widget.FloatingActionButton
+                        android:layout_gravity="right"
+                        android:id="@+id/add_room"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/margin_10"
+                        android:src="@drawable/ic_add_black" />-->
+
+                    <Button android:textSize="14.0dip"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+                        android:id="@+id/button_search"
+                        android:background="@drawable/btn_bkg"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10.0dip"
+                        android:layout_marginTop="20.0dip"
+                        android:layout_marginRight="10.0dip"
+                        android:layout_marginBottom="10.0dip"
+                        android:text="SEARCH HOTELS" />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

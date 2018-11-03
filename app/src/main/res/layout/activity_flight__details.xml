@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <android.support.design.widget.AppBarLayout
+        android:theme="@style/MyAppTheme.AppBarOverlay"
+        android:id="@id/appBarLayout"
+        android:visibility="visible"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+      <include layout="@layout/toolbar1" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/appBarLayout">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:background="@color/bg"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1.0">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.7">
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_margin="@dimen/margin_10">
+
+                        <TextView
+                            android:textSize="@dimen/text_14sp"
+                            android:textColor="@color/black"
+                            android:gravity="center"
+                            android:layout_gravity="center_vertical"
+                            android:id="@+id/txt_departure"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:text="DEL" />
+
+                        <ImageView
+                            android:layout_width="@dimen/dimen_30"
+                            android:layout_height="@dimen/dimen_30"
+                            android:layout_marginLeft="@dimen/margin_10"
+                            android:src="@drawable/ic_right_arrow" />
+
+                        <TextView
+                            android:textSize="@dimen/text_14sp"
+                            android:textColor="@color/black"
+                            android:gravity="center"
+                            android:layout_gravity="center_vertical"
+                            android:id="@+id/txt_arrival"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_marginLeft="@dimen/margin_10"
+                            android:text="UDR" />
+                    </LinearLayout>
+
+
+                    <TextView
+                        android:textColor="@color/black"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_marginLeft="@dimen/margin_10"
+                        android:text="26 SEP" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="0.4">
+
+                    <TextView
+                        android:textSize="@dimen/text_14sp"
+                        android:textColor="@color/black"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:id="@id/txt_time"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/margin_10"
+                        android:text="1h 20m" />
+
+                    <TextView
+                        android:textSize="@dimen/text_14sp"
+                        android:textColor="@color/black"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:id="@id/txt_stopage"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_10"
+                        android:layout_marginRight="@dimen/margin_10"
+                        android:text="Non Stop" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:id="@+id/layout_flight_detail"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" />
+            <include layout="@layout/flight_description" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="1.0"
+        android:layout_alignParentBottom="true">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:background="@drawable/btn_gray"
+            android:layout_width="0.0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="0.5">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:textSize="@dimen/text_20dp"
+                    android:textColor="@color/white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_10"
+                    android:text="₹ " />
+
+                <TextView
+                    android:textSize="@dimen/text_20dp"
+                    android:textColor="@color/white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_10"
+                    android:text="3,333" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:textSize="@dimen/text_16sp"
+                    android:textColor="@color/white"
+                    android:id="@+id/pessanger_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_10"
+                    android:text="1" />
+
+                <TextView
+                    android:textSize="@dimen/text_16sp"
+                    android:textColor="@color/white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_10"
+                    android:text="Traveller" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <Button
+            android:textSize="@dimen/text_20dp"
+            android:textColor="@color/white"
+            android:background="@drawable/btn_bkg"
+            android:layout_width="0.0dip"
+            android:layout_height="fill_parent"
+            android:text="continue"
+            android:layout_weight="0.5" />
+    </LinearLayout>
+</RelativeLayout>

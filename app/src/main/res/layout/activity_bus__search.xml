@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    android:background="#ffe8e8e8"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:weightSum="1.0"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.design.widget.AppBarLayout
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:orientation="vertical"
+        android:id="@+id/appbar"
+        android:layout_width="fill_parent"
+        android:layout_height="0.0dip"
+        android:layout_weight="0.2">
+
+        <android.support.v7.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/toolbar"
+            app:titleTextColor="@color/white">
+
+        </android.support.v7.widget.Toolbar>
+
+
+        <!--<include android:id="@+id/toolbar"
+            layout="@layout/toolbar3"
+            />-->
+    </android.support.design.widget.AppBarLayout>
+
+    <ScrollView android:id="@+id/scrollView"
+        android:background="@color/gray"
+        android:layout_width="fill_parent"
+        android:layout_height="0.0dip"
+        android:layout_weight="0.8">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:background="@color/white"
+            android:padding="20.0dip"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="20.0dip"
+            android:layout_marginTop="30.0dip"
+            android:layout_marginRight="20.0dip">
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="From"
+                    android:textSize="@dimen/activity_horizontal_margin"/>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".28"
+                    android:background="@drawable/customizespinner"
+                    android:orientation="horizontal">
+
+                    <Spinner
+                        android:id="@+id/fromselectcity"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:background="@android:color/transparent"
+                        android:gravity="center"
+                        android:layout_marginLeft="5dp"
+                        android:spinnerMode="dropdown" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_arrow_drop_down_black_24dp" />
+
+                </RelativeLayout>
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_10">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="To     "
+                    android:textSize="@dimen/activity_horizontal_margin"/>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".28"
+                    android:background="@drawable/customizespinner"
+                    android:orientation="horizontal">
+
+                    <Spinner
+                        android:id="@+id/toselectcity"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:background="@android:color/transparent"
+                        android:gravity="center"
+                        android:layout_marginLeft="5dp"
+                        android:spinnerMode="dropdown" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_arrow_drop_down_black_24dp" />
+
+                </RelativeLayout>
+            </android.support.design.widget.TextInputLayout>
+
+            <LinearLayout android:layout_gravity="left"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10.0dip"
+                android:layout_marginTop="@dimen/margin_10"
+                android:layout_alignParentLeft="true"
+                style="@style/EditTextHint">
+
+                <LinearLayout
+                    android:layout_gravity="center_horizontal"
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView android:layout_width="16.0dip"
+                        android:layout_height="16.0dip"
+                        android:src="@drawable/ic_calendar" />
+
+                    <TextView android:textSize="12.0dip"
+                        android:textColor="#ff333333"
+                        android:gravity="center_vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:layout_marginLeft="5.0dip"
+                        android:text="Depart on" />
+                </LinearLayout>
+
+                <TextView
+                    android:textAppearance="?android:textAppearanceLarge"
+                    android:textSize="24.0dip"
+                    android:textStyle="bold"
+                    android:layout_gravity="center_horizontal"
+                    android:id="@+id/txt_depart_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10.0dip"
+                    android:text="20 SEP" />
+
+                <TextView android:textSize="12.0dip"
+                    android:textStyle="bold"
+                    android:textColor="#ff333333"
+                    android:layout_gravity="center_horizontal"
+                    android:id="@+id/txt_depart_day"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tuesday, 2016" />
+                <TextView android:id="@+id/depart_date"
+                    android:visibility="gone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <Button android:textSize="14.0dip"
+                android:textStyle="bold"
+                android:textColor="#ffffffff"
+                android:id="@+id/button_bus_search"
+                android:background="@drawable/btn_bkg"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10.0dip"
+                android:layout_marginTop="20.0dip"
+                android:layout_marginRight="10.0dip"
+                android:layout_marginBottom="10.0dip"
+                android:text="SEARCH BUS" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

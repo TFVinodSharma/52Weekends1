@@ -1,0 +1,714 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    android:background="#ffe8e8e8"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:weightSum="1.0"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<!--
+<android.support.v7.widget.Toolbar
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/toolbarflight"
+    app:title="Flight Search"
+    app:titleTextColor="@color/white"
+    android:background="@color/colorPrimary">
+
+</android.support.v7.widget.Toolbar>
+-->
+
+    <android.support.design.widget.AppBarLayout
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:orientation="vertical"
+        android:id="@id/appbar"
+        android:layout_width="fill_parent"
+        android:layout_height="0.0dip"
+        android:layout_weight="0.2">
+        <include
+            android:id="@+id/toolbarflight"
+            layout="@layout/toolbar4" />
+    </android.support.design.widget.AppBarLayout>
+   <!-- <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:id="@+id/toolbarflight"
+        app:title="Flight Search"
+        app:titleTextColor="@color/white">
+
+    </android.support.v7.widget.Toolbar>
+-->
+
+    <ScrollView
+        android:id="@id/scrollView"
+        android:layout_width="fill_parent"
+        android:layout_height="0.0dip"
+        android:layout_weight="0.8">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="fill_parent"
+                    android:layout_height="240.0dip"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/bkg_01" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:orientation="vertical">
+
+                    <RadioGroup
+                        android:id="@+id/rg_route"
+                        android:layout_width="fill_parent"
+                        android:layout_height="40.0dip"
+                        android:layout_marginLeft="10.0dip"
+                        android:layout_marginTop="10.0dip"
+                        android:layout_marginRight="10.0dip"
+                        android:background="@drawable/white_bdr"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/rb_oneway"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="1.0"
+                            android:checked="true"
+                            android:text="One Way"
+                            android:textColor="#ff5f2db2"
+                            android:textSize="12.0dip" />
+
+                        <RadioButton
+                            android:id="@+id/rb_roundtrip"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="1.0"
+                            android:text="Round Trip"
+                            android:textColor="#ff5f2db2"
+                            android:textSize="12.0dip" />
+
+                        <RadioButton
+                            android:id="@+id/rb_multicity"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="1.0"
+                            android:text="Multi Cities"
+                            android:textColor="#ff5f2db2"
+                            android:textSize="12.0dip" />
+
+                    </RadioGroup>
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_marginLeft="24.0dip"
+                        android:layout_marginRight="24.0dip">
+
+                        <LinearLayout
+                            android:id="@+id/layout_from"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerVertical="true"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:text="FROM"
+                                android:textColor="#ffffffff"
+                                android:textSize="12.0dip" />
+
+                            <TextView
+                                android:id="@+id/txt_from"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginTop="10.0dip"
+                                android:layout_marginBottom="10.0dip"
+                                android:text="DEL"
+                                android:textAppearance="?android:textAppearanceLarge"
+                                android:textColor="#ffffffff"
+                                android:textSize="40.0dip"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:text="New Delhi"
+                                android:textColor="#ffffffff"
+                                android:textSize="10.0dip" />
+
+                        </LinearLayout>
+
+                        <ImageView
+                            android:layout_width="40.0dip"
+                            android:layout_height="40.0dip"
+                            android:layout_centerInParent="true"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/ic_round" />
+
+                        <LinearLayout
+                            android:id="@+id/layout_to"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:text="TO"
+                                android:textColor="#ffffffff"
+                                android:textSize="12.0dip" />
+
+                            <TextView
+                                android:id="@+id/txt_to"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginTop="10.0dip"
+                                android:layout_marginBottom="10.0dip"
+                                android:text="BOM"
+                                android:textAppearance="?android:textAppearanceLarge"
+                                android:textColor="#ffffffff"
+                                android:textSize="40.0dip"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:text="Mumbai"
+                                android:textColor="#ffffffff"
+                                android:textSize="10.0dip" />
+
+                        </LinearLayout>
+                    </RelativeLayout>
+                </LinearLayout>
+            </FrameLayout>
+
+            <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10.0dip"
+                android:layout_marginTop="10.0dip"
+                android:layout_marginRight="10.0dip"
+                android:orientation="vertical"
+                card_view:cardCornerRadius="4.0dip">
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:padding="10.0dip">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:layout_alignParentLeft="true"
+                        android:layout_gravity="left"
+                        android:layout_marginLeft="10.0dip"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="16.0dip"
+                                android:layout_height="16.0dip"
+                                android:src="@drawable/ic_calendar" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="fill_parent"
+                                android:layout_marginLeft="5.0dip"
+                                android:gravity="center_vertical"
+                                android:text="Depart on"
+                                android:textColor="#ff333333"
+                                android:textSize="12.0dip" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@id/txt_depart_date"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="10.0dip"
+                            android:text="20 SEP"
+                            android:textAppearance="?android:textAppearanceLarge"
+                            android:textSize="24.0dip"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@id/txt_depart_day"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:text="Tuesday, 2016"
+                            android:textColor="#ff333333"
+                            android:textSize="12.0dip"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@id/depart_date"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:layout_alignParentRight="true"
+                        android:layout_gravity="right"
+                        android:layout_marginRight="10.0dip"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="16.0dip"
+                                android:layout_height="16.0dip"
+                                android:src="@drawable/ic_calendar" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="fill_parent"
+                                android:layout_marginLeft="5.0dip"
+                                android:gravity="center_vertical"
+                                android:text="Return on"
+                                android:textColor="#ff333333"
+                                android:textSize="12.0dip" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/txt_return_date"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="10.0dip"
+                            android:text="-- ---"
+                            android:textAppearance="?android:textAppearanceLarge"
+                            android:textSize="24.0dip"
+                            android:textStyle="bold" />
+
+                        <TextView
+
+                            android:id="@+id/txt_return_day"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:text="-----, ----"
+                            android:textColor="#ff333333"
+                            android:textSize="12.0dip"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/return_date"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone" />
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycle_add_trip"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10.0dip"
+                android:layout_marginTop="10.0dip"
+                android:layout_marginRight="10.0dip"
+                android:visibility="gone" />
+
+            <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/card_add_view"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/dimen_50"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10.0dip"
+                android:layout_marginRight="10.0dip"
+                android:orientation="vertical"
+                android:visibility="gone"
+                card_view:cardCornerRadius="4.0dip">
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1.0dip"
+                    android:background="@color/gray" />
+
+                <TextView
+                    android:id="@+id/txt_add_city"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="+Add City"
+                    android:textColor="@color/blue"
+                    android:textSize="@dimen/text_20dp"
+                    android:textStyle="bold" />
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10.0dip"
+                android:layout_marginTop="10.0dip"
+                android:layout_marginRight="10.0dip"
+                android:orientation="vertical"
+                card_view:cardCornerRadius="4.0dip">
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:padding="10.0dip">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:layout_alignParentLeft="true"
+                        android:layout_gravity="left"
+                        android:layout_marginLeft="10.0dip"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:text="Adults"
+                            android:textColor="#ff333333"
+                            android:textSize="14.0dip"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/txt_adult"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="fill_parent"
+
+                                    android:layout_gravity="center_horizontal"
+                                    android:gravity="center_vertical"
+                                    android:text="10+ years"
+                                    android:textColor="#ff333333"
+                                    android:textSize="12.0dip" />
+
+                                <TextView
+                                    android:id="@+id/txt_no_adult"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/txt_adult"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_marginTop="@dimen/margin_4"
+                                    android:gravity="center_vertical"
+                                    android:text="1"
+                                    android:textAppearance="?android:textAppearanceLarge"
+                                    android:textSize="24.0dip"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/margin_4"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/txt_inc_adult"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="+"
+                                    android:textAppearance="?android:textAppearanceLarge"
+                                    android:textSize="24.0dip"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/txt_dec_adult"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="-"
+                                    android:textAppearance="?android:textAppearanceLarge"
+                                    android:textSize="24.0dip"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:layout_alignParentRight="false"
+                        android:layout_centerHorizontal="true"
+                        android:layout_gravity="right"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:text="Childrens"
+                            android:textColor="#ff333333"
+                            android:textSize="14.0dip"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/txt_child"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="fill_parent"
+                                    android:layout_gravity="center_horizontal"
+                                    android:gravity="center_vertical"
+                                    android:text="2-10 years"
+                                    android:textColor="#ff333333"
+                                    android:textSize="12.0dip" />
+
+                                <TextView
+                                    android:id="@+id/txt_no_child"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/txt_adult"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_marginTop="@dimen/margin_4"
+                                    android:gravity="center_vertical"
+                                    android:text="0"
+                                    android:textAppearance="?android:textAppearanceLarge"
+                                    android:textSize="24.0dip"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/margin_4"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/txt_inc_child"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="+"
+                                    android:textAppearance="?android:textAppearanceLarge"
+                                    android:textSize="24.0dip"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/txt_dec_child"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="-"
+                                    android:textAppearance="?android:textAppearanceLarge"
+                                    android:textSize="24.0dip"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:layout_alignParentRight="true"
+                        android:layout_gravity="right"
+                        android:layout_marginRight="10.0dip"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:text="Infants"
+                            android:textColor="#ff333333"
+                            android:textSize="14.0dip"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/txt_infant"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="fill_parent"
+                                    android:layout_gravity="center_horizontal"
+                                    android:gravity="center_vertical"
+                                    android:text="1-2 years"
+                                    android:textColor="#ff333333"
+                                    android:textSize="12.0dip" />
+
+                                <TextView
+                                    android:id="@+id/txt_no_infant"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/txt_adult"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_marginTop="@dimen/margin_4"
+                                    android:gravity="center_vertical"
+                                    android:text="0"
+                                    android:textAppearance="?android:textAppearanceLarge"
+                                    android:textSize="24.0dip"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/margin_4"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/txt_inc_infant"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="+"
+                                    android:textAppearance="?android:textAppearanceLarge"
+                                    android:textSize="24.0dip"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/txt_dec_infant"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="-"
+                                    android:textAppearance="?android:textAppearanceLarge"
+                                    android:textSize="24.0dip"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+            <RadioGroup
+                android:id="@+id/rg_trip_class"
+                android:layout_width="fill_parent"
+                android:layout_height="40.0dip"
+                android:layout_marginLeft="10.0dip"
+                android:layout_marginTop="10.0dip"
+                android:layout_marginRight="10.0dip"
+                android:background="@drawable/white_bdr"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rb_economy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1.0"
+                    android:checked="true"
+                    android:text="Economy"
+                    android:textColor="#ff5f2db2"
+                    android:textSize="12.0dip" />
+
+                <RadioButton
+                    android:id="@+id/rb_buisness"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1.0"
+                    android:text="Business"
+                    android:textColor="#ff5f2db2"
+                    android:textSize="12.0dip" />
+
+                <RadioButton
+                    android:id="@+id/rb_first"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1.0"
+                    android:text="First"
+                    android:textColor="#ff5f2db2"
+                    android:textSize="12.0dip" />
+
+            </RadioGroup>
+
+            <Button
+                android:id="@id/button_search"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10.0dip"
+                android:layout_marginTop="20.0dip"
+                android:layout_marginRight="10.0dip"
+                android:layout_marginBottom="10.0dip"
+                android:background="@drawable/btn_bkg"
+                android:text="SEARCH FLIGHT"
+                android:textColor="#ffffffff"
+                android:textSize="14.0dip"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

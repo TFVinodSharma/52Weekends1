@@ -1,0 +1,80 @@
+package com.android.weekends.base.adapter;
+
+import android.content.Context;
+import android.content.Intent;
+import android.support.annotation.NonNull;
+import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
+
+import com.android.weekends.R;
+import com.android.weekends.modules.hotels.view.HotelDetails;
+
+public class Hotel_List_Adapter extends RecyclerView.Adapter<Hotel_List_Adapter.Versionview> {
+    private String [] data1;
+    private String [] data2;
+    private String [] data3;
+
+
+    public Hotel_List_Adapter(String[]data1,String[]data2,String[]data3){
+        this.data1=data1;
+        this.data2=data2;
+        this.data3=data3;
+
+
+
+    }
+    @NonNull
+    @Override
+    public Versionview onCreateViewHolder(@NonNull ViewGroup parent, int i) {
+        LayoutInflater inflater=LayoutInflater.from(parent.getContext());
+        View view=inflater.inflate(R.layout.row_hotel_list,parent,false);
+
+        return new Hotel_List_Adapter.Versionview(view);
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull Versionview holder, int position) {
+        String pnd=data1[position];
+        holder.tv.setText(pnd);
+        String rnk=data2[position];
+        holder.tv1.setText(rnk);
+        String wrk=data3[position];
+        holder.tv2.setText(wrk);
+
+
+
+    }
+
+    @Override
+    public int getItemCount() {
+        return data1.length;
+    }
+
+    public class Versionview extends RecyclerView.ViewHolder {
+
+        TextView tv,tv1,tv2;
+        Button tv3;
+        private final Context context;
+        public Versionview(@NonNull View itemView) {
+            super(itemView);
+           context = itemView.getContext();
+            tv=itemView.findViewById(R.id.img_name);
+            tv1=itemView.findViewById(R.id.txt_add);
+            tv2=itemView.findViewById(R.id.txt_amount);
+            tv3=itemView.findViewById(R.id.btn_view);
+            tv3.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent i= new Intent(context,HotelDetails.class);
+                    context.startActivity(i);
+
+                }
+            });
+
+        }
+    }
+}

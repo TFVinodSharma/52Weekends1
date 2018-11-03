@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:padding="8.0dip">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:padding="8.0dip"
+        app:cardCornerRadius="6.0dip"
+        app:cardUseCompatPadding="true">
+
+        <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?android:selectableItemBackground"
+                    android:padding="0.0dip">
+
+                    <ImageView
+                        android:id="@+id/impact_image"
+                        android:layout_width="fill_parent"
+                        android:layout_height="180.0dip"
+                        android:contentDescription="@string/app_name"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/temple" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/impact_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:layout_alignParentLeft="true"
+                        android:layout_margin="8.0dip"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="20.0sp" />
+
+                    <LinearLayout
+                        android:id="@+id/layout_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:layout_alignParentRight="true"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/margin_4">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="₹ "
+                            android:textColor="@color/blue"
+                            android:textSize="@dimen/text_18dp" />
+
+                        <TextView
+                            android:id="@id/txt_price"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="@dimen/margin_4"
+                            android:text="3,658"
+                            android:textColor="@color/blue"
+                            android:textSize="@dimen/text_18dp" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <RatingBar
+                    android:id="@+id/ratingbar"
+                    style="?android:ratingBarStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:isIndicator="true"
+                    android:numStars="5"
+                    android:rating="5.0"
+                    android:stepSize="0.1" />
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="2.0dip"
+                    android:background="@color/bg_gray"
+                    android:padding="@dimen/margin_4" />
+
+                <TextView
+                    android:id="@+id/impact_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8.0dip"
+                    android:textColor="@color/black"
+                    android:textSize="16.0sp" />
+            </LinearLayout>
+        </ScrollView>
+    </android.support.v7.widget.CardView>
+</LinearLayout>

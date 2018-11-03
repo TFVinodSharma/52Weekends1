@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.android.weekends">
+
+    <application
+        android:allowBackup="true"
+        android:hardwareAccelerated="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:screenOrientation="portrait"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".base.Activity.Splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".modules.login.view.Signup" />
+
+        <activity android:name=".modules.buses.view.BusSearch"
+            android:parentActivityName=".modules.home.view.HomePage"/>
+
+        <activity android:name=".modules.buses.view.BusList" />
+
+        <activity android:name=".modules.login.view.Login" />
+
+        <activity android:name=".modules.buses.view.SeatSelection" />
+
+        <activity
+            android:name=".modules.hotels.view.HotelSearch"
+            android:parentActivityName=".modules.home.view.HomePage"/>
+
+        <activity android:name=".modules.hotels.view.HotelList" />
+
+        <activity android:name=".modules.flights.view.Flight"
+            android:parentActivityName=".modules.home.view.HomePage"
+            />
+
+        <activity android:name=".modules.flights.view.FlightList" />
+
+        <activity android:name=".modules.flights.view.FlightDetails" />
+
+        <activity android:name=".base.Activity.Trip"
+
+            />
+
+        <activity android:name=".base.Activity.Destination" />
+
+        <activity android:name=".modules.profile.view.Profile" />
+
+        <activity android:name=".modules.hotels.view.HotelDetails" />
+
+        <activity android:name=".modules.hotels.view.HotelGuestSlection" />
+
+        <activity android:name=".modules.home.view.HomePage" />
+
+        <activity android:name=".modules.tourdetails.view.PackageDetails"
+            android:label="Darjeeling"/>
+
+        <activity android:name=".modules.tourdetails.view.ActivityDetailDestination" />
+
+        <activity android:name=".base.Activity.SelectPacakge"
+            android:label="Select Pacakge"
+            ></activity>
+    </application>
+
+</manifest>

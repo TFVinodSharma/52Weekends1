@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_content"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:weightSum="1.0">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@id/appbar"
+        android:layout_width="fill_parent"
+        android:layout_height="0.0dip"
+        android:layout_weight="0.2"
+        android:orientation="vertical"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+<android.support.v7.widget.Toolbar
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:title="Profile"
+    >
+
+</android.support.v7.widget.Toolbar>
+        <!--<include
+            android:id="@id/toolbar"
+            layout="@layout/toolbar" />-->
+    </android.support.design.widget.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="0.0dip"
+        android:layout_weight="0.8">
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <ImageView
+                android:id="@+id/header_cover_image"
+                android:layout_width="fill_parent"
+                android:layout_height="70.0dip"
+                android:background="@color/colorPrimary" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/user_profile_photo"
+                android:layout_width="100.0dip"
+                android:layout_height="100.0dip"
+                android:layout_below="@id/header_cover_image"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="-60.0dip"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_user"
+                app:civ_border_color="#ffffffff"
+                app:civ_border_width="2.0dip" />
+
+            <RelativeLayout
+                android:id="@+id/profile_layout"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_below="@id/header_cover_image"
+                android:background="@color/white"
+                android:paddingBottom="24.0dip">
+
+                <TextView
+                    android:id="@+id/user_profile_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="60.0dip"
+                    android:text="Vinod Sharma"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="24.0sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/user_email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/user_profile_name"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10.0dip"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="14.0sp" />
+
+                <TextView
+                    android:id="@+id/user_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/user_email"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10.0dip"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="14.0sp" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/user_date"
+                    android:layout_marginTop="10.0dip"
+                    android:background="@color/white"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="10.0dip">
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="5.0dip"
+                            android:text="@string/first_name"
+                            android:textColor="@color/colorPrimary" />
+
+                        <TextView
+                            android:id="@+id/txt_first_name"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="5.0dip"
+                            android:text="\Vinod "
+                            android:textColor="@android:color/black" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="10.0dip">
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="5.0dip"
+                            android:text="@string/last_name"
+                            android:textColor="@color/colorPrimary" />
+
+                        <TextView
+                            android:id="@+id/txt_last_name"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="5.0dip"
+                            android:text="Sharma"
+                            android:textColor="@android:color/black" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="10.0dip">
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="5.0dip"
+                            android:text="Mobile Number"
+                            android:textColor="@color/colorPrimary" />
+
+                        <TextView
+                            android:id="@+id/txt_mobile"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="5.0dip"
+                            android:text="\ 8130635356"
+                            android:textColor="@android:color/black" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="10.0dip">
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="5.0dip"
+                            android:text="Address"
+                            android:textColor="@color/colorPrimary" />
+
+                        <TextView
+                            android:id="@+id/txt_address"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="5.0dip"
+                            android:textColor="@android:color/black" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="10.0dip">
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="5.0dip"
+                            android:text="City"
+                            android:textColor="@color/colorPrimary" />
+
+                        <TextView
+                            android:id="@+id/txt_city"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="5.0dip"
+                            android:text="Delhi"
+                            android:textColor="@android:color/black" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="10.0dip">
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="5.0dip"
+                            android:text="Pin Code"
+                            android:textColor="@color/colorPrimary" />
+
+                        <TextView
+                            android:id="@+id/txt_pincode"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="5.0dip"
+                            android:text="110043"
+                            android:textColor="@android:color/black" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="10.0dip"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/txt_logout"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="5.0dip"
+                            android:text="@string/logout"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/text_18dp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
+</LinearLayout>
