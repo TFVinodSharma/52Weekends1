@@ -5,7 +5,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 
-import com.android.weekends.base.adapter.Flight_List_Adapter;
+import com.android.weekends.modules.flights.adapter.FlightListAdapter;
 import com.android.weekends.R;
 import com.android.weekends.base.BaseActivity;
 
@@ -31,7 +31,7 @@ public class FlightList extends BaseActivity {
 
         RecyclerView RecyclerFlightList=(RecyclerView)findViewById(R.id.recycler_flight_list);
         RecyclerFlightList.setLayoutManager(new LinearLayoutManager(this));
-        RecyclerFlightList.setAdapter(new Flight_List_Adapter(FlightName,FlightStartTime,FlightTotalTime,FlightEndTime,FlightPrice));
+        RecyclerFlightList.setAdapter(new FlightListAdapter(FlightName,FlightStartTime,FlightTotalTime,FlightEndTime,FlightPrice));
     }
 
     @Override

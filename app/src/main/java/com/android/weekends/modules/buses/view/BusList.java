@@ -5,7 +5,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 
-import com.android.weekends.base.adapter.Bus_List_Adapter;
+import com.android.weekends.modules.buses.adapter.BusListAdapter;
 import com.android.weekends.R;
 import com.android.weekends.base.BaseActivity;
 
@@ -32,7 +32,7 @@ getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 */
         RecyclerView RecyclerBusList=(RecyclerView)findViewById(R.id.recycler_bus_list);
         RecyclerBusList.setLayoutManager(new LinearLayoutManager(this));
-        RecyclerBusList.setAdapter(new Bus_List_Adapter(BusState,BusCompany,TextStartTime,TotalTime,EndTime,BusType,Fare));
+        RecyclerBusList.setAdapter(new BusListAdapter(BusState,BusCompany,TextStartTime,TotalTime,EndTime,BusType,Fare));
 
     }
 

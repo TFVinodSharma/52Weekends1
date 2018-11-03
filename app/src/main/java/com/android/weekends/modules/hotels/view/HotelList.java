@@ -5,7 +5,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 
-import com.android.weekends.base.adapter.Hotel_List_Adapter;
+import com.android.weekends.modules.hotels.adapter.HotelListAdapter;
 import com.android.weekends.R;
 import com.android.weekends.base.BaseActivity;
 
@@ -29,7 +29,7 @@ public class HotelList extends BaseActivity {
         RecyclerView RecyclerHotelList=(RecyclerView)findViewById(R.id.recycler_hotel_list);
         RecyclerHotelList.setLayoutManager(new LinearLayoutManager(this));
         RecyclerHotelList.setHasFixedSize(true);
-        RecyclerHotelList.setAdapter(new Hotel_List_Adapter(HotelName, HotelAddress,HotelAmount));
+        RecyclerHotelList.setAdapter(new HotelListAdapter(HotelName, HotelAddress,HotelAmount));
     }
 
     @Override

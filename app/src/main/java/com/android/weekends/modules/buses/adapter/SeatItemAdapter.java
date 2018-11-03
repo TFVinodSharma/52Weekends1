@@ -1,4 +1,4 @@
-package com.android.weekends.base.adapter;
+package com.android.weekends.modules.buses.adapter;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -10,9 +10,9 @@ import android.widget.ImageView;
 
 import com.android.weekends.R;
 
-public class Seat_Item_Adapter extends RecyclerView.Adapter<Seat_Item_Adapter.Versionview> {
+public class SeatItemAdapter extends RecyclerView.Adapter<SeatItemAdapter.Versionview> {
     private String [] data1;
-    public Seat_Item_Adapter(String[]data1) {
+    public SeatItemAdapter(String[]data1) {
         this.data1 = data1;
     }
 
@@ -22,7 +22,7 @@ public class Seat_Item_Adapter extends RecyclerView.Adapter<Seat_Item_Adapter.Ve
         LayoutInflater inflater=LayoutInflater.from(parent.getContext());
         View view=inflater.inflate(R.layout.list_item_seat,parent,false);
 
-        return new Seat_Item_Adapter.Versionview(view);
+        return new SeatItemAdapter.Versionview(view);
     }
 
     @Override

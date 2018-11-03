@@ -11,7 +11,7 @@ import android.widget.LinearLayout;
 
 import com.android.weekends.R;
 
-public class PagerHotel_Adapter extends PagerAdapter {
+public class PagerHotelAdapter extends PagerAdapter {
     int[] mResources = {
             R.drawable.temple,
             R.drawable.temple,
@@ -23,7 +23,7 @@ public class PagerHotel_Adapter extends PagerAdapter {
     Context mContext;
     LayoutInflater mLayoutInflater;
 
-    public PagerHotel_Adapter(Context context) {
+    public PagerHotelAdapter(Context context) {
         mContext = context;
         mLayoutInflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }

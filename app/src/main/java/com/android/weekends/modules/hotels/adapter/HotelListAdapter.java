@@ -1,4 +1,4 @@
-package com.android.weekends.base.adapter;
+package com.android.weekends.modules.hotels.adapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -7,34 +7,33 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.android.weekends.R;
-import com.android.weekends.modules.flights.view.FlightDetails;
+import com.android.weekends.modules.hotels.view.HotelDetails;
 
-public class Flight_List_Adapter  extends RecyclerView.Adapter<Flight_List_Adapter.Versionview> {
+public class HotelListAdapter extends RecyclerView.Adapter<HotelListAdapter.Versionview> {
     private String [] data1;
     private String [] data2;
     private String [] data3;
-    private String [] data4;
-    private String [] data5;
 
-    public Flight_List_Adapter(String[]data1,String[]data2,String[]data3,String[]data4,String[]data5){
+
+    public HotelListAdapter(String[]data1, String[]data2, String[]data3){
         this.data1=data1;
         this.data2=data2;
         this.data3=data3;
-        this.data4=data4;
-        this.data5=data5;
+
+
 
     }
     @NonNull
     @Override
     public Versionview onCreateViewHolder(@NonNull ViewGroup parent, int i) {
-
         LayoutInflater inflater=LayoutInflater.from(parent.getContext());
-        View view=inflater.inflate(R.layout.row_flight_details,parent,false);
+        View view=inflater.inflate(R.layout.row_hotel_list,parent,false);
 
-        return new Flight_List_Adapter.Versionview(view);
+        return new HotelListAdapter.Versionview(view);
     }
 
     @Override
@@ -45,11 +44,10 @@ public class Flight_List_Adapter  extends RecyclerView.Adapter<Flight_List_Adapt
         holder.tv1.setText(rnk);
         String wrk=data3[position];
         holder.tv2.setText(wrk);
-        String rtg=data4[position];
-        holder.tv3.setText(rtg);
-        String rev=data5[position];
-        holder.tv4.setText(rev);
-        }
+
+
+
+    }
 
     @Override
     public int getItemCount() {
@@ -57,25 +55,25 @@ public class Flight_List_Adapter  extends RecyclerView.Adapter<Flight_List_Adapt
     }
 
     public class Versionview extends RecyclerView.ViewHolder {
-        TextView tv,tv1,tv2,tv3,tv4;
+
+        TextView tv,tv1,tv2;
+        Button tv3;
         private final Context context;
         public Versionview(@NonNull View itemView) {
             super(itemView);
-            context = itemView.getContext();
-            tv=itemView.findViewById(R.id.txt_flight_name);
-            tv1=itemView.findViewById(R.id.txt_start_time);
-            tv2=itemView.findViewById(R.id.txt_time);
-            tv3=itemView.findViewById(R.id.txt_end_time);
-            tv4=itemView.findViewById(R.id.txt_price);
-            itemView.setOnClickListener(new View.OnClickListener() {
+           context = itemView.getContext();
+            tv=itemView.findViewById(R.id.img_name);
+            tv1=itemView.findViewById(R.id.txt_add);
+            tv2=itemView.findViewById(R.id.txt_amount);
+            tv3=itemView.findViewById(R.id.btn_view);
+            tv3.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent i= new Intent(context,FlightDetails.class);
+                    Intent i= new Intent(context,HotelDetails.class);
                     context.startActivity(i);
 
                 }
             });
-
 
         }
     }

@@ -4,12 +4,12 @@ import android.support.v4.view.ViewPager;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 
-import com.android.weekends.base.adapter.PagerHotel_Adapter;
+import com.android.weekends.base.adapter.PagerHotelAdapter;
 import com.android.weekends.R;
 import com.android.weekends.base.BaseActivity;
 
 public class HotelDetails extends BaseActivity {
-PagerHotel_Adapter pagerHotel_adapter;
+PagerHotelAdapter pagerHotel_adapter;
 ViewPager mViewPager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +22,7 @@ ViewPager mViewPager;
         setTitle("Hotel Search");
 
 
-        pagerHotel_adapter = new PagerHotel_Adapter(this);
+        pagerHotel_adapter = new PagerHotelAdapter(this);
 
         mViewPager = (ViewPager) findViewById(R.id.image_pager);
         mViewPager.setAdapter(pagerHotel_adapter);
