@@ -4,19 +4,19 @@ import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
 
-public class BaseResponse  implements Serializable {
+public class BaseResponse implements Serializable {
 
     @SerializedName("status")
-    private String status;
+    private boolean status;
 
     @SerializedName("message")
     private String message;
 
-    public String getStatus() {
+    public boolean getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(boolean status) {
         this.status = status;
     }
 

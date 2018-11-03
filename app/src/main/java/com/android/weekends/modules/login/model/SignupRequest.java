@@ -7,7 +7,7 @@ import java.io.Serializable;
 
 public class SignupRequest extends BaseRequest implements Serializable {
 
-    @SerializedName("user_name")
+    @SerializedName("full_name")
     private String fullName;
 
     @SerializedName("email")
@@ -19,11 +19,10 @@ public class SignupRequest extends BaseRequest implements Serializable {
     @SerializedName("phone")
     private String phone;
 
-
     @SerializedName("password")
     private String password;
 
-    @SerializedName("countryId")
+    @SerializedName("country_id")
     private String countryId;
 
     @SerializedName("city")
@@ -35,17 +34,6 @@ public class SignupRequest extends BaseRequest implements Serializable {
     @SerializedName("pincode")
     private String pincode;
 
-    public SignupRequest(String fullName, String email, String title, String phone, String password, String countryId, String city, String address, String pincode) {
-        this.fullName = fullName;
-        this.email = email;
-        this.title = title;
-        this.phone = phone;
-        this.password = password;
-        this.countryId = countryId;
-        this.city = city;
-        this.address = address;
-        this.pincode = pincode;
-    }
 
     public String getFullName() {
         return fullName;

@@ -1,4 +1,6 @@
 package com.android.weekends.modules.login.viewmodels;
 
-public class LoginViewModel {
+import android.arch.lifecycle.ViewModel;
+
+public class LoginViewModel  extends ViewModel {
 }
