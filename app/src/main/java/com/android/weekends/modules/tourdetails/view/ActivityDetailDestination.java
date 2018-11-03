@@ -1,11 +1,10 @@
 package com.android.weekends.modules.tourdetails.view;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
 import com.android.weekends.R;
-import com.android.weekends.base.BaseActivity;
+import com.android.weekends.base.activity.BaseActivity;
 
 public class ActivityDetailDestination extends BaseActivity {
 

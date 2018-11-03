@@ -9,7 +9,7 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 
 import com.android.weekends.R;
-import com.android.weekends.base.BaseActivity;
+import com.android.weekends.base.activity.BaseActivity;
 import com.android.weekends.base.fragment.FragAboutPlacce;
 import com.android.weekends.base.fragment.FragStayInfo;
 import com.android.weekends.base.fragment.FragTourHighlights;

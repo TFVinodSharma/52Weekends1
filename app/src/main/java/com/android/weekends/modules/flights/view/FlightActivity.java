@@ -7,9 +7,9 @@ import android.view.View;
 import android.widget.Button;
 
 import com.android.weekends.R;
-import com.android.weekends.base.BaseActivity;
+import com.android.weekends.base.activity.BaseActivity;
 
-public class Flight extends BaseActivity {
+public class FlightActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,14 +19,14 @@ public class Flight extends BaseActivity {
         Toolbar Flightsearchtoolbar=(Toolbar)findViewById(R.id.toolbarflight);
         setSupportActionBar(Flightsearchtoolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        setTitle("Flight Search");
+        setTitle("FlightActivity Search");
 
 
         Button SearchFlight=(Button)findViewById(R.id.button_search);
         SearchFlight.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i=new Intent(getApplicationContext(),FlightList.class);
+                Intent i=new Intent(getApplicationContext(),FlightListActivity.class);
                 startActivity(i);
             }
         });

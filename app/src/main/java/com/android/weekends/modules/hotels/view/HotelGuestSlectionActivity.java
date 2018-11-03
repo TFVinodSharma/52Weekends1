@@ -10,10 +10,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.weekends.R;
-import com.android.weekends.base.BaseActivity;
-import com.android.weekends.modules.hotels.view.HotelSearch;
+import com.android.weekends.base.activity.BaseActivity;
 
-public class HotelGuestSlection extends BaseActivity {
+public class HotelGuestSlectionActivity extends BaseActivity {
     int minteger = 0;
     TextView displayInteger;
     @Override
@@ -37,7 +36,7 @@ public class HotelGuestSlection extends BaseActivity {
         linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent in=new Intent(getApplicationContext(),HotelSearch.class);
+                Intent in=new Intent(getApplicationContext(),HotelSearchActivity.class);
                 Bundle b=new Bundle();
                 b.putString("Key", String.valueOf(displayInteger.getText().toString()));
 
@@ -89,7 +88,7 @@ public class HotelGuestSlection extends BaseActivity {
 
         if (v.getId()==R.id.setvalueongest)
         {
-            Intent in=new Intent(getApplicationContext(),HotelSearch.class);
+            Intent in=new Intent(getApplicationContext(),HotelSearchActivity.class);
             Bundle b=new Bundle();
             b.putString("Key", String.valueOf(displayInteger.getText().toString()));
 
@@ -99,7 +98,7 @@ public class HotelGuestSlection extends BaseActivity {
 
         else
         {
-            Intent in=new Intent(getApplicationContext(),HotelSearch.class);
+            Intent in=new Intent(getApplicationContext(),HotelSearchActivity.class);
             Bundle b=new Bundle();
             b.putString("Key", String.valueOf(displayInteger1.getText().toString()));
 
@@ -110,7 +109,7 @@ public class HotelGuestSlection extends BaseActivity {
        /* switch(v.getId()){
 
             case R.id.setvalueongest:
-                Intent in=new Intent(getApplicationContext(),HotelSearch.class);
+                Intent in=new Intent(getApplicationContext(),HotelSearchActivity.class);
                 Bundle b=new Bundle();
                 b.putString("Key", String.valueOf(displayInteger.getText().toString()));
 
@@ -119,7 +118,7 @@ public class HotelGuestSlection extends BaseActivity {
                 break;
 
             case R.id.setvalueongest:
-                Intent in=new Intent(getApplicationContext(),HotelSearch.class);
+                Intent in=new Intent(getApplicationContext(),HotelSearchActivity.class);
                 Bundle b=new Bundle();
                 b.putString("Key", String.valueOf(displayInteger.getText().toString()));
 

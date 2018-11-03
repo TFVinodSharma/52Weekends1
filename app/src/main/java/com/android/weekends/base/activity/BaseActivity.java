@@ -1,4 +1,4 @@
-package com.android.weekends.base;
+package com.android.weekends.base.activity;
 
 
 import android.app.Activity;

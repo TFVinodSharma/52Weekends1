@@ -6,9 +6,9 @@ import android.support.v7.widget.Toolbar;
 
 import com.android.weekends.base.adapter.PagerHotelAdapter;
 import com.android.weekends.R;
-import com.android.weekends.base.BaseActivity;
+import com.android.weekends.base.activity.BaseActivity;
 
-public class HotelDetails extends BaseActivity {
+public class HotelDetailsActivity extends BaseActivity {
 PagerHotelAdapter pagerHotel_adapter;
 ViewPager mViewPager;
     @Override

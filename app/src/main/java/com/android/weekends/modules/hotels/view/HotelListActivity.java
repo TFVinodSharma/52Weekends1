@@ -7,9 +7,9 @@ import android.support.v7.widget.Toolbar;
 
 import com.android.weekends.modules.hotels.adapter.HotelListAdapter;
 import com.android.weekends.R;
-import com.android.weekends.base.BaseActivity;
+import com.android.weekends.base.activity.BaseActivity;
 
-public class HotelList extends BaseActivity {
+public class HotelListActivity extends BaseActivity {
     public  String[] HotelName={"Karni Fort","Raj Mohan","Sat Sitra","Hayat","Taj","Sraton"};
     public  String[] HotelAddress={"Chattarpur New Delhi","Janta Colony Jaipur","Alwar Rajasthan","Navi Mumbai","New Delhi","Saket New Delhi"};
     public String[] HotelAmount={"2000","3000","2500","5000","7000","5500"};

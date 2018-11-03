@@ -7,11 +7,11 @@ import android.view.View;
 import android.widget.LinearLayout;
 
 import com.android.weekends.R;
-import com.android.weekends.base.Activity.Destination;
-import com.android.weekends.base.BaseActivity;
-import com.android.weekends.modules.home.view.HomePage;
+import com.android.weekends.base.activity.Destination;
+import com.android.weekends.base.activity.BaseActivity;
+import com.android.weekends.modules.home.view.HomePageActivity;
 
-public class Profile extends BaseActivity {
+public class ProfileActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +37,7 @@ public class Profile extends BaseActivity {
         HomeLayout1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i= new Intent(getApplicationContext(),HomePage.class);
+                Intent i= new Intent(getApplicationContext(),HomePageActivity.class);
                 startActivity(i);
             }
         });

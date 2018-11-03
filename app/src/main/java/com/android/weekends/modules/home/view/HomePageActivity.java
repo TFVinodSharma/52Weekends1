@@ -7,21 +7,21 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.LinearLayout;
 
-import com.android.weekends.base.Activity.Destination;
-import com.android.weekends.modules.profile.view.Profile;
-import com.android.weekends.base.Activity.SelectPacakge;
-import com.android.weekends.base.Activity.Trip;
+import com.android.weekends.base.activity.Destination;
+import com.android.weekends.modules.hotels.view.HotelSearchActivity;
+import com.android.weekends.modules.profile.view.ProfileActivity;
+import com.android.weekends.base.activity.SelectPacakge;
+import com.android.weekends.base.activity.Trip;
 import com.android.weekends.base.adapter.HomeDesitinationAdapter;
 import com.android.weekends.base.adapter.InternationalPakageAdapter;
 import com.android.weekends.base.adapter.MyPakageAdapter;
 import com.android.weekends.R;
-import com.android.weekends.base.BaseActivity;
-import com.android.weekends.modules.buses.view.BusSearch;
-import com.android.weekends.modules.flights.view.Flight;
-import com.android.weekends.modules.hotels.view.HotelSearch;
+import com.android.weekends.base.activity.BaseActivity;
+import com.android.weekends.modules.buses.view.BusSearchActivity;
+import com.android.weekends.modules.flights.view.FlightActivity;
 
 
-public class HomePage extends BaseActivity {
+public class HomePageActivity extends BaseActivity {
     int arr1[] = {com.android.weekends.R.drawable.temple, com.android.weekends.R.drawable.temple, com.android.weekends.R.drawable.temple
             , com.android.weekends.R.drawable.temple, com.android.weekends.R.drawable.temple, com.android.weekends.R.drawable.temple,
             com.android.weekends.R.drawable.temple, com.android.weekends.R.drawable.temple, com.android.weekends.R.drawable.temple, com.android.weekends.R.drawable.temple, com.android.weekends.R.drawable.temple, com.android.weekends.R.drawable.temple};
@@ -59,7 +59,7 @@ public class HomePage extends BaseActivity {
         GotoFlightActivity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i= new Intent(getApplicationContext(),Flight.class);
+                Intent i= new Intent(getApplicationContext(),FlightActivity.class);
                 startActivity(i);
             }
         });
@@ -68,7 +68,7 @@ public class HomePage extends BaseActivity {
         GotoHotelActivity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i= new Intent(getApplicationContext(),HotelSearch.class);
+                Intent i= new Intent(getApplicationContext(),HotelSearchActivity.class);
                 startActivity(i);
             }
         });
@@ -76,7 +76,7 @@ public class HomePage extends BaseActivity {
         GotoBusActivity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i= new Intent(getApplicationContext(),BusSearch.class);
+                Intent i= new Intent(getApplicationContext(),BusSearchActivity.class);
                 startActivity(i);
             }
         });
@@ -104,7 +104,7 @@ public class HomePage extends BaseActivity {
         GotoHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i= new Intent(getApplicationContext(),HomePage.class);
+                Intent i= new Intent(getApplicationContext(),HomePageActivity.class);
                 startActivity(i);
 
             }
@@ -132,7 +132,7 @@ public class HomePage extends BaseActivity {
         GotoProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i= new Intent(getApplicationContext(),Profile.class);
+                Intent i= new Intent(getApplicationContext(),ProfileActivity.class);
                 startActivity(i);
 
             }

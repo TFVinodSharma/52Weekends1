@@ -1,13 +1,12 @@
 package com.android.weekends.modules.buses.view;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 
 import com.android.weekends.R;
-import com.android.weekends.base.BaseActivity;
+import com.android.weekends.base.activity.BaseActivity;
 
-public class SeatSelection extends BaseActivity {
+public class SeatSelectionActivity extends BaseActivity {
     public  String[] SeatSelection={"","","","",""};
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.android.weekends.R;
-import com.android.weekends.modules.flights.view.FlightDetails;
+import com.android.weekends.modules.flights.view.FlightDetailsActivity;
 
 public class FlightListAdapter extends RecyclerView.Adapter<FlightListAdapter.Versionview> {
     private String [] data1;
@@ -70,7 +70,7 @@ public class FlightListAdapter extends RecyclerView.Adapter<FlightListAdapter.Ve
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent i= new Intent(context,FlightDetails.class);
+                    Intent i= new Intent(context,FlightDetailsActivity.class);
                     context.startActivity(i);
 
                 }

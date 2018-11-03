@@ -1,12 +1,11 @@
 package com.android.weekends.modules.flights.view;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.android.weekends.R;
-import com.android.weekends.base.BaseActivity;
+import com.android.weekends.base.activity.BaseActivity;
 
-public class FlightDetails extends BaseActivity {
+public class FlightDetailsActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

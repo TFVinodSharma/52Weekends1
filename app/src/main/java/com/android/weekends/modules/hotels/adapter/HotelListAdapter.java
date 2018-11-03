@@ -11,7 +11,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.android.weekends.R;
-import com.android.weekends.modules.hotels.view.HotelDetails;
+import com.android.weekends.modules.hotels.view.HotelDetailsActivity;
 
 public class HotelListAdapter extends RecyclerView.Adapter<HotelListAdapter.Versionview> {
     private String [] data1;
@@ -69,7 +69,7 @@ public class HotelListAdapter extends RecyclerView.Adapter<HotelListAdapter.Vers
             tv3.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent i= new Intent(context,HotelDetails.class);
+                    Intent i= new Intent(context,HotelDetailsActivity.class);
                     context.startActivity(i);
 
                 }

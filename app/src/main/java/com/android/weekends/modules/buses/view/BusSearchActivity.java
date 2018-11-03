@@ -9,10 +9,9 @@ import android.widget.Button;
 import android.widget.Spinner;
 
 import com.android.weekends.R;
-import com.android.weekends.base.BaseActivity;
-import com.android.weekends.modules.buses.view.BusList;
+import com.android.weekends.base.activity.BaseActivity;
 
-public class BusSearch extends BaseActivity {
+public class BusSearchActivity extends BaseActivity {
 Spinner spin1,spin2;
 
 
@@ -35,7 +34,7 @@ Spinner spin1,spin2;
         BusSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i=new Intent(getApplicationContext(),BusList.class);
+                Intent i=new Intent(getApplicationContext(),BusListActivity.class);
                 startActivity(i);
             }
         });

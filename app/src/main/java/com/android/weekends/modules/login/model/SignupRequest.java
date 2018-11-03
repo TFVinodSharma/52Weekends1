@@ -1,4 +1,4 @@
-package com.android.weekends.model.request;
+package com.android.weekends.modules.login.model;
 
 import com.android.weekends.base.request.BaseRequest;
 import com.google.gson.annotations.SerializedName;

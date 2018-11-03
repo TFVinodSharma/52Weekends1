@@ -9,9 +9,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.android.weekends.R;
-import com.android.weekends.base.BaseActivity;
+import com.android.weekends.base.activity.BaseActivity;
 
-public class HotelSearch extends BaseActivity {
+public class HotelSearchActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +42,7 @@ public class HotelSearch extends BaseActivity {
         Hotelsearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i=new Intent(getApplicationContext(),HotelList.class);
+                Intent i=new Intent(getApplicationContext(),HotelListActivity.class);
                 startActivity(i);
             }
         });
@@ -51,7 +51,7 @@ public class HotelSearch extends BaseActivity {
         Hotelguestselection.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i= new Intent(getApplicationContext(),HotelGuestSlection.class);
+                Intent i= new Intent(getApplicationContext(),HotelGuestSlectionActivity.class);
                 startActivity(i);
 
             }
@@ -61,7 +61,7 @@ public class HotelSearch extends BaseActivity {
         HotelRoomSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i=new Intent(getApplicationContext(),HotelGuestSlection.class);
+                Intent i=new Intent(getApplicationContext(),HotelGuestSlectionActivity.class);
                 startActivity(i);
 
             }

@@ -10,9 +10,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.android.weekends.R;
-import com.android.weekends.modules.login.view.Login;
 
-public class Signup extends AppCompatActivity {
+public class SignupActivity extends AppCompatActivity {
     String[] LArray = {"Select","Mr.","Mrs.","Miss",
             };
 
@@ -24,7 +23,7 @@ public class Signup extends AppCompatActivity {
         GotoLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i= new Intent(getApplicationContext(),Login.class);
+                Intent i= new Intent(getApplicationContext(),LoginActivity.class);
                 startActivity(i);
             }
         });
@@ -35,7 +34,7 @@ public class Signup extends AppCompatActivity {
         backtosignin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent it=new Intent(getApplicationContext(),Login.class);
+                Intent it=new Intent(getApplicationContext(),LoginActivity.class);
                 startActivity(it);
             }
         });

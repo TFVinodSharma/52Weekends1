@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.android.weekends.R;
-import com.android.weekends.modules.buses.view.SeatSelection;
+import com.android.weekends.modules.buses.view.SeatSelectionActivity;
 
 public class BusListAdapter extends RecyclerView.Adapter<BusListAdapter.Versionview> {
 
@@ -81,7 +81,7 @@ public class BusListAdapter extends RecyclerView.Adapter<BusListAdapter.Versionv
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent i= new Intent(context,SeatSelection.class);
+                    Intent i= new Intent(context,SeatSelectionActivity.class);
                     context.startActivity(i);
 
                 }

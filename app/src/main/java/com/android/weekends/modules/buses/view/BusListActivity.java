@@ -7,9 +7,9 @@ import android.support.v7.widget.Toolbar;
 
 import com.android.weekends.modules.buses.adapter.BusListAdapter;
 import com.android.weekends.R;
-import com.android.weekends.base.BaseActivity;
+import com.android.weekends.base.activity.BaseActivity;
 
-public class BusList extends BaseActivity {
+public class BusListActivity extends BaseActivity {
     public  String[] BusState={"Uttar Pradesh State Road","Rajasthan State Road","Punjab State Road","UttaraKhand State Road","Madhya Pradesh State Road"};
     public  String[] BusCompany={"Transport Corporation(UPSRTC)","Transport Corporation(RSRTC)","Transport Corporation(PSRTC)","Transport Corporation(UKSRTC)","Transport Corporation(MPSRTC)"};
     public String[] TextStartTime={"2:10","3:15","4:30","4:10","5:00"};
@@ -22,9 +22,13 @@ public class BusList extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bus__list);
+
+
+/*
 Toolbar BusListToolbar=(Toolbar)findViewById(R.id.buslisttoolbar);
 setSupportActionBar(BusListToolbar);
 getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+*/
       /*  Toolbar BusListToolbar=(Toolbar)findViewById(R.id.buslisttoolbar);
         setSupportActionBar(BusListToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

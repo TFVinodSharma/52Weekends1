@@ -12,60 +12,64 @@
         android:screenOrientation="portrait"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".base.Activity.Splash">
+        <activity android:name=".base.activity.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".modules.login.view.Signup" />
+        <activity android:name=".modules.login.view.SignupActivity" />
 
-        <activity android:name=".modules.buses.view.BusSearch"
-            android:parentActivityName=".modules.home.view.HomePage"/>
+        <activity android:name=".modules.buses.view.BusSearchActivity"
+            android:parentActivityName=".modules.home.view.HomePageActivity"/>
 
-        <activity android:name=".modules.buses.view.BusList" />
+        <activity android:name=".modules.buses.view.BusListActivity" />
 
-        <activity android:name=".modules.login.view.Login" />
+        <activity android:name=".modules.login.view.LoginActivity" />
 
-        <activity android:name=".modules.buses.view.SeatSelection" />
+        <activity android:name=".modules.buses.view.SeatSelectionActivity" />
 
         <activity
-            android:name=".modules.hotels.view.HotelSearch"
-            android:parentActivityName=".modules.home.view.HomePage"/>
+            android:name=".modules.hotels.view.HotelSearchActivity"
+            android:parentActivityName=".modules.home.view.HomePageActivity"/>
 
-        <activity android:name=".modules.hotels.view.HotelList" />
+        <activity android:name=".modules.hotels.view.HotelListActivity" />
 
-        <activity android:name=".modules.flights.view.Flight"
-            android:parentActivityName=".modules.home.view.HomePage"
+        <activity android:name=".modules.flights.view.FlightActivity"
+            android:parentActivityName=".modules.home.view.HomePageActivity"
             />
 
-        <activity android:name=".modules.flights.view.FlightList" />
+        <activity android:name=".modules.flights.view.FlightListActivity" />
 
-        <activity android:name=".modules.flights.view.FlightDetails" />
+        <activity android:name=".modules.flights.view.FlightDetailsActivity" />
 
-        <activity android:name=".base.Activity.Trip"
+        <activity android:name=".base.activity.Trip"
 
             />
 
-        <activity android:name=".base.Activity.Destination" />
+        <activity android:name=".base.activity.Destination" />
 
-        <activity android:name=".modules.profile.view.Profile" />
+        <activity android:name=".modules.profile.view.ProfileActivity" />
 
-        <activity android:name=".modules.hotels.view.HotelDetails" />
+        <activity android:name=".modules.hotels.view.HotelDetailsActivity" />
 
-        <activity android:name=".modules.hotels.view.HotelGuestSlection" />
+        <activity android:name=".modules.hotels.view.HotelGuestSlectionActivity" />
 
-        <activity android:name=".modules.home.view.HomePage" />
+        <activity android:name=".modules.home.view.HomePageActivity" />
 
         <activity android:name=".modules.tourdetails.view.PackageDetails"
             android:label="Darjeeling"/>
 
         <activity android:name=".modules.tourdetails.view.ActivityDetailDestination" />
 
-        <activity android:name=".base.Activity.SelectPacakge"
+        <activity android:name=".base.activity.SelectPacakge"
             android:label="Select Pacakge"
             ></activity>
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="0497bd53ee9187ffb75687611155e1e89e410675" />
     </application>
 
+    <uses-permission android:name="android.permission.INTERNET" />
 </manifest>

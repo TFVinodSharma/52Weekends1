@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- <string name="app_name">52Weekends</string>
-    <string name="login_now">Login Now !</string>
+    <string name="login_now">LoginActivity Now !</string>
     <string name="new_to_weekend">New to 52wkends ?</string>
     <string name="signup">signup</string>
-    <string name="signup_now">Signup Now!</string>
+    <string name="signup_now">SignupActivity Now!</string>
     <string name="title">Title</string>
     <string name="name">Name</string>
     <string name="code">Code</string>

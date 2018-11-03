@@ -1,4 +1,4 @@
-package com.android.weekends.base.Activity;
+package com.android.weekends.base.activity;
 
 import android.content.Intent;
 import android.support.design.widget.TabLayout;
@@ -9,8 +9,6 @@ import android.view.View;
 import android.widget.LinearLayout;
 
 import com.android.weekends.R;
-import com.android.weekends.base.Activity.Destination;
-import com.android.weekends.base.BaseActivity;
 
 public class Trip extends BaseActivity {
 

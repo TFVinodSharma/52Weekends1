@@ -1,4 +1,4 @@
-package com.android.weekends.base.Activity;
+package com.android.weekends.base.activity;
 
 
 
@@ -9,7 +9,6 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.android.weekends.R;
-import com.android.weekends.base.BaseActivity;
 import com.android.weekends.modules.tourdetails.view.PackageDetails;
 
 public class SelectPacakge extends BaseActivity {

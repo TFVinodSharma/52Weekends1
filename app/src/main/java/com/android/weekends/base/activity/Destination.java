@@ -1,4 +1,4 @@
-package com.android.weekends.base.Activity;
+package com.android.weekends.base.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,9 +10,8 @@ import android.widget.LinearLayout;
 
 import com.android.weekends.base.adapter.DestinationAdapter;
 import com.android.weekends.R;
-import com.android.weekends.base.BaseActivity;
-import com.android.weekends.modules.home.view.HomePage;
-import com.android.weekends.modules.profile.view.Profile;
+import com.android.weekends.modules.home.view.HomePageActivity;
+import com.android.weekends.modules.profile.view.ProfileActivity;
 
 public class Destination extends BaseActivity {
 
@@ -38,7 +37,7 @@ public class Destination extends BaseActivity {
         ProfileDestination.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i= new Intent(getApplicationContext(),Profile.class);
+                Intent i= new Intent(getApplicationContext(),ProfileActivity.class);
                 startActivity(i);
             }
         });
@@ -48,7 +47,7 @@ public class Destination extends BaseActivity {
         img.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i1=new Intent(getApplicationContext(),HomePage.class);
+                Intent i1=new Intent(getApplicationContext(),HomePageActivity.class);
                 startActivity(i1);
             }
         });
@@ -65,7 +64,7 @@ public class Destination extends BaseActivity {
         img3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i1=new Intent(getApplicationContext(),Profile.class);
+                Intent i1=new Intent(getApplicationContext(),ProfileActivity.class);
                 startActivity(i1);
             }
         });
