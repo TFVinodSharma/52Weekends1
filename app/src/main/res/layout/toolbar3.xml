@@ -12,21 +12,21 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/margin_10">
 
-        <ImageView
+        <!--<ImageView
             android:id="@id/img_back"
             android:layout_width="wrap_content"
             android:layout_height="47.0dip"
             android:layout_marginLeft="@dimen/margin_10"
             android:src="@drawable/left_arrow"
             android:layout_above="@id/title"
-            android:layout_alignParentLeft="true" />
+            android:layout_alignParentLeft="true" />-->
 
         <TextView
 
             android:textSize="@dimen/text_24dp"
             android:textStyle="bold"
             android:textColor="@color/white"
-            android:id="@id/title"
+            android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/margin_4"

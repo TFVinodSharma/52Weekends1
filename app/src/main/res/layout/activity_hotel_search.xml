@@ -166,7 +166,7 @@
                                 android:layout_marginTop="10.0dip"
                                 android:text="20 SEP" />
 
-                            <TextView
+                            <!--<TextView
                                 android:textSize="12.0dip"
                                 android:textStyle="bold"
                                 android:textColor="#ff333333"
@@ -174,7 +174,7 @@
                                 android:id="@+id/txt_checkin_day"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Tuesday, 2016" />
+                                android:text="Tuesday, 2016" />-->
 
 <!--
                             <TextView

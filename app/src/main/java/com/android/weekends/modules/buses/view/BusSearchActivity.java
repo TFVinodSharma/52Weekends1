@@ -12,7 +12,6 @@ import com.android.weekends.R;
 import com.android.weekends.base.activity.BaseActivity;
 
 public class BusSearchActivity extends BaseActivity {
-Spinner spin1,spin2;
 
 
     String[] fromArray = {"Select city","Ahemdabad","Delhi.","Jaipur.","Sri Nagar",};

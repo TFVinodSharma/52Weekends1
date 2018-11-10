@@ -209,6 +209,7 @@
 
 
     <!--Login!-->
+    <string name="login_progress_title">Logging in </string>
     <string name="signup_progress_title">Signup</string>
     <string name="please_wait_progress">Please wait...</string>
 

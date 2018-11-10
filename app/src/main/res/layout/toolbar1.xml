@@ -18,6 +18,7 @@
             android:layout_height="47.0dip"
             android:src="@drawable/left_arrow"
             android:layout_weight="0.1"
+            android:visibility="invisible"
             android:layout_above="@id/title"
             android:layout_alignParentLeft="true" />
 

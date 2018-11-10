@@ -23,7 +23,11 @@ public class HotelListActivity extends BaseActivity {
         Toolbar HotelListToolbar=(Toolbar)findViewById(R.id.hotellisttoolbar);
         setSupportActionBar(HotelListToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        //setTitle("Hotel Search");
+
+       /* Toolbar HotelListToolbar=(Toolbar)findViewById(R.id.hotellisttoolbar);
+        setSupportActionBar(HotelListToolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //setTitle("Hotel Search");*/
 
 
         RecyclerView RecyclerHotelList=(RecyclerView)findViewById(R.id.recycler_hotel_list);

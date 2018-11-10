@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.android.weekends.R;
 import com.android.weekends.modules.hotels.view.HotelDetailsActivity;
+import com.android.weekends.modules.login.view.LoginActivity;
 
 public class HotelListAdapter extends RecyclerView.Adapter<HotelListAdapter.Versionview> {
     private String [] data1;
@@ -66,6 +67,14 @@ public class HotelListAdapter extends RecyclerView.Adapter<HotelListAdapter.Vers
             tv1=itemView.findViewById(R.id.txt_add);
             tv2=itemView.findViewById(R.id.txt_amount);
             tv3=itemView.findViewById(R.id.btn_view);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent i= new Intent(context,LoginActivity.class);
+                    context.startActivity(i);
+                }
+            });
             tv3.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

@@ -23,17 +23,12 @@ public class BusListActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bus__list);
 
-
-/*
-Toolbar BusListToolbar=(Toolbar)findViewById(R.id.buslisttoolbar);
-setSupportActionBar(BusListToolbar);
-getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-*/
-      /*  Toolbar BusListToolbar=(Toolbar)findViewById(R.id.buslisttoolbar);
-        setSupportActionBar(BusListToolbar);
+        Toolbar BusSearchListtoolbar=(Toolbar)findViewById(R.id.buslisttoolbar);
+        setSupportActionBar(BusSearchListtoolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+       // setTitle("Hotel Search");
 
-*/
+
         RecyclerView RecyclerBusList=(RecyclerView)findViewById(R.id.recycler_bus_list);
         RecyclerBusList.setLayoutManager(new LinearLayoutManager(this));
         RecyclerBusList.setAdapter(new BusListAdapter(BusState,BusCompany,TextStartTime,TotalTime,EndTime,BusType,Fare));

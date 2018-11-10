@@ -261,7 +261,7 @@
                             android:textSize="24.0dip"
                             android:textStyle="bold" />
 
-                        <TextView
+                        <!--<TextView
                             android:id="@id/txt_depart_day"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -269,7 +269,7 @@
                             android:text="Tuesday, 2016"
                             android:textColor="#ff333333"
                             android:textSize="12.0dip"
-                            android:textStyle="bold" />
+                            android:textStyle="bold" />-->
 
                         <TextView
                             android:id="@id/depart_date"
@@ -321,17 +321,17 @@
                             android:textSize="24.0dip"
                             android:textStyle="bold" />
 
-                        <TextView
+                       <!-- <TextView
 
                             android:id="@+id/txt_return_day"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
-                            android:text="-----, ----"
+                            android:text="-&#45;&#45;&#45;&#45;, &#45;&#45;&#45;&#45;"
                             android:textColor="#ff333333"
                             android:textSize="12.0dip"
                             android:textStyle="bold" />
-
+-->
                         <TextView
                             android:id="@+id/return_date"
                             android:layout_width="wrap_content"
