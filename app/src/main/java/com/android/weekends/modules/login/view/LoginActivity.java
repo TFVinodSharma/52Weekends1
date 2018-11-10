@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.android.weekends.R;
+import com.android.weekends.database.AppState;
 import com.android.weekends.databinding.ActivityMainBinding;
 import com.android.weekends.databinding.ActivitySignupBinding;
 import com.android.weekends.modules.home.view.HomePageActivity;
@@ -20,11 +21,12 @@ import com.android.weekends.modules.login.viewmodels.SignupViewModel;
 
 public class LoginActivity extends BaseActivity {
 
-ActivityMainBinding activityMainBinding;
+    ActivityMainBinding activityMainBinding;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-      /*  setContentView(R.layout.activity_main);*/
+        /*  setContentView(R.layout.activity_main);*/
         activityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
 
 
@@ -63,7 +65,8 @@ ActivityMainBinding activityMainBinding;
             hideProgressDialgogue();
             if (loginResponse == null) {
                 showErrorMessage(getString(R.string.not_valid_response));
-            } else if (loginResponse.getToken()!=null) {
+            } else if (loginResponse.getToken() != null) {
+                AppState.getInstance(this).setUserToken(loginResponse.getToken());
                 startActivity(new Intent(LoginActivity.this, HomePageActivity.class));
             } else {
                 showErrorMessage(loginResponse.getMessage());

@@ -21,93 +21,74 @@ import java.util.Calendar;
 
 public class FlightActivity extends BaseActivity {
 
-   private TextView mDisplayDateDepart,mDisplayDateReturn;
-    private static  String TAG="Search_Nanny";
+    private TextView mDisplayDateDepart, mDisplayDateReturn;
+
+    private static String TAG = "FlightActivity";
+
     private DatePickerDialog.OnDateSetListener mDateSetListener;
-    //static final int DIALOG_ID = 0;
-
-    // Get Current time
-    final Calendar calender = Calendar.getInstance();
-    int hour = calender.get(Calendar.HOUR_OF_DAY);
-    int minute = calender.get(Calendar.MINUTE);
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_filght);
 
-        Toolbar Flightsearchtoolbar=(Toolbar)findViewById(R.id.toolbarflight);
+        Toolbar Flightsearchtoolbar = findViewById(R.id.toolbarflight);
         setSupportActionBar(Flightsearchtoolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //TODO put this string in strings.xml
         setTitle("FlightActivity Search");
 
-        // ShowTimePicker();
 
-        mDisplayDateDepart=(TextView)findViewById(R.id.txt_depart_date);
+        mDisplayDateDepart = findViewById(R.id.txt_depart_date);
+        mDisplayDateReturn = findViewById(R.id.txt_return_date);
+
         mDisplayDateDepart.setOnClickListener(view -> {
-
-            ChooseDate();
-            /*Calendar cal=Calendar.getInstance();
-            int year=cal.get(Calendar.YEAR);
-            int month =cal.get(Calendar.MONTH);
-            int date=cal.get(Calendar.DAY_OF_MONTH);
-            DatePickerDialog dialog;
-            dialog = new DatePickerDialog(FlightActivity.this,
-                    mDateSetListener,
-                    year,month,date);
-            dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#FDD7E4")));
-            dialog.show();
-            dialog.getDatePicker().setMinDate(System.currentTimeMillis() - 1000);  // Disable past dates .
-*/
+            ChooseDate(view.getId());
         });
+
+        mDisplayDateReturn.setOnClickListener(view -> ChooseDate(view.getId()));
+
         mDateSetListener = (datePicker, year, month, day) -> {
-            Log.d(TAG, "onDateSet:mm/dd/yy:" + month + "/" + day + "/" + year);
-            String date = month+1 + "/" + day + "/" + year;
-            mDisplayDateDepart.setText(date);
+            int tagId = (int) datePicker.getTag();
+            String date = month + 1 + "/" + day + "/" + year;
+            switch (tagId) {
+                case R.id.txt_depart_date:
+                    mDisplayDateDepart.setText(date);
+                    break;
+
+                case R.id.txt_return_date:
+                    mDisplayDateReturn.setText(date);
+                    break;
+            }
+
         };
 
 
-        mDisplayDateReturn=(TextView)findViewById(R.id.txt_return_date);
-        mDisplayDateReturn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ChooseDate();
-            }
-        });
 
-       /* mDateSetListener = (datePicker, year, month, day) -> {
-            Log.d(TAG, "onDateSet:mm/dd/yy:" + month + "/" + day + "/" + year);
-            String date = month+1 + "/" + day + "/" + year;
-            mDisplayDateReturn.setText(date);
-        };
-*/
-
-        Button SearchFlight=(Button)findViewById(R.id.button_search);
-        SearchFlight.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i=new Intent(getApplicationContext(),FlightListActivity.class);
-                startActivity(i);
-            }
+        Button SearchFlight = (Button) findViewById(R.id.button_search);
+        SearchFlight.setOnClickListener(v -> {
+            Intent i = new Intent(getApplicationContext(), FlightListActivity.class);
+            startActivity(i);
         });
 
 
     }
 
-    public void ChooseDate()
-    {
-        Calendar cal=Calendar.getInstance();
-        int year=cal.get(Calendar.YEAR);
-        int month =cal.get(Calendar.MONTH);
-        int date=cal.get(Calendar.DAY_OF_MONTH);
+    public void ChooseDate(int id) {
+        Calendar cal = Calendar.getInstance();
+        int year = cal.get(Calendar.YEAR);
+        int month = cal.get(Calendar.MONTH);
+        int date = cal.get(Calendar.DAY_OF_MONTH);
         DatePickerDialog dialog;
         dialog = new DatePickerDialog(FlightActivity.this,
                 mDateSetListener,
-                year,month,date);
-       dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#FDD7E4")));
+                year, month, date);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#FDD7E4")));
         dialog.show();
-        dialog.getDatePicker().setMinDate(System.currentTimeMillis() - 1000);  // Disable past dates .
+
+        DatePicker datePicker = dialog.getDatePicker();
+        datePicker.setTag(id);
+        datePicker.setMinDate(System.currentTimeMillis() - 1000);
     }
 
 
