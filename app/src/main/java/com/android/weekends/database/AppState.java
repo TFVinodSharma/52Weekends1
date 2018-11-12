@@ -3,7 +3,6 @@ package com.android.weekends.database;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import com.android.weekends.modules.login.model.LoginResponse;
 import com.google.gson.Gson;
 
 public class AppState {

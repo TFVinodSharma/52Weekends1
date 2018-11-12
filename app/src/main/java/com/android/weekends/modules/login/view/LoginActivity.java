@@ -31,12 +31,9 @@ public class LoginActivity extends BaseActivity {
 
 
         TextView Signup = (TextView) findViewById(R.id.gotosignup);
-        Signup.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(getApplicationContext(), SignupActivity.class);
-                startActivity(i);
-            }
+        Signup.setOnClickListener(v -> {
+            Intent i = new Intent(getApplicationContext(), SignupActivity.class);
+            startActivity(i);
         });
 
 /*

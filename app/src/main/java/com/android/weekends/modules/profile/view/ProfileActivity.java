@@ -21,7 +21,10 @@ public class ProfileActivity extends BaseActivity {
         Toolbar ProfileToolBar=(Toolbar)findViewById(R.id.profiletoolbar);
         setSupportActionBar(ProfileToolBar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        setTitle("Hotel Search");
+        setTitle("Profile");
+
+
+
 
 
         LinearLayout DestinationLayout1=(LinearLayout)findViewById(R.id.desination);

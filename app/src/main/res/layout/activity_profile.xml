@@ -21,7 +21,9 @@
             android:id="@+id/profiletoolbar"
             android:background="?colorPrimary"
             android:layout_width="fill_parent"
-            android:layout_height="?actionBarSize" />
+            android:layout_height="?actionBarSize">
+        </android.support.v7.widget.Toolbar>
+
 
     </android.support.design.widget.AppBarLayout>
 
@@ -35,7 +37,6 @@
             android:id="@id/pb_loading"
             android:visibility="gone"
             android:layout_width="fill_parent"
-
             android:layout_height="wrap_content"
             android:indeterminate="true"
             style="@style/Widget.AppCompat.ProgressBar.Horizontal" />

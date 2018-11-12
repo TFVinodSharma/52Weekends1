@@ -9,6 +9,7 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -19,16 +20,15 @@ import com.android.weekends.modules.flights.view.FlightActivity;
 import java.util.Calendar;
 
 public class HotelSearchActivity extends BaseActivity {
-    /*private TextView mDisplayCheckInDate,mDisplayOutDate;
-    private static  String TAG="Search_Nanny";
-    private DatePickerDialog.OnDateSetListener mDateSetListener1;
-    //static final int DIALOG_ID = 0;
 
-    // Get Current time
-    final Calendar calender = Calendar.getInstance();
-    int hour = calender.get(Calendar.HOUR_OF_DAY);
-    int minute = calender.get(Calendar.MINUTE);
-*/
+
+    private TextView checkindate, checkoutdate;
+
+    private static String TAG = "HotelSearchActivity";
+
+    private DatePickerDialog.OnDateSetListener mDateSetListener;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,33 +40,30 @@ public class HotelSearchActivity extends BaseActivity {
         setTitle("Hotel Search");
 
 
-       /* mDisplayCheckInDate=(TextView)findViewById(R.id.txt_checkin_date);
-        mDisplayCheckInDate.setOnClickListener(view -> {
 
-            ChooseDate1();
+        checkindate = findViewById(R.id.txt_checkin_date);
+        checkoutdate = findViewById(R.id.txt_checkout_date);
 
+        checkindate.setOnClickListener(view -> {
+            ChooseDate(view.getId());
         });
-        mDateSetListener1 = (datePicker, year, month, day) -> {
-            Log.d(TAG, "onDateSet:mm/dd/yy:" + month + "/" + day + "/" + year);
-            String date = month+1 + "/" + day + "/" + year;
-            mDisplayCheckInDate.setText(date);
-        };
-*/
 
-      /*  mDisplayOutDate=(TextView)findViewById(R.id.txt_checkout_date);
-        mDisplayOutDate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ChooseDate1();
+        checkoutdate.setOnClickListener(view -> ChooseDate(view.getId()));
+
+        mDateSetListener = (datePicker, year, month, day) -> {
+            int tagId = (int) datePicker.getTag();
+            String date = month + 1 + "/" + day + "/" + year;
+            switch (tagId) {
+                case R.id.txt_checkin_date:
+                    checkindate.setText(date);
+                    break;
+
+                case R.id.txt_checkout_date:
+                    checkoutdate.setText(date);
+                    break;
             }
-        });
-*/
-       /* mDateSetListener = (datePicker, year, month, day) -> {
-            Log.d(TAG, "onDateSet:mm/dd/yy:" + month + "/" + day + "/" + year);
-            String date = month+1 + "/" + day + "/" + year;
-            mDisplayDateReturn.setText(date);
+
         };
-*/
 
 
 
@@ -113,22 +110,25 @@ public class HotelSearchActivity extends BaseActivity {
     }
 
 
-   /* public void ChooseDate1()
-    {
-        Calendar cal=Calendar.getInstance();
-        int year=cal.get(Calendar.YEAR);
-        int month =cal.get(Calendar.MONTH);
-        int date=cal.get(Calendar.DAY_OF_MONTH);
-        DatePickerDialog dialog1;
-        dialog1 = new DatePickerDialog(getApplicationContext(),
-                mDateSetListener1,
-                year,month,date);
-        dialog1.getWindow().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#FDD7E4")));
-        dialog1.show();
-        dialog1.getDatePicker().setMinDate(System.currentTimeMillis() - 1000);  // Disable past dates .
+    public void ChooseDate(int id) {
+        Calendar cal = Calendar.getInstance();
+        int year = cal.get(Calendar.YEAR);
+        int month = cal.get(Calendar.MONTH);
+        int date = cal.get(Calendar.DAY_OF_MONTH);
+        DatePickerDialog dialog;
+        dialog = new DatePickerDialog(HotelSearchActivity.this,
+                mDateSetListener,
+                year, month, date);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#FDD7E4")));
+        dialog.show();
+
+        DatePicker datePicker = dialog.getDatePicker();
+        datePicker.setTag(id);
+        datePicker.setMinDate(System.currentTimeMillis() - 1000);
     }
 
-*/
+
+
 
     @Override
     public boolean onSupportNavigateUp() {
