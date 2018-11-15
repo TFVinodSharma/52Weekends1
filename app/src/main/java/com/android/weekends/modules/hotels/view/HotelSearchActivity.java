@@ -116,10 +116,11 @@ public class HotelSearchActivity extends BaseActivity {
         int month = cal.get(Calendar.MONTH);
         int date = cal.get(Calendar.DAY_OF_MONTH);
         DatePickerDialog dialog;
-        dialog = new DatePickerDialog(HotelSearchActivity.this,
+        dialog = new DatePickerDialog(HotelSearchActivity.this,/*R.style.Datepicker,*/
                 mDateSetListener,
                 year, month, date);
-        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#FDD7E4")));
+        dialog.getWindow();
+                //.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#FDD7E4")));
         dialog.show();
 
         DatePicker datePicker = dialog.getDatePicker();

@@ -1,4 +1,4 @@
-package com.android.weekends.base.adapter;
+package com.android.weekends.modules.home.adapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -13,12 +13,12 @@ import android.widget.TextView;
 import com.android.weekends.modules.tourdetails.view.PackageDetails;
 import com.android.weekends.R;
 
-public class MyPakageAdapter extends RecyclerView.Adapter<MyPakageAdapter.MyViewHolder> {
+public class DomesticPackageAdapter extends RecyclerView.Adapter<DomesticPackageAdapter.MyViewHolder> {
 
     private int[] ar1;
     private String[] ar2,ar3;
 
-    public MyPakageAdapter(int[] ar1, String[] ar2, String[] ar3) {
+    public DomesticPackageAdapter(int[] ar1, String[] ar2, String[] ar3) {
         this.ar1 = ar1;
         this.ar2 = ar2;
         this.ar3 = ar3;
@@ -29,7 +29,7 @@ public class MyPakageAdapter extends RecyclerView.Adapter<MyPakageAdapter.MyView
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         View view= LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.row_domestic_package,viewGroup,false);
 
-        return new MyPakageAdapter.MyViewHolder(view);
+        return new DomesticPackageAdapter.MyViewHolder(view);
 
 
     }

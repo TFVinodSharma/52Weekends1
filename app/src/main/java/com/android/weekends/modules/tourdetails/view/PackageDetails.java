@@ -10,11 +10,11 @@ import android.support.v7.widget.Toolbar;
 
 import com.android.weekends.R;
 import com.android.weekends.base.activity.BaseActivity;
-import com.android.weekends.base.fragment.FragAboutPlacce;
-import com.android.weekends.base.fragment.FragStayInfo;
-import com.android.weekends.base.fragment.FragTourHighlights;
-import com.android.weekends.base.fragment.FragTransportaion;
-import com.android.weekends.base.fragment.FragItinerary;
+import com.android.weekends.modules.tourdetails.fragment.FragAboutPlace;
+import com.android.weekends.modules.tourdetails.fragment.FragStayInfo;
+import com.android.weekends.modules.tourdetails.fragment.FragTourHighlights;
+import com.android.weekends.modules.tourdetails.fragment.FragTransportaion;
+import com.android.weekends.modules.tourdetails.fragment.FragItinerary;
 
 import java.util.ArrayList;
 
@@ -29,7 +29,6 @@ public class PackageDetails extends BaseActivity {
         Toolbar PacakageDetailsToolBar=(Toolbar)findViewById(R.id.pacakgedetailstoolbar);
         setSupportActionBar(PacakageDetailsToolBar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-       // setTitle("Hotel Search");
 
 
 
@@ -69,7 +68,7 @@ public class PackageDetails extends BaseActivity {
         ArrayList<Fragment> list = new ArrayList<>();
         public MyAdapter(FragmentManager fm) {
             super(fm);
-            list.add(new FragAboutPlacce());
+            list.add(new FragAboutPlace());
             list.add(new FragItinerary());
             list.add(new FragStayInfo());
             list.add(new FragTransportaion());

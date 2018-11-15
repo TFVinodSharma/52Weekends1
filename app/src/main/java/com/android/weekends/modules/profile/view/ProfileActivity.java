@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 
 import com.android.weekends.R;
-import com.android.weekends.base.activity.Destination;
+import com.android.weekends.modules.destination.view.DestinationActivity;
 import com.android.weekends.base.activity.BaseActivity;
 import com.android.weekends.modules.home.view.HomePageActivity;
 
@@ -31,7 +31,7 @@ public class ProfileActivity extends BaseActivity {
         DestinationLayout1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i= new Intent(getApplicationContext(),Destination.class);
+                Intent i= new Intent(getApplicationContext(),DestinationActivity.class);
                 startActivity(i);
             }
         });
@@ -49,7 +49,7 @@ public class ProfileActivity extends BaseActivity {
         TripLayout1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i= new Intent(getApplicationContext(),Destination.class);
+                Intent i= new Intent(getApplicationContext(),DestinationActivity.class);
                 startActivity(i);
             }
         });

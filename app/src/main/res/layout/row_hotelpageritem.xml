@@ -8,5 +8,6 @@
     <ImageView
         android:id="@+id/imageView_hotel"
         android:layout_width="match_parent"
+        android:src="@drawable/temple"
         android:layout_height="match_parent" />
 </LinearLayout>

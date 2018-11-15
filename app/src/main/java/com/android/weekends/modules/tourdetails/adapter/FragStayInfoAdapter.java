@@ -1,4 +1,4 @@
-package com.android.weekends.base.adapter;
+package com.android.weekends.modules.tourdetails.adapter;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;

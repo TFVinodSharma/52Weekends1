@@ -1,4 +1,4 @@
-package com.android.weekends.base.adapter;
+package com.android.weekends.modules.home.adapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -11,16 +11,16 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.android.weekends.R;
-import com.android.weekends.modules.tourdetails.view.ActivityDetailDestination;
+import com.android.weekends.modules.destination.view.ActivityDetailDestination;
 
-public class HomeDesitinationAdapter extends RecyclerView.Adapter<HomeDesitinationAdapter.Versionview>
+public class TopDestinationAdapter extends RecyclerView.Adapter<TopDestinationAdapter.Versionview>
 
 {
 
     private int[] ar1;
     private String[] ar2,ar3;
 
-    public  HomeDesitinationAdapter(int[] ar1,String[] ar2,String[] ar3)
+    public TopDestinationAdapter(int[] ar1, String[] ar2, String[] ar3)
     {
         this.ar1=ar1;
         this.ar2=ar2;
@@ -35,7 +35,7 @@ public class HomeDesitinationAdapter extends RecyclerView.Adapter<HomeDesitinati
     {
         View view= LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.row_home_destination,viewGroup,false);
 
-        return new HomeDesitinationAdapter.Versionview(view);
+        return new TopDestinationAdapter.Versionview(view);
     }
 
     @Override

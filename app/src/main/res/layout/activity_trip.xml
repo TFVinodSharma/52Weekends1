@@ -11,20 +11,22 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
+
     <android.support.design.widget.AppBarLayout
         android:theme="@style/MyAppTheme.AppBarOverlay"
         android:id="@+id/appBarLayout"
-        android:visibility="gone"
+        android:visibility="visible"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content">
 
-        <!--<android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
+       <android.support.v7.widget.Toolbar
+            android:id="@+id/triptoolbar"
             android:background="?colorPrimary"
             android:layout_width="fill_parent"
-            android:layout_height="?actionBarSize" />-->
+            android:layout_height="?actionBarSize" />
 
     </android.support.design.widget.AppBarLayout>
+
 
     <LinearLayout android:orientation="vertical"
         android:layout_width="fill_parent"
@@ -60,6 +62,7 @@
             android:layout_height="fill_parent"
             android:weightSum="1.0">
 
+<!--
             <android.support.design.widget.AppBarLayout
                 android:orientation="vertical"
                 android:id="@id/appbar"
@@ -67,9 +70,12 @@
                 android:layout_height="0.0dip"
                 android:layout_weight="0.2">
 
+&lt;!&ndash;
                 <include android:id="@+id/triptoolbar"
                     layout="@layout/toolbar5" />
+&ndash;&gt;
             </android.support.design.widget.AppBarLayout>
+-->
 
             <LinearLayout
                 android:orientation="vertical"

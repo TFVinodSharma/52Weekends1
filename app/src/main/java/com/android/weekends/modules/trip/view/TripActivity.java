@@ -1,4 +1,4 @@
-package com.android.weekends.base.activity;
+package com.android.weekends.modules.trip.view;
 
 import android.content.Intent;
 import android.support.design.widget.TabLayout;
@@ -9,8 +9,12 @@ import android.view.View;
 import android.widget.LinearLayout;
 
 import com.android.weekends.R;
+import com.android.weekends.base.activity.BaseActivity;
+import com.android.weekends.modules.destination.view.DestinationActivity;
+import com.android.weekends.modules.home.view.HomePageActivity;
+import com.android.weekends.modules.profile.view.ProfileActivity;
 
-public class Trip extends BaseActivity {
+public class TripActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +24,7 @@ public class Trip extends BaseActivity {
         Toolbar TripToolBar=(Toolbar)findViewById(R.id.triptoolbar);
         setSupportActionBar(TripToolBar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        //setTitle("Hotel Search");
+        setTitle("My Trip");
 
 
 
@@ -37,7 +41,7 @@ public class Trip extends BaseActivity {
         DestinationLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i= new Intent(getApplicationContext(),Destination.class);
+                Intent i= new Intent(getApplicationContext(),DestinationActivity.class);
                 startActivity(i);
             }
         });
@@ -46,7 +50,7 @@ public class Trip extends BaseActivity {
         HomeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i= new Intent(getApplicationContext(),Destination.class);
+                Intent i= new Intent(getApplicationContext(),HomePageActivity.class);
                 startActivity(i);
             }
         });
@@ -55,7 +59,7 @@ public class Trip extends BaseActivity {
         ProfileLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i= new Intent(getApplicationContext(),Destination.class);
+                Intent i= new Intent(getApplicationContext(),ProfileActivity.class);
                 startActivity(i);
             }
         });

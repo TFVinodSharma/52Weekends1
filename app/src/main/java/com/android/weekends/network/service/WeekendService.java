@@ -1,5 +1,7 @@
 package com.android.weekends.network.service;
 
+import com.android.weekends.modules.destination.model.DestinationRequest;
+import com.android.weekends.modules.destination.model.DestinationResponse;
 import com.android.weekends.modules.login.model.LoginRequest;
 import com.android.weekends.modules.login.model.LoginResponse;
 import com.android.weekends.modules.login.model.SignUpResponse;
@@ -11,6 +13,7 @@ import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.FieldMap;
 import retrofit2.http.FormUrlEncoded;
+import retrofit2.http.GET;
 import retrofit2.http.POST;
 
 public interface WeekendService {
@@ -22,6 +25,10 @@ public interface WeekendService {
     @FormUrlEncoded
     @POST("api/register/login/")
     Call<LoginResponse> loginUser(@FieldMap Map<String, String> loginRequest);
+
+    @GET("api/destinations/destination/")
+    Call<DestinationResponse> setdata(@Body DestinationRequest destinationRequest);
+
 
 
 }

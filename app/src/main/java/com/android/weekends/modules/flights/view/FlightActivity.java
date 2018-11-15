@@ -80,10 +80,11 @@ public class FlightActivity extends BaseActivity {
         int month = cal.get(Calendar.MONTH);
         int date = cal.get(Calendar.DAY_OF_MONTH);
         DatePickerDialog dialog;
-        dialog = new DatePickerDialog(FlightActivity.this,
+        dialog = new DatePickerDialog(FlightActivity.this,/*R.style.Datepicker,*/
                 mDateSetListener,
                 year, month, date);
-        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#FDD7E4")));
+        dialog.getWindow();
+               // .setBackgroundDrawable(new ColorDrawable(Color.parseColor("#4a148c")));
         dialog.show();
 
         DatePicker datePicker = dialog.getDatePicker();

@@ -1,6 +1,8 @@
-package com.android.weekends.base.activity;
+package com.android.weekends.modules.destination.view;
 
+import android.content.Context;
 import android.content.Intent;
+import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -8,15 +10,18 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.LinearLayout;
 
-import com.android.weekends.base.adapter.DestinationAdapter;
+import com.android.weekends.base.activity.BaseActivity;
+import com.android.weekends.databinding.ActivityDestinationBinding;
+import com.android.weekends.modules.trip.view.TripActivity;
+import com.android.weekends.modules.destination.adapter.DestinationAdapter;
 import com.android.weekends.R;
 import com.android.weekends.modules.home.view.HomePageActivity;
 import com.android.weekends.modules.profile.view.ProfileActivity;
 
-public class Destination extends BaseActivity {
-
-    String arr1[] = {"Bihar", "Mahabaleswar", "Tripura", "Allahabad",
-            "Almora","Kashmir","Manali","Karnataka","Darjaling","Haryana","Himachal","Puri"};
+public class DestinationActivity extends BaseActivity {
+    ActivityDestinationBinding activityDestinationBinding;
+    String arr1[] = {"Agra", "Delhi", "Udaipur", "Varnasi",
+            "Mizoram","Assam","Rajashthan","Kerla","Jammu","Kaling","Lucknow","Trivantampuram"};
     String arr2[] = {"India", "India", "India",
             "India", "India","India", "India", "India", "India", "India","India","India"};
 
@@ -24,12 +29,15 @@ public class Destination extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_destination);
+//        setContentView(R.layout.activity_destination);
+        activityDestinationBinding=DataBindingUtil.setContentView(this,R.layout.activity_destination);
+
 
         Toolbar DesToolBar=(Toolbar)findViewById(R.id.destoolbar);
         setSupportActionBar(DesToolBar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         setTitle("Destnation");
+
 
 
 
@@ -55,7 +63,7 @@ public class Destination extends BaseActivity {
         img1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i1=new Intent(getApplicationContext(),Trip.class);
+                Intent i1=new Intent(getApplicationContext(),TripActivity.class);
                 startActivity(i1);
             }
         });

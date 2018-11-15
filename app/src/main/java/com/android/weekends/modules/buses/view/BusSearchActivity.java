@@ -108,7 +108,8 @@ public class BusSearchActivity extends BaseActivity {
         dialog = new DatePickerDialog(BusSearchActivity.this,
                 mDateSetListener,
                 year, month, date);
-        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#FDD7E4")));
+        dialog.getWindow();
+                //.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#FDD7E4")));
         dialog.show();
 
         DatePicker datePicker = dialog.getDatePicker();

@@ -1,4 +1,4 @@
-package com.android.weekends.base.fragment;
+package com.android.weekends.modules.tourdetails.fragment;
 
 
 import android.os.Bundle;
@@ -9,7 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.android.weekends.base.adapter.FragItineraryAdapter;
+import com.android.weekends.modules.tourdetails.adapter.FragItineraryAdapter;
 import com.android.weekends.R;
 
 

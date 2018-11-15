@@ -213,6 +213,9 @@
     <string name="signup_progress_title">Signup</string>
     <string name="please_wait_progress">Please wait...</string>
 
+    <!--Acitivity Destination-->
+    <string name="destination_progress_title">Destination</string>
+
     <!--Error messages!-->
     <string name="not_valid_response">Response is not valid</string>
 

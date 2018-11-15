@@ -316,7 +316,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
                             android:layout_marginTop="10.0dip"
-                            android:text="-- ---"
+                            android:text="20 SEP"
                             android:textAppearance="?android:textAppearanceLarge"
                             android:textSize="24.0dip"
                             android:textStyle="bold" />

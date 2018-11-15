@@ -8,6 +8,15 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    `<!--Date Picker theme-->
+
+    <style name="Datepicker" parent="Theme.AppCompat.Light.Dialog">
+        <item name="color">#ff3f51b5</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+
+    </style>
+
     <!-- Base application theme. -->
     <style name="AppTheme1" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->

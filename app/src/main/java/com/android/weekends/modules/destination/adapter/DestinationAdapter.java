@@ -1,5 +1,7 @@
-package com.android.weekends.base.adapter;
+package com.android.weekends.modules.destination.adapter;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -8,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.android.weekends.R;
+import com.android.weekends.modules.destination.view.ActivityDetailDestination;
 
 public class DestinationAdapter extends RecyclerView.Adapter<DestinationAdapter.MyViewHolder> {
 
@@ -39,10 +42,25 @@ public class DestinationAdapter extends RecyclerView.Adapter<DestinationAdapter.
 
     public class MyViewHolder extends RecyclerView.ViewHolder{
         private TextView Name,Loc;
+        private Context context;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
+            context = itemView.getContext();
+
             Name=itemView.findViewById(R.id.txt_name);
             Loc=itemView.findViewById(R.id.txt_location);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    Intent i= new Intent(context,ActivityDetailDestination.class );
+
+
+                    context.startActivity(i);
+
+
+                }
+            });
         }
     }
 }

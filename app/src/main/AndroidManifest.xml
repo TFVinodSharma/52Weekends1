@@ -37,8 +37,8 @@
             android:parentActivityName=".modules.home.view.HomePageActivity" />
         <activity android:name=".modules.flights.view.FlightListActivity" />
         <activity android:name=".modules.flights.view.FlightDetailsActivity" />
-        <activity android:name=".base.activity.Trip" />
-        <activity android:name=".base.activity.Destination" />
+        <activity android:name=".modules.trip.view.TripActivity" />
+        <activity android:name=".modules.destination.view.DestinationActivity" />
         <activity android:name=".modules.profile.view.ProfileActivity" />
         <activity android:name=".modules.hotels.view.HotelDetailsActivity" />
         <activity android:name=".modules.hotels.view.HotelGuestSlectionActivity" />
@@ -46,7 +46,7 @@
         <activity
             android:name=".modules.tourdetails.view.PackageDetails"
             android:label="Darjeeling" />
-        <activity android:name=".modules.tourdetails.view.ActivityDetailDestination" />
+        <activity android:name=".modules.destination.view.ActivityDetailDestination" />
         <activity
             android:name=".base.activity.SelectPacakge"
             android:label="Select Pacakge" />

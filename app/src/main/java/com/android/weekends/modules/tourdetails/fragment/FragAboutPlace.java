@@ -1,4 +1,4 @@
-package com.android.weekends.base.fragment;
+package com.android.weekends.modules.tourdetails.fragment;
 
 
 import android.os.Bundle;
@@ -13,10 +13,10 @@ import com.android.weekends.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class FragTourHighlights extends Fragment {
+public class FragAboutPlace extends Fragment {
 
 
-    public FragTourHighlights() {
+    public FragAboutPlace() {
         // Required empty public constructor
     }
 
@@ -25,7 +25,7 @@ public class FragTourHighlights extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_frag_tour_highlights, container, false);
+        return inflater.inflate(R.layout.fragment_about_placce, container, false);
     }
 
 }

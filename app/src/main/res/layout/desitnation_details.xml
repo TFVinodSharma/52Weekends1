@@ -34,9 +34,10 @@
                         android:layout_height="180.0dip"
                         android:contentDescription="@string/app_name"
                         android:scaleType="fitXY"
-                        android:src="@drawable/temple" />
+                        android:src="@drawable/download" />
                 </RelativeLayout>
 
+<!--
                 <RelativeLayout
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content">
@@ -77,7 +78,15 @@
                             android:textSize="@dimen/text_18dp" />
                     </LinearLayout>
                 </RelativeLayout>
-
+-->
+                <TextView
+                    android:id="@+id/txt_place"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/margin_4"
+                    android:text="New Delhi"
+                    android:textColor="@color/blue"
+                    android:textSize="@dimen/text_18dp" />
                 <RatingBar
                     android:id="@+id/ratingbar"
                     style="?android:ratingBarStyleSmall"

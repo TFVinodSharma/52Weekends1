@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data></data>
+<LinearLayout
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@id/container"
     android:layout_width="fill_parent"
@@ -12,11 +16,12 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:theme="@style/MyAppTheme.AppBarOverlay"
-        android:visibility="gone">
+        android:visibility="visible">
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/destoolbar"
             android:layout_width="fill_parent"
+            app:title="Destination"
             android:layout_height="?actionBarSize"
             android:background="?colorPrimary" />
     </android.support.design.widget.AppBarLayout>
@@ -56,3 +61,4 @@
 
     <include layout="@layout/app_bottom_bar" />
 </LinearLayout>
+</layout>
