@@ -1,8 +1,6 @@
 package com.android.weekends.network.service;
 
-import com.android.weekends.modules.destination.model.DestinationRequest;
 import com.android.weekends.modules.destination.model.DestinationResponse;
-import com.android.weekends.modules.login.model.LoginRequest;
 import com.android.weekends.modules.login.model.LoginResponse;
 import com.android.weekends.modules.login.model.SignUpResponse;
 import com.android.weekends.modules.login.model.SignupRequest;
@@ -27,8 +25,7 @@ public interface WeekendService {
     Call<LoginResponse> loginUser(@FieldMap Map<String, String> loginRequest);
 
     @GET("api/destinations/destination/")
-    Call<DestinationResponse> setdata(@Body DestinationRequest destinationRequest);
-
+    Call<DestinationResponse> getDestinations();
 
 
 }

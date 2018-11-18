@@ -5,357 +5,332 @@
     <data></data>
 
 
-    <LinearLayout
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@id/container"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:background="@color/white"
-    android:orientation="vertical">
-
-    <android.support.design.widget.AppBarLayout
-        android:id="@id/appBarLayout"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/MyAppTheme.AppBarOverlay"
-        android:visibility="visible">
-
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbardestination"
-            app:titleTextColor="@color/white"
-            app:title="Agra"
-            android:layout_width="fill_parent"
-            android:layout_height="?actionBarSize"
-            android:background="?colorPrimary" />
-    </android.support.design.widget.AppBarLayout>
-
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-<!--
-        <ProgressBar
-            android:id="@id/pb_loading"
-            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:indeterminate="true"
-            android:visibility="gone" />
-
-        <TextView
-            android:id="@id/txt_sync"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:padding="5.0dip"
-            android:text="data syncing"
-            android:textColor="@color/colorPrimary"
-            android:visibility="gone" />
--->
-    </LinearLayout>
-    <android.support.v7.widget.CardView
+    <LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@id/container"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:padding="8.0dip"
-        app:cardCornerRadius="6.0dip"
-        app:cardUseCompatPadding="true">
+        android:background="@color/white"
+        android:orientation="vertical">
 
-        <ScrollView
+        <android.support.design.widget.AppBarLayout
+            android:id="@id/appBarLayout"
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent">
+            android:layout_height="wrap_content"
+            android:theme="@style/MyAppTheme.AppBarOverlay"
+            android:visibility="visible">
 
-            <LinearLayout
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbardestination"
                 android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:orientation="vertical">
-
-                <RelativeLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:background="?android:selectableItemBackground"
-                    android:padding="0.0dip">
-
-                    <ImageView
-                        android:id="@+id/impact_image"
-                        android:layout_width="fill_parent"
-                        android:layout_height="180.0dip"
-                        android:contentDescription="@string/app_name"
-                        android:scaleType="fitXY"
-                        android:src="@drawable/download" />
-                </RelativeLayout>
-
-                <!--
-                                <RelativeLayout
-                                    android:layout_width="fill_parent"
-                                    android:layout_height="wrap_content">
-
-                                    <TextView
-                                        android:id="@+id/impact_title"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="fill_parent"
-                                        android:layout_alignParentLeft="true"
-                                        android:layout_margin="8.0dip"
-                                        android:textColor="@color/colorPrimary"
-                                        android:textSize="20.0sp" />
-
-                                    <LinearLayout
-                                        android:id="@+id/layout_price"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="fill_parent"
-                                        android:layout_alignParentRight="true"
-                                        android:layout_gravity="center_horizontal"
-                                        android:gravity="center_vertical"
-                                        android:orientation="horizontal"
-                                        android:padding="@dimen/margin_4">
-
-                                        <TextView
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:text="₹ "
-                                            android:textColor="@color/blue"
-                                            android:textSize="@dimen/text_18dp" />
-
-                                        <TextView
-                                            android:id="@id/txt_price"
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:layout_marginRight="@dimen/margin_4"
-                                            android:text="3,658"
-                                            android:textColor="@color/blue"
-                                            android:textSize="@dimen/text_18dp" />
-                                    </LinearLayout>
-                                </RelativeLayout>
-                -->
-                <TextView
-                    android:id="@+id/txt_place"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="@dimen/margin_4"
-                    android:text="Agra"
-                    android:textColor="@color/blue"
-                    android:textSize="@dimen/text_18dp" />
-                <RatingBar
-                    android:id="@+id/ratingbar"
-                    style="?android:ratingBarStyleSmall"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:isIndicator="true"
-                    android:numStars="5"
-                    android:rating="5.0"
-                    android:stepSize="0.1" />
-
-                <View
-                    android:layout_width="fill_parent"
-                    android:layout_height="2.0dip"
-                    android:background="@color/bg_gray"
-                    android:padding="@dimen/margin_4" />
-
-                <TextView
-                    android:id="@+id/impact_description"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="8.0dip"
-                    android:textColor="@color/black"
-                    android:textSize="16.0sp" />
-
-                <!--getting there-->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Getting there"
-                    android:padding="5dp"
-                    android:textStyle="bold"
-                    android:textSize="@dimen/text_20dp"/>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/gettingthere"
-                    android:text="Agra Civil Enclaves or  popularly known as Kheria is the airport of Agra which is situated 8 km away from city. You can get connecting flights for Delhi, Varanasi and Kajuraho. For your destination you have to take taxis and cab which ar easily available there. Sometimes airlines seal their flights to Agra so get detail information before planning. Another nearest airport is Delhi International airport which is 200 km away from Agra. You can hire taxis or rom Delhi to Agra which will take only 2 hours to reach here. "
-                    android:padding="5dp"
-                    android:textStyle="normal"
-                    android:textSize="@dimen/text_16dp"/>
-
-                </LinearLayout>
-
-<!--By Train-->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="By Train"
-                        android:padding="5dp"
-                        android:textStyle="bold"
-                        android:textSize="@dimen/text_20dp"/>
-
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/train"
-                        />
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/train"
-                        android:text="Agra cantonment railway station is the main and major railway station. Except this Agra fort railway station and Idgah railway junction are anther railway station. This place is well connected to all major cities of India by train. Lots of superfast trains are available for major destinations like Delhi, Mumbai, Pune, Chennai, Bangalore, Kolkata, Jaipur,Varanasi and Lucknow. Maximum trains run all the days of week so coming by train is easiest way to reach the Agra.  Some good trains from Delhi are Shatabdi (chair car- Rs 370), Taj express (Chair car- 210 Rs and 2nd AC -56 Rs) which will take 2 hours to reach here. For Jaipur, Jodhpur and Varanasi Marudhar express will be good option. Fare will be 250 to 1000 INR according to service and destination. Punjab mail, Karnataka express and Tamil Nadu express are other good trains on reasonable fare. Other nearest railway stations are Tundla and Fatehpur Sikari where you can get good trains if need. On railway station you can hire taxis, cab"                        android:padding="5dp"
-                        android:textStyle="normal"
-                        android:textSize="@dimen/text_16dp"/>
-
-                </LinearLayout>
-
-                <!--BY Road-->
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="By Road"
-                        android:padding="5dp"
-                        android:textStyle="bold"
-                        android:textSize="@dimen/text_20dp"/>
-
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/road"
-                        />
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textStyle="normal"
-                        android:id="@+id/roadimage"
-                        android:text=" bus stand is the main bus terminal of Agra which is located near cantonment railway station and you can get all kind of buses for maximum parts of country. UPSRTC (state operated buses) and private bus are available for travelling. Delhi to Agra is national highway (NH-2) and having very good transportation system so coming by road is really a good idea. \nOther bus station is Bijlighar Bus station which is 5 km way from red fort. You can get simple and luxury buses for travelling on good fare. Fare will start from 150 INR but for deluxe buses fare will be near 500 INR. Government buses are cheaper than private buses so choose according to your need and budget."
-                        android:textSize="@dimen/text_16dp"/>
-
-                </LinearLayout>
-
-                <!--By Air-->
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="By Air"
-                        android:padding="5dp"
-                        android:textStyle="bold"
-                        android:textSize="@dimen/text_20dp"/>
-
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/air"
-                        />
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textStyle="normal"
-                        android:id="@+id/airplaneimage"
-                        android:text="Agra’s Kheria airport is also a military base. It is a seasonal commercial airport and is connected only by Air India flights from New Delhi. The flight from Delhi to Agra is less than an hour long. Kheria airport is 13 kilometres away from Agra city. Hire a taxi from the airport to get to the city, which should take you around 10-15 minutes depending on traffic."
-                        android:textSize="@dimen/text_16dp"/>
-
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Visit and Do"
-                        android:padding="5dp"
-                        android:textStyle="bold"
-                        android:textSize="@dimen/text_20dp"/>
-
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/dos"
-                        />
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textStyle="normal"
-                        android:id="@+id/dosimage"
-                        android:text="A first thing is to see what you are here for and that is Taj Mahal. Taj Mahal is Located near river Yamuna and made up of White marble. This marvellous monument is constructed in 1653 and mute sign of the love story of king Shahjahan and his wife Mumtaj Mahal. Basically this place is having graves of ShaJahan and Mumtaj Mahal. This amazing architecture is still a puzzle for everyone. See it from different views on different time and you will get different colour and beauty. To reach Taj Mahal hire Tonga asthis is most popular commuting medium for here. You can walk too to reach here. Taj Mahal use to close on Fridays and timings for other days 6am to 7:30 pm. The entry will cost Rs. 20 for Indians and Rs. 250 for foreigners.Other places where you can go are Red Ford near Taj Mahal garden, Moti masjid which is famous for its pearl white exterior, Fatehpur sikri which is located 40 km away .From Agra, Jama Masjid, Chini ka rauza, Buland darwaja, Mehtab bagh (park) and museum which is located in Taj garden etc.If travelling in February then you must see Taj Mahotsav which is a cultural event and celebrated for10 days. Here you can see lots of programs, functions, Dance and music shows which is performed by famous artists of all over India. \nWithout shopping your trip will incomplete so get some beautiful handicrafts and other decorative items from nearby market. For right price you have to bargain here. You can get little replica of Taj too. (Some believe that keeping Taj replica is not good at home as it is sign of grave. Buying this item depends on yourbelief). Leather is another famous thing of Agra so get some foot wears, bags, wallets etc. as memento."                        android:textSize="@dimen/text_16dp"/>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Accommodation"
-                        android:padding="5dp"
-                        android:textStyle="bold"
-                        android:textSize="@dimen/text_20dp"/>
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textStyle="normal"
-                        android:id="@+id/accomodations"
-                        android:text="A first thing is to see what you are here for and that is Taj Mahal. Taj Mahal is Located near river Yamuna and made up of White marble. This marvellous monument is constructed in 1653 and mute sign of the love story of king Shahjahan and his wife Mumtaj Mahal. Basically this place is having graves of ShaJahan and Mumtaj Mahal. This amazing architecture is still a puzzle for everyone. See it from different views on different time and you will get different colour and beauty. To reach Taj Mahal hire Tonga asthis is most popular commuting medium for here. You can walk too to reach here. Taj Mahal use to close on Fridays and timings for other days 6am to 7:30 pm. The entry will cost Rs. 20 for Indians and Rs. 250 for foreigners.Other places where you can go are Red Ford near Taj Mahal garden, Moti masjid which is famous for its pearl white exterior, Fatehpur sikri which is located 40 km away .From Agra, Jama Masjid, Chini ka rauza, Buland darwaja, Mehtab bagh (park) and museum which is located in Taj garden etc.If travelling in February then you must see Taj Mahotsav which is a cultural event and celebrated for10 days. Here you can see lots of programs, functions, Dance and music shows which is performed by famous artists of all over India. \nWithout shopping your trip will incomplete so get some beautiful handicrafts and other decorative items from nearby market. For right price you have to bargain here. You can get little replica of Taj too. (Some believe that keeping Taj replica is not good at home as it is sign of grave. Buying this item depends on yourbelief). Leather is another famous thing of Agra so get some foot wears, bags, wallets etc. as memento."                        android:textSize="@dimen/text_16dp"/>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Food"
-                        android:padding="5dp"
-                        android:textStyle="bold"
-                        android:textSize="@dimen/text_20dp"/>
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textStyle="normal"
-                        android:id="@+id/foodtext"
-                        android:text="Agra has plenty of option when we talk about food. This is hot spot for travellers from all over world so lots of hotels and restaurants provide all kind of food which is generally demanded by visitors. This place has many options for vegetarians and non-vegetarians. Try mughlai cuisine if travelling Agra. You can get very yummy and delicious mughlai food in maximum eating joints.  Ask for kebabs and seekh dishes. Tandoori chicken is also very tasty option for non-vegetarians.Do not forget to taste some Petha( sweet) and Dalmoth( A kind of salty snacks).Other food chains and star restaurants are also available in the city so do not worry about eating when in Agra."
-                        android:textSize="@dimen/text_16dp"/>
-
-                </LinearLayout>
+                android:layout_height="?actionBarSize"
+                android:background="?colorPrimary"
+                app:titleTextColor="@color/white" />
+        </android.support.design.widget.AppBarLayout>
 
 
-
-
-            </LinearLayout>
-        </ScrollView>
-    </android.support.v7.widget.CardView>
-
-
-    <!--
-        <FrameLayout
-            android:id="@id/content"
+        <android.support.v7.widget.CardView
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent">
+            android:layout_height="fill_parent"
+            android:layout_margin="@dimen/activity_horizontal_margin"
+            android:padding="8.0dip"
+            app:cardCornerRadius="6.0dip"
+            app:cardUseCompatPadding="true">
 
-            <include layout="@layout/desitnation_details" />
-        </FrameLayout>
-    -->
-</LinearLayout>
+            <ScrollView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?android:selectableItemBackground"
+                        android:padding="0.0dip">
+
+                        <ImageView
+                            android:id="@+id/impact_image"
+                            android:layout_width="fill_parent"
+                            android:layout_height="180.0dip"
+                            android:contentDescription="@string/app_name"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/download" />
+                    </RelativeLayout>
+
+                    <!--
+                                    <RelativeLayout
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="wrap_content">
+
+                                        <TextView
+                                            android:id="@+id/impact_title"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="fill_parent"
+                                            android:layout_alignParentLeft="true"
+                                            android:layout_margin="8.0dip"
+                                            android:textColor="@color/colorPrimary"
+                                            android:textSize="20.0sp" />
+
+                                        <LinearLayout
+                                            android:id="@+id/layout_price"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="fill_parent"
+                                            android:layout_alignParentRight="true"
+                                            android:layout_gravity="center_horizontal"
+                                            android:gravity="center_vertical"
+                                            android:orientation="horizontal"
+                                            android:padding="@dimen/margin_4">
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:text="₹ "
+                                                android:textColor="@color/blue"
+                                                android:textSize="@dimen/text_18dp" />
+
+                                            <TextView
+                                                android:id="@id/txt_price"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginRight="@dimen/margin_4"
+                                                android:text="3,658"
+                                                android:textColor="@color/blue"
+                                                android:textSize="@dimen/text_18dp" />
+                                        </LinearLayout>
+                                    </RelativeLayout>
+                    -->
+                    <TextView
+                        android:id="@+id/txt_place"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/margin_4"
+                        android:text="Agra"
+                        android:textColor="@color/blue"
+                        android:textSize="@dimen/text_18dp" />
+
+                    <RatingBar
+                        android:id="@+id/ratingbar"
+                        style="?android:ratingBarStyleSmall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:isIndicator="true"
+                        android:numStars="5"
+                        android:rating="5.0"
+                        android:stepSize="0.1" />
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="2.0dip"
+                        android:background="@color/bg_gray"
+                        android:padding="@dimen/margin_4" />
+
+                    <TextView
+                        android:id="@+id/impact_description"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8.0dip"
+                        android:textColor="@color/black"
+                        android:textSize="16.0sp" />
+
+                    <!--getting there-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp"
+                            android:text="Getting there"
+                            android:textSize="@dimen/text_20dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/gettingthere"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp"
+                            android:textSize="@dimen/text_16dp"
+                            android:textStyle="normal" />
+
+                    </LinearLayout>
+
+                    <!--By Train-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp"
+                            android:text="By Train"
+                            android:textSize="@dimen/text_20dp"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/train" />
+
+                        <TextView
+                            android:id="@+id/train"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp"
+                            android:textSize="@dimen/text_16dp"
+                            android:textStyle="normal" />
+
+                    </LinearLayout>
+
+                    <!--BY Road-->
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp"
+                            android:text="By Road"
+                            android:textSize="@dimen/text_20dp"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/road" />
+
+                        <TextView
+                            android:id="@+id/roadimage"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/text_16dp"
+                            android:textStyle="normal" />
+
+                    </LinearLayout>
+
+                    <!--By Air-->
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp"
+                            android:text="By Air"
+                            android:textSize="@dimen/text_20dp"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/air" />
+
+                        <TextView
+                            android:id="@+id/airplaneimage"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/text_16dp"
+                            android:textStyle="normal" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp"
+                            android:text="Visit and Do"
+                            android:textSize="@dimen/text_20dp"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/dos" />
+
+                        <TextView
+                            android:id="@+id/dosimage"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/text_16dp"
+                            android:textStyle="normal" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp"
+                            android:text="Accommodation"
+                            android:textSize="@dimen/text_20dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/accomodations"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/text_16dp"
+                            android:textStyle="normal" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp"
+                            android:text="Food"
+                            android:textSize="@dimen/text_20dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/foodtext"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/text_16dp"
+                            android:textStyle="normal" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+            </ScrollView>
+        </android.support.v7.widget.CardView>
+
+
+        <!--
+            <FrameLayout
+                android:id="@id/content"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+
+                <include layout="@layout/desitnation_details" />
+            </FrameLayout>
+        -->
+    </LinearLayout>
 </layout>

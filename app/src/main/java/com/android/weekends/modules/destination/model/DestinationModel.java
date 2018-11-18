@@ -1,11 +1,10 @@
 package com.android.weekends.modules.destination.model;
 
-import com.android.weekends.base.activity.BaseActivity;
 import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
 
-public class DestinationRequest extends BaseActivity implements Serializable {
+public class DestinationModel  implements Serializable {
 
     @SerializedName("id")
     private String id;
@@ -20,7 +19,7 @@ public class DestinationRequest extends BaseActivity implements Serializable {
     private String description;
 
     @SerializedName("getting_there")
-    private String getting_there;
+    private String gettingThere;
 
     @SerializedName("train")
     private String train;
@@ -165,12 +164,12 @@ public class DestinationRequest extends BaseActivity implements Serializable {
         this.description = description;
     }
 
-    public String getGetting_there() {
-        return getting_there;
+    public String getGettingThere() {
+        return gettingThere;
     }
 
-    public void setGetting_there(String getting_there) {
-        this.getting_there = getting_there;
+    public void setGettingThere(String gettingThere) {
+        this.gettingThere = gettingThere;
     }
 
     public String getTrain() {

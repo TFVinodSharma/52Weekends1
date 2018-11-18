@@ -1,7 +1,5 @@
 package com.android.weekends.network.manager;
 
-import android.os.Debug;
-
 import com.android.weekends.BuildConfig;
 import com.android.weekends.constants.AppConstants;
 import com.android.weekends.network.service.WeekendService;
@@ -16,7 +14,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class WeekendRetrofitManager {
 
     private static final int TIME_OUT = 1;
-    public static final WeekendService WEEKEN_SERVICE;
+    public static final WeekendService WEEKEND_SERVICE;
 
     static {
 
@@ -33,7 +31,7 @@ public class WeekendRetrofitManager {
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(weekendCLientBuilder.build()).build();
 
-        WEEKEN_SERVICE = retrofit.create(WeekendService.class);
+        WEEKEND_SERVICE = retrofit.create(WeekendService.class);
 
     }
 

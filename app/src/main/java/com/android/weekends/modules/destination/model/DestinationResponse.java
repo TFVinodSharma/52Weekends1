@@ -1,21 +1,23 @@
 package com.android.weekends.modules.destination.model;
 
-import com.android.weekends.base.activity.BaseActivity;
+import com.android.weekends.base.response.BaseResponse;
 import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
-public class DestinationResponse extends BaseActivity  implements Serializable {
+public class DestinationResponse extends BaseResponse implements Serializable {
 
-/*    @SerializedName("token")
-    private String token;
+    @SerializedName("contents")
+    private ArrayList<DestinationModel> destinations;
 
-    public String getToken() {
-        return token;
+    public ArrayList getDestinations() {
+        return destinations;
     }
 
-    public void setToken(String token) {
-        this.token = token;
-    }*/
+    public void setDestinations(ArrayList destinations) {
+        this.destinations = destinations;
+    }
+
 }
 

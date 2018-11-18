@@ -28,7 +28,7 @@ public class SignupViewModel extends ViewModel {
 
     private void doRegisteration(SignupRequest signupRequest) {
 
-        WeekendRetrofitManager.WEEKEN_SERVICE.registerUser(signupRequest).enqueue(new Callback<SignUpResponse>() {
+        WeekendRetrofitManager.WEEKEND_SERVICE.registerUser(signupRequest).enqueue(new Callback<SignUpResponse>() {
             @Override
             public void onResponse(Call<SignUpResponse> call, Response<SignUpResponse> response) {
                 SignUpResponse signUpResponse = response.body();

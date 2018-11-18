@@ -26,7 +26,6 @@ public class LoginActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        /*  setContentView(R.layout.activity_main);*/
         activityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
 
 
@@ -36,16 +35,6 @@ public class LoginActivity extends BaseActivity {
             startActivity(i);
         });
 
-/*
-        Button btn_Signin = (Button) findViewById(R.id.btn_signin);
-        btn_Signin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent ii = new Intent(getApplicationContext(), HomePageActivity.class);
-                startActivity(ii);
-            }
-        });
-*/
     }
 
     public void loginuser(View view) {

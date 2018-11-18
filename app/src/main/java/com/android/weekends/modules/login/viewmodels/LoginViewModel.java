@@ -5,14 +5,9 @@ import android.arch.lifecycle.ViewModel;
 
 import com.android.weekends.modules.login.model.LoginRequest;
 import com.android.weekends.modules.login.model.LoginResponse;
-import com.android.weekends.modules.login.model.SignUpResponse;
-import com.android.weekends.modules.login.model.SignupRequest;
 import com.android.weekends.network.manager.WeekendRetrofitManager;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.util.HashMap;
 
@@ -25,11 +20,8 @@ public class LoginViewModel extends ViewModel {
     private MutableLiveData<LoginResponse> loginLiveDataResponse;
 
     public MutableLiveData<LoginResponse> loginUser(LoginRequest loginRequest) {
-
-        if (loginLiveDataResponse == null) {
-            loginLiveDataResponse = new MutableLiveData<LoginResponse>();
-            doLogin(loginRequest);
-        }
+        loginLiveDataResponse = new MutableLiveData<>();
+        doLogin(loginRequest);
         return loginLiveDataResponse;
     }
 
@@ -41,8 +33,7 @@ public class LoginViewModel extends ViewModel {
                 }.getType()
         );
 
-
-        WeekendRetrofitManager.WEEKEN_SERVICE.loginUser(loginRequestHashMap).enqueue(new Callback<LoginResponse>() {
+        WeekendRetrofitManager.WEEKEND_SERVICE.loginUser(loginRequestHashMap).enqueue(new Callback<LoginResponse>() {
             @Override
             public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
                 LoginResponse loginResponse = response.body();
@@ -52,7 +43,6 @@ public class LoginViewModel extends ViewModel {
                 } else {
                     loginLiveDataResponse.setValue(loginResponse);
                 }
-
             }
 
             @Override
@@ -63,7 +53,5 @@ public class LoginViewModel extends ViewModel {
             }
         });
 
-
     }
-
 }
