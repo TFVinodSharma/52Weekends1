@@ -23,12 +23,14 @@ public class SplashActivity extends BaseActivity {
         setContentView(R.layout.activity_splash);
         new Handler().postDelayed(() -> {
             Intent intent;
-            //TODO need to have token in registeration as well.
+
+            intent = new Intent(SplashActivity.this, HomePageActivity.class);
+            /*//TODO need to have token in registeration as well.
             if (AppState.getInstance(SplashActivity.this).getUserToken() == null) {
                 intent = new Intent(SplashActivity.this, LoginActivity.class);
             } else {
                 intent = new Intent(SplashActivity.this, HomePageActivity.class);
-            }
+            }*/
             startActivity(intent);
             finish();
         }, SPLASH_TIME_OUT);

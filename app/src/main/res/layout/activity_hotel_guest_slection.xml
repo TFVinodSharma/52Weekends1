@@ -16,7 +16,6 @@
             android:layout_height="wrap_content"
             android:background="@color/colorPrimary"
             android:id="@+id/hotelroomselect"
-            app:title="Select Room"
             app:titleTextColor="@color/white">
 
         </android.support.v7.widget.Toolbar>
@@ -126,7 +125,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp"
-        android:id="@+id/setvalueongest"
+        android:id="@+id/setvalueonguest"
         android:gravity="center_horizontal"
         android:layout_gravity="bottom">
     <TextView

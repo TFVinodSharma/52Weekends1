@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.android.weekends.R;
@@ -35,6 +36,7 @@ public class DestinationAdapter extends RecyclerView.Adapter<DestinationAdapter.
     public void onBindViewHolder(@NonNull MyViewHolder myViewHolder, int index) {
         DestinationModel destinationModel = destinationArrayList.get(index);
         myViewHolder.Name.setText(destinationModel.getName());
+       // myViewHolder.imageView.setImageResource(destinationModel.getMain_image());
     }
 
     @Override
@@ -45,6 +47,7 @@ public class DestinationAdapter extends RecyclerView.Adapter<DestinationAdapter.
     public class MyViewHolder extends RecyclerView.ViewHolder {
         private TextView Name, Loc;
         private Context context;
+        private ImageView imageView;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -52,6 +55,7 @@ public class DestinationAdapter extends RecyclerView.Adapter<DestinationAdapter.
 
             Name = itemView.findViewById(R.id.txt_name);
             Loc = itemView.findViewById(R.id.txt_location);
+            imageView=itemView.findViewById(R.id.image);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

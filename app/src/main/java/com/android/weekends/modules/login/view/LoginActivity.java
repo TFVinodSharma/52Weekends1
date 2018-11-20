@@ -1,10 +1,13 @@
 package com.android.weekends.modules.login.view;
 
+import android.annotation.SuppressLint;
 import android.arch.lifecycle.ViewModelProvider;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -29,6 +32,9 @@ public class LoginActivity extends BaseActivity {
         activityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
 
 
+
+
+
         TextView Signup = (TextView) findViewById(R.id.gotosignup);
         Signup.setOnClickListener(v -> {
             Intent i = new Intent(getApplicationContext(), SignupActivity.class);
@@ -37,6 +43,9 @@ public class LoginActivity extends BaseActivity {
 
     }
 
+
+
+/*    Simple Login */
     public void loginuser(View view) {
         LoginRequest loginRequest = new LoginRequest();
 
@@ -60,4 +69,11 @@ public class LoginActivity extends BaseActivity {
         });
 
     }
+
+
+
+
+
+
+
 }

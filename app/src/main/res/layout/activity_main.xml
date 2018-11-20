@@ -125,15 +125,23 @@
                             android:textColor="@color/blue" />
                     </LinearLayout>
 
-                    <Button
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/activity_horizontal_margin"
-                        android:background="@drawable/roundbutton"
-                        android:text="Login With Facebook"
-                        android:textAllCaps="false"
-                        android:textColor="@color/white" />
 
+                    <com.facebook.login.widget.LoginButton
+                        android:id="@+id/login_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginBottom="30dp" />
+
+<com.google.android.gms.common.SignInButton
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/google_background"
+    android:id="@+id/signinwithgoogle">
+
+</com.google.android.gms.common.SignInButton>
+<!--
                     <Button
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -141,7 +149,9 @@
                         android:background="@drawable/google_background"
                         android:text="Login With Google"
                         android:textAllCaps="false"
+                        android:id="@+id/loginwithgoogle"
                         android:textColor="@color/white" />
+-->
 
                 </LinearLayout>
 

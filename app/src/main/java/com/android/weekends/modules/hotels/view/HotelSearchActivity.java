@@ -68,13 +68,17 @@ public class HotelSearchActivity extends BaseActivity {
 
 
         TextView setguest=(TextView)findViewById(R.id.txt_no_guest);
-       // TextView setroom=(TextView)findViewById(R.id.txt_no_room);
+        TextView setroom=(TextView)findViewById(R.id.txt_no_room);
 
         Bundle b1 = getIntent().getExtras();
 
         if (b1 != null)
         {
             setguest.setText(" "+b1.getString("Key"));
+        }
+        else
+        {
+            setroom.setText(" "+b1.getString("Key"));
         }
 
         Button Hotelsearch=(Button)findViewById(R.id.button_search);

@@ -57,7 +57,7 @@
                             android:layout_height="180.0dip"
                             android:contentDescription="@string/app_name"
                             android:scaleType="fitXY"
-                            android:src="@drawable/download" />
+                            />
                     </RelativeLayout>
 
                     <!--

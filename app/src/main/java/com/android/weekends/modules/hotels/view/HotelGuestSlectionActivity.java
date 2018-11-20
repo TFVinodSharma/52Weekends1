@@ -23,7 +23,7 @@ public class HotelGuestSlectionActivity extends BaseActivity {
         Toolbar HotelGuestToolBar=(Toolbar)findViewById(R.id.hotelroomselect);
         setSupportActionBar(HotelGuestToolBar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        setTitle("Hotel Search");
+        setTitle("Select room and guest");
 
 
         displayInteger = (TextView) findViewById(
@@ -32,7 +32,7 @@ public class HotelGuestSlectionActivity extends BaseActivity {
 
 
 
-        LinearLayout linearLayout=(LinearLayout)findViewById(R.id.setvalueongest);
+        LinearLayout linearLayout=(LinearLayout)findViewById(R.id.setvalueonguest);
         linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -59,7 +59,7 @@ public class HotelGuestSlectionActivity extends BaseActivity {
             Toast toast = Toast.makeText(this,"up to 5 Guest allowed in one room", Toast.LENGTH_LONG);
             toast.setGravity(Gravity.CENTER, 0, 0);
             toast.show();
-            //Toast.makeText(this, "Up to 5 Guest allowed in one room", Toast.LENGTH_SHORT).show();
+
         }
 
     }public void decreaseInteger(View view) {
@@ -84,47 +84,5 @@ public class HotelGuestSlectionActivity extends BaseActivity {
         return true;
     }
 
-   /* public void onClick(View v) {
-
-        if (v.getId()==R.id.setvalueongest)
-        {
-            Intent in=new Intent(getApplicationContext(),HotelSearchActivity.class);
-            Bundle b=new Bundle();
-            b.putString("Key", String.valueOf(displayInteger.getText().toString()));
-
-            in.putExtras(b);
-            startActivity(in);
-        }
-
-        else
-        {
-            Intent in=new Intent(getApplicationContext(),HotelSearchActivity.class);
-            Bundle b=new Bundle();
-            b.putString("Key", String.valueOf(displayInteger1.getText().toString()));
-
-            in.putExtras(b);
-            startActivity(in);
-        }
-*/
-       /* switch(v.getId()){
-
-            case R.id.setvalueongest:
-                Intent in=new Intent(getApplicationContext(),HotelSearchActivity.class);
-                Bundle b=new Bundle();
-                b.putString("Key", String.valueOf(displayInteger.getText().toString()));
-
-                in.putExtras(b);
-                startActivity(in);
-                break;
-
-            case R.id.setvalueongest:
-                Intent in=new Intent(getApplicationContext(),HotelSearchActivity.class);
-                Bundle b=new Bundle();
-                b.putString("Key", String.valueOf(displayInteger.getText().toString()));
-
-                in.putExtras(b);
-                startActivity(in);
-                break;
-        }*/
     }
 
