@@ -21,38 +21,21 @@
             android:id="@+id/profiletoolbar"
             android:background="?colorPrimary"
             android:layout_width="fill_parent"
+            app:titleTextColor="@color/white"
             android:layout_height="?actionBarSize">
-        </android.support.v7.widget.Toolbar>
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_logout"
+                android:layout_gravity="end"
+                android:layout_marginRight="@dimen/text_25dp"
+                />
 
+        </android.support.v7.widget.Toolbar>
 
     </android.support.design.widget.AppBarLayout>
 
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content">
-
-        <ProgressBar
-            android:id="@id/pb_loading"
-            android:visibility="gone"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:indeterminate="true"
-            style="@style/Widget.AppCompat.ProgressBar.Horizontal" />
-
-
-        <TextView
-            android:textColor="@color/colorPrimary"
-            android:gravity="center"
-            android:id="@id/txt_sync"
-            android:padding="5.0dip"
-            android:visibility="gone"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="data syncing" />
-
-    </LinearLayout>
 
 
     <FrameLayout android:id="@id/content"
@@ -64,6 +47,9 @@
 
     </FrameLayout>
 
-    <include layout="@layout/app_bottom_bar" />
+    <include layout="@layout/app_bottom_bar"
+        android:layout_alignParentBottom="true"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"/>
 
 </LinearLayout>

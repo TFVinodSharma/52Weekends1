@@ -2,8 +2,11 @@ package com.android.weekends.modules.home.view;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
 
@@ -30,10 +33,43 @@ public class HomePageActivity extends BaseActivity {
     String arr3[] = {"India", "India", "India",
             "India", "India","India", "India", "India", "India", "India","India","India"};
 
+
+
+    /*private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
+            = new BottomNavigationView.OnNavigationItemSelectedListener() {
+
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            switch (item.getItemId()) {
+                case R.id.desination:
+                    Intent i= new Intent(HomePageActivity.this,DestinationActivity.class);
+                    startActivity(i);
+                    return true;
+                case R.id.trip:
+                    Intent i1= new Intent(getApplicationContext(),TripActivity.class);
+                    startActivity(i1);
+
+                    return true;
+                case R.id.profile:
+                    Intent i2= new Intent(getApplicationContext(),ProfileActivity.class);
+                    startActivity(i2);
+
+                    return true;
+
+            }
+            return false;
+        }
+    };
+*/
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(com.android.weekends.R.layout.activity_home__page1);
+
+        /*BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+*/
 
         TopDestinationAdapter adapter= new TopDestinationAdapter(arr1,arr2,arr3);
         RecyclerView recyclerView = findViewById(com.android.weekends.R.id.recycle);
@@ -81,6 +117,8 @@ public class HomePageActivity extends BaseActivity {
             }
         });
 
+
+
         LinearLayout GotoDestination=(LinearLayout)findViewById(com.android.weekends.R.id.desination);
         GotoDestination.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -89,6 +127,8 @@ public class HomePageActivity extends BaseActivity {
                 startActivity(i);
             }
         });
+
+
 
         LinearLayout GotoPackage=(LinearLayout)findViewById(R.id.flightpackage);
         GotoPackage.setOnClickListener(new View.OnClickListener() {
@@ -100,15 +140,6 @@ public class HomePageActivity extends BaseActivity {
             }
         });
 
-        /*LinearLayout GotoHome=(LinearLayout)findViewById(R.id.homeP);
-        GotoHome.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i= new Intent(getApplicationContext(),HomePageActivity.class);
-                startActivity(i);
-
-            }
-        });*/
 
 
 

@@ -16,6 +16,7 @@ import com.android.weekends.databinding.ActivitySignupBinding;
 import com.android.weekends.modules.home.view.HomePageActivity;
 import com.android.weekends.modules.login.model.SignupRequest;
 import com.android.weekends.modules.login.viewmodels.SignupViewModel;
+import com.android.weekends.modules.profile.view.ProfileActivity;
 
 public class SignupActivity extends BaseActivity {
     String[] LArray = {"Select", "Mr.", "Mrs.", "Miss"};
@@ -77,7 +78,7 @@ public class SignupActivity extends BaseActivity {
             if (signupResponse == null) {
                 showErrorMessage(getString(R.string.not_valid_response));
             } else if (signupResponse.getStatus()) {
-                startActivity(new Intent(SignupActivity.this, HomePageActivity.class));
+                startActivity(new Intent(SignupActivity.this, ProfileActivity.class));
             } else {
                 showErrorMessage(signupResponse.getMessage());
             }

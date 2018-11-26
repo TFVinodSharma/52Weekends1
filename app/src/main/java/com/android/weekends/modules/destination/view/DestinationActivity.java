@@ -61,6 +61,7 @@ public class DestinationActivity extends BaseActivity {
             }
         });
 
+/*
         LinearLayout img3 = findViewById(R.id.response);
         img3.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,6 +70,7 @@ public class DestinationActivity extends BaseActivity {
                 startActivity(i1);
             }
         });
+*/
 
         showProgressDialogue("Fetching Destinations", "Please Wait ...");
         getDestinations();

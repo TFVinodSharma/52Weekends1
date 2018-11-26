@@ -132,9 +132,6 @@ public class HotelSearchActivity extends BaseActivity {
         datePicker.setMinDate(System.currentTimeMillis() - 1000);
     }
 
-
-
-
     @Override
     public boolean onSupportNavigateUp() {
         onBackPressed();
