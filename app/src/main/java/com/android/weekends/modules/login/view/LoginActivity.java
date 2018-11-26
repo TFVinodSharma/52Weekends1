@@ -23,6 +23,11 @@ import com.android.weekends.modules.login.viewmodels.LoginViewModel;
 import com.android.weekends.modules.login.viewmodels.SignupViewModel;
 import com.android.weekends.modules.profile.view.ProfileActivity;
 import com.facebook.CallbackManager;
+import com.facebook.FacebookCallback;
+import com.facebook.FacebookException;
+import com.facebook.FacebookSdk;
+import com.facebook.appevents.AppEventsLogger;
+import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -37,6 +42,8 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+
+import java.util.Arrays;
 
 public class LoginActivity extends BaseActivity {
 
@@ -80,6 +87,43 @@ public class LoginActivity extends BaseActivity {
         mAuth = FirebaseAuth.getInstance();
 
 
+        // facebook
+
+
+        FacebookSdk.sdkInitialize(getApplicationContext());
+        AppEventsLogger.activateApp(this);
+
+        callbackManager = CallbackManager.Factory.create();
+        loginButton=findViewById(R.id.login_button);
+
+        loginButton.setReadPermissions(Arrays.asList(EMAIL));
+
+        // Callback registration
+        loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
+            @Override
+            public void onSuccess(LoginResult loginResult) {
+                // App code
+
+                String  accessToken = loginResult.getAccessToken().getToken();
+               //boolean isLoggedIn = accessToken != null && !accessToken.isExpired();
+
+            }
+
+            @Override
+            public void onCancel() {
+                // App code
+            }
+
+            @Override
+            public void onError(FacebookException exception) {
+                // App code
+            }
+        });
+
+
+
+
+
 
 
         TextView Signup = (TextView) findViewById(R.id.gotosignup);
@@ -121,6 +165,7 @@ public class LoginActivity extends BaseActivity {
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        callbackManager.onActivityResult(requestCode,resultCode,data);
         super.onActivityResult(requestCode, resultCode, data);
 
         // Result returned from launching the Intent from GoogleSignInApi.getSignInIntent(...);
