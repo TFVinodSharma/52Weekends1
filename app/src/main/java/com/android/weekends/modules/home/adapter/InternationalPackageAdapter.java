@@ -1,7 +1,6 @@
 package com.android.weekends.modules.home.adapter;
 
 import android.content.Context;
-import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -10,7 +9,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.android.weekends.modules.tourdetails.view.PackageDetails;
 import com.android.weekends.R;
 
 public class InternationalPackageAdapter extends RecyclerView.Adapter<InternationalPackageAdapter.InternationalViewHolder> {
@@ -54,13 +52,15 @@ public class InternationalPackageAdapter extends RecyclerView.Adapter<Internatio
             Des=itemView.findViewById(R.id.image);
             Name=itemView.findViewById(R.id.txt_name);
             Location=itemView.findViewById(R.id.txt_location);
+/*
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent i=new Intent(context,PackageDetails.class);
+                    Intent i=new Intent(context,PackageDetailsActivity.class);
                     context.startActivity(i);
                 }
             });
+*/
         }
     }
 }

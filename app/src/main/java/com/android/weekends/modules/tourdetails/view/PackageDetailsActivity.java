@@ -1,35 +1,43 @@
 package com.android.weekends.modules.tourdetails.view;
 
+import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 
 import com.android.weekends.R;
 import com.android.weekends.base.activity.BaseActivity;
+import com.android.weekends.modules.selectpackage.model.PackageDetails;
 import com.android.weekends.modules.tourdetails.fragment.FragAboutPlace;
+import com.android.weekends.modules.tourdetails.fragment.FragItinerary;
 import com.android.weekends.modules.tourdetails.fragment.FragStayInfo;
 import com.android.weekends.modules.tourdetails.fragment.FragTourHighlights;
 import com.android.weekends.modules.tourdetails.fragment.FragTransportaion;
-import com.android.weekends.modules.tourdetails.fragment.FragItinerary;
 
 import java.util.ArrayList;
 
-public class PackageDetails extends BaseActivity {
+public class PackageDetailsActivity extends BaseActivity {
     ViewPager viewPager;
-    FragmentManager fm;
+    public static final String PACKAGE_DETAILS = "PACKAGE_DETAILS";
+    private PackageDetails packageDetails;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_package__details);
 
-        Toolbar PacakageDetailsToolBar=(Toolbar)findViewById(R.id.pacakgedetailstoolbar);
+        Toolbar PacakageDetailsToolBar=findViewById(R.id.pacakgedetailstoolbar);
         setSupportActionBar(PacakageDetailsToolBar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        if (getIntent().hasExtra(PACKAGE_DETAILS)) {
+            packageDetails = (PackageDetails) getIntent().getSerializableExtra(PACKAGE_DETAILS);
+            initDomesticDetails();
+        }
 
 
         TabLayout tabLayout = findViewById(R.id.tab);
@@ -63,6 +71,15 @@ public class PackageDetails extends BaseActivity {
         });
 
     }
+    private void initDomesticDetails() {
+        getSupportActionBar().setTitle(packageDetails.getPack_name());
+
+    }
+    private void initInternationalDetails() {
+        getSupportActionBar().setTitle(packageDetails.getPack_name());
+
+    }
+
 
     class MyAdapter extends FragmentPagerAdapter {
         ArrayList<Fragment> list = new ArrayList<>();

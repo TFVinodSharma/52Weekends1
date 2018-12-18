@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".base.activity.SelectPacakge">
+    tools:context=".modules.selectpackage.view.SelectPacakge">
 <android.support.design.widget.AppBarLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -30,9 +30,10 @@
         android:gravity="center"
         android:textStyle="bold"
         android:id="@+id/domestic"
+        android:textColor="@color/black"
         android:padding="@dimen/text_20dp"
         android:textSize="@dimen/text_20dp"
-        android:text="Domestic"/>
+        android:text="Domestic Packages "/>
     <View
         android:layout_width="wrap_content"
         android:layout_height="1dp"
@@ -41,8 +42,9 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="International"
+        android:text="International Packages"
         android:textStyle="bold"
+        android:textColor="@color/black"
         android:id="@+id/international"
         android:padding="@dimen/text_20dp"
         android:gravity="center"

@@ -1,179 +1,200 @@
 package com.android.weekends.modules.home.view;
 
+import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
+import android.databinding.DataBindingUtil;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.design.widget.BottomNavigationView;
+import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.MenuItem;
+import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.LinearLayout;
 
+import com.android.weekends.database.AppState;
+import com.android.weekends.databinding.ActivityHomePageBinding;
+import com.android.weekends.modules.buses.view.BusSearchActivity;
+import com.android.weekends.modules.destination.adapter.DestinationAdapter;
 import com.android.weekends.modules.destination.view.DestinationActivity;
+import com.android.weekends.modules.destination.viewmodel.DestinationViewModel;
 import com.android.weekends.modules.hotels.view.HotelSearchActivity;
+import com.android.weekends.modules.login.view.LoginActivity;
 import com.android.weekends.modules.profile.view.ProfileActivity;
-import com.android.weekends.base.activity.SelectPacakge;
-import com.android.weekends.modules.trip.view.TripActivity;
+import com.android.weekends.modules.selectpackage.adapter.DomesticSelectPackageAdapter;
+import com.android.weekends.modules.selectpackage.adapter.InternationalSelectPackageAdapter;
+import com.android.weekends.modules.selectpackage.view.SelectPacakge;
 import com.android.weekends.modules.home.adapter.TopDestinationAdapter;
 import com.android.weekends.modules.home.adapter.InternationalPackageAdapter;
 import com.android.weekends.modules.home.adapter.DomesticPackageAdapter;
 import com.android.weekends.R;
 import com.android.weekends.base.activity.BaseActivity;
-import com.android.weekends.modules.buses.view.BusSearchActivity;
 import com.android.weekends.modules.flights.view.FlightActivity;
+import com.android.weekends.modules.selectpackage.viewmodel.DomesticPackageViewModel;
+import com.android.weekends.modules.selectpackage.viewmodel.InternationalPackageViewModel;
+import com.android.weekends.modules.trip.view.TripActivity;
 
 
-public class HomePageActivity extends BaseActivity {
-    int arr1[] = {com.android.weekends.R.drawable.temple, com.android.weekends.R.drawable.temple, com.android.weekends.R.drawable.temple
-            , com.android.weekends.R.drawable.temple, com.android.weekends.R.drawable.temple, com.android.weekends.R.drawable.temple,
-            com.android.weekends.R.drawable.temple, com.android.weekends.R.drawable.temple, com.android.weekends.R.drawable.temple, com.android.weekends.R.drawable.temple, com.android.weekends.R.drawable.temple, com.android.weekends.R.drawable.temple};
-    String arr2[] = {"Bihar", "Mahabaleswar", "Tripura", "Allahabad",
-            "Almora","Kashmir","Manali","Karnataka","Darjaling","Haryana","Himachal","Puri"};
-    String arr3[] = {"India", "India", "India",
-            "India", "India","India", "India", "India", "India", "India","India","India"};
+public class HomePageActivity extends BaseActivity implements View.OnClickListener {
 
+    ActivityHomePageBinding activityHomePageBinding;
 
-
-    /*private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
-
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            switch (item.getItemId()) {
-                case R.id.desination:
-                    Intent i= new Intent(HomePageActivity.this,DestinationActivity.class);
-                    startActivity(i);
-                    return true;
-                case R.id.trip:
-                    Intent i1= new Intent(getApplicationContext(),TripActivity.class);
-                    startActivity(i1);
-
-                    return true;
-                case R.id.profile:
-                    Intent i2= new Intent(getApplicationContext(),ProfileActivity.class);
-                    startActivity(i2);
-
-                    return true;
-
-            }
-            return false;
-        }
-    };
-*/
+    LinearLayout GotoFlightActivity, GotoBusActivity, GotoHotelActivity, GotoDestination, GotoTrip, GotoProfile, GotoPackage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(com.android.weekends.R.layout.activity_home__page1);
+        activityHomePageBinding = DataBindingUtil.setContentView(this, R.layout.activity_home__page);
 
-        /*BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-*/
-
-        TopDestinationAdapter adapter= new TopDestinationAdapter(arr1,arr2,arr3);
-        RecyclerView recyclerView = findViewById(com.android.weekends.R.id.recycle);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false));
-        recyclerView.setAdapter(adapter);
+        GotoFlightActivity = findViewById(R.id.gotoflightactivity);
+        GotoBusActivity = findViewById(R.id.gotobusactivity);
+        GotoHotelActivity = findViewById(R.id.gotohotelacitivity);
+        GotoDestination = findViewById(R.id.desination);
+        GotoTrip = findViewById(R.id.tripP);
+        GotoPackage = findViewById(R.id.flightpackage);
+        GotoProfile = findViewById(R.id.response);
 
 
-        DomesticPackageAdapter adapter1= new DomesticPackageAdapter(arr1,arr2,arr3);
-        RecyclerView recyclerView1 = findViewById(com.android.weekends.R.id.recycler);
-        recyclerView1.setHasFixedSize(true);
-        recyclerView1.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false));
-        recyclerView1.setAdapter(adapter1);
+        GotoFlightActivity.setOnClickListener(this);
+        GotoBusActivity.setOnClickListener(this);
+        GotoHotelActivity.setOnClickListener(this);
+        GotoDestination.setOnClickListener(this);
+        GotoTrip.setOnClickListener(this);
+        GotoPackage.setOnClickListener(this);
+        GotoProfile.setOnClickListener(this);
 
-        InternationalPackageAdapter adapter2= new InternationalPackageAdapter(arr1,arr2,arr3);
-        RecyclerView recyclerView2 = findViewById(com.android.weekends.R.id.recycler_View);
-        recyclerView2.setHasFixedSize(true);
-        recyclerView2.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false));
-        recyclerView2.setAdapter(adapter2);
+        getDestinations();
+        getDomesticPackage();
 
+        getinternationalpackage();
 
-        LinearLayout GotoFlightActivity=(LinearLayout)findViewById(com.android.weekends.R.id.gotoflightactivity);
-        GotoFlightActivity.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i= new Intent(HomePageActivity.this,FlightActivity.class);
-                startActivity(i);
-            }
-        });
-
-        LinearLayout GotoHotelActivity=(LinearLayout)findViewById(com.android.weekends.R.id.gotohotelacitivity);
-        GotoHotelActivity.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i= new Intent(HomePageActivity.this,HotelSearchActivity.class);
-                startActivity(i);
-            }
-        });
-        LinearLayout GotoBusActivity=(LinearLayout)findViewById(com.android.weekends.R.id.gotobusactivity);
-        GotoBusActivity.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i= new Intent(HomePageActivity.this,BusSearchActivity.class);
-                startActivity(i);
-            }
-        });
-
-
-
-        LinearLayout GotoDestination=(LinearLayout)findViewById(com.android.weekends.R.id.desination);
-        GotoDestination.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i= new Intent(HomePageActivity.this,DestinationActivity.class);
-                startActivity(i);
-            }
-        });
-
-
-
-        LinearLayout GotoPackage=(LinearLayout)findViewById(R.id.flightpackage);
-        GotoPackage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i= new Intent(HomePageActivity.this,SelectPacakge.class);
-                startActivity(i);
-
-            }
-        });
-
-
-
-
-        // Bottom Layout work Start
-
-        LinearLayout GotoDestination1=(LinearLayout)findViewById(R.id.desination);
-        GotoDestination1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i= new Intent(getApplicationContext(),DestinationActivity.class);
-                startActivity(i);
-
-            }
-        });
-
-        LinearLayout GotoTrip=(LinearLayout)findViewById(R.id.tripP);
-        GotoTrip.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i= new Intent(getApplicationContext(),TripActivity.class);
-                startActivity(i);
-
-            }
-        });
-        LinearLayout GotoProfile=(LinearLayout)findViewById(R.id.response);
-        GotoProfile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i= new Intent(getApplicationContext(),ProfileActivity.class);
-                startActivity(i);
-
-            }
-        });
     }
 
 
+    private void getDomesticPackage() {
+
+        showProgressDialogue();
+
+        DomesticPackageViewModel domesticPackageViewModel = ViewModelProviders.of(this).get(DomesticPackageViewModel.class);
+
+        domesticPackageViewModel.getdomesticpackage().observe(this, domesticPackageResponse -> {
+
+            hideProgressDialgogue();
+
+            if (domesticPackageResponse.getdomesticpackage() != null) {
+                DomesticSelectPackageAdapter domesticPackageAdapter = new DomesticSelectPackageAdapter(domesticPackageResponse.getdomesticpackage());
+                RecyclerView recyclerViewDPA = findViewById(R.id.rv_domestic);
+                domesticPackageAdapter.isHorizontal = true;
+
+                DisplayMetrics displayMetrics = new DisplayMetrics();
+                getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+                domesticPackageAdapter.widthPixels = displayMetrics.widthPixels;
+                recyclerViewDPA.setAdapter(domesticPackageAdapter);
+            } else {
+                showErrorMessage(domesticPackageResponse.getMessage());
+            }
+
+        });
+
+    }
+
+    private void getinternationalpackage() {
+
+        InternationalPackageViewModel internationalPackageViewModel = ViewModelProviders.of(this).get(InternationalPackageViewModel.class);
+        internationalPackageViewModel.getinternationalpackage().observe(this, internationalPackageResponse -> {
+
+            //hideProgressDialgogue();
+
+            if (internationalPackageResponse.getinternationalpackage() != null) {
+                InternationalSelectPackageAdapter internationalPackageAdapter = new InternationalSelectPackageAdapter(internationalPackageResponse.getinternationalpackage());
+                RecyclerView recyclerViewIPA = findViewById(R.id.rv_international);
+
+                recyclerViewIPA.setAdapter(internationalPackageAdapter);
+                recyclerViewIPA.setHasFixedSize(true);
+                recyclerViewIPA.addItemDecoration(new DividerItemDecoration(this,LinearLayoutManager.VERTICAL));
+                recyclerViewIPA.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false));
+
+            } else {
+                showErrorMessage(internationalPackageResponse.getMessage());
+            }
+
+        });
+
+    }
+
+    private void getDestinations() {
+
+        DestinationViewModel destinationViewModel = ViewModelProviders.of(this).get(DestinationViewModel.class);
+
+        destinationViewModel.getDestinations().observe(this, destinationResponse -> {
+
+            hideProgressDialgogue();
+
+            if (destinationResponse.getDestinations() != null) {
+                DestinationAdapter destinationAdapter = new DestinationAdapter(destinationResponse.getDestinations());
+                RecyclerView destinationrecycler = findViewById(R.id.rv_destinations);
+                destinationrecycler.setHasFixedSize(true);
+                destinationrecycler.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false));
+                destinationrecycler.setAdapter(destinationAdapter);
+            } else {
+                showErrorMessage(destinationResponse.getMessage());
+            }
+
+        });
+
+    }
+
+
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+
+            // for bottom bar
+            case R.id.response:
+                Intent intent;
+                //TODO need to have token in registeration as well.
+                if (AppState.getInstance(HomePageActivity.this).getUserToken() == null) {
+                    intent = new Intent(HomePageActivity.this, LoginActivity.class);
+                } else {
+                    intent = new Intent(HomePageActivity.this, ProfileActivity.class);
+                }
+                startActivity(intent);
+                break;
+
+            case R.id.tripP:
+                if (AppState.getInstance(HomePageActivity.this).getUserToken() == null) {
+                    intent = new Intent(HomePageActivity.this, LoginActivity.class);
+                } else {
+                    intent = new Intent(HomePageActivity.this, TripActivity.class);
+                }
+                startActivity(intent);
+                break;
+            case R.id.desination:
+                Intent intent2 = new Intent(this, DestinationActivity.class);
+                this.startActivity(intent2);
+                break;
+            // close bottom bar
+            case R.id.gotoflightactivity:
+                Intent intent3 = new Intent(this, FlightActivity.class);
+                this.startActivity(intent3);
+                break;
+
+            case R.id.gotobusactivity:
+                Intent intent4 = new Intent(this, BusSearchActivity.class);
+                this.startActivity(intent4);
+                break;
+
+            case R.id.gotohotelacitivity:
+                Intent intent5 = new Intent(this, HotelSearchActivity.class);
+                this.startActivity(intent5);
+                break;
+
+            case R.id.flightpackage:
+                Intent intent6 = new Intent(this, SelectPacakge.class);
+                this.startActivity(intent6);
+                break;
+
+        }
+
+    }
 }

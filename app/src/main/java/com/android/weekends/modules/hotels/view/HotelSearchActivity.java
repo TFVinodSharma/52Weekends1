@@ -15,16 +15,14 @@ import android.widget.TextView;
 
 import com.android.weekends.R;
 import com.android.weekends.base.activity.BaseActivity;
+import com.android.weekends.modules.buses.view.BusSearchActivity;
 import com.android.weekends.modules.flights.view.FlightActivity;
+import com.android.weekends.modules.selectpackage.view.SelectPacakge;
 
 import java.util.Calendar;
 
-public class HotelSearchActivity extends BaseActivity {
-
-
+public class HotelSearchActivity extends BaseActivity implements View.OnClickListener {
     private TextView checkindate, checkoutdate;
-
-    private static String TAG = "HotelSearchActivity";
 
     private DatePickerDialog.OnDateSetListener mDateSetListener;
 
@@ -38,6 +36,13 @@ public class HotelSearchActivity extends BaseActivity {
         setSupportActionBar(Hotelsearchtoolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         setTitle("Hotel Search");
+
+        Button Hotelsearch=(Button)findViewById(R.id.button_search);
+        LinearLayout Hotelguestselection=(LinearLayout)findViewById(R.id.selectguest);
+
+
+        Hotelsearch.setOnClickListener(this);
+        Hotelguestselection.setOnClickListener(this);
 
 
 
@@ -62,10 +67,7 @@ public class HotelSearchActivity extends BaseActivity {
                     checkoutdate.setText(date);
                     break;
             }
-
         };
-
-
 
         TextView setguest=(TextView)findViewById(R.id.txt_no_guest);
         TextView setroom=(TextView)findViewById(R.id.txt_no_room);
@@ -76,43 +78,8 @@ public class HotelSearchActivity extends BaseActivity {
         {
             setguest.setText(" "+b1.getString("Key"));
         }
-        else
-        {
-            setroom.setText(" "+b1.getString("Key"));
-        }
-
-        Button Hotelsearch=(Button)findViewById(R.id.button_search);
-        Hotelsearch.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i=new Intent(getApplicationContext(),HotelListActivity.class);
-                startActivity(i);
-            }
-        });
-
-        final LinearLayout Hotelguestselection=(LinearLayout)findViewById(R.id.selectguest);
-        Hotelguestselection.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i= new Intent(getApplicationContext(),HotelGuestSlectionActivity.class);
-                startActivity(i);
-
-            }
-        });
-
-        LinearLayout HotelRoomSearch=(LinearLayout)findViewById(R.id.roomssearch);
-        HotelRoomSearch.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i=new Intent(getApplicationContext(),HotelGuestSlectionActivity.class);
-                startActivity(i);
-
-            }
-        });
-
 
     }
-
 
     public void ChooseDate(int id) {
         Calendar cal = Calendar.getInstance();
@@ -124,7 +91,6 @@ public class HotelSearchActivity extends BaseActivity {
                 mDateSetListener,
                 year, month, date);
         dialog.getWindow();
-                //.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#FDD7E4")));
         dialog.show();
 
         DatePicker datePicker = dialog.getDatePicker();
@@ -136,5 +102,22 @@ public class HotelSearchActivity extends BaseActivity {
     public boolean onSupportNavigateUp() {
         onBackPressed();
         return true;
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId())
+        {
+            case R.id.button_search:
+                Intent intent = new Intent(this, HotelListActivity.class);
+                this.startActivity(intent);
+                break;
+
+            case R.id.selectguest:
+                Intent intent1=new Intent(this,HotelGuestSlectionActivity.class);
+                this.startActivity(intent1);
+                break;
+
+        }
     }
 }

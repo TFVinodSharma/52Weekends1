@@ -1,4 +1,4 @@
-package com.android.weekends.base.adapter;
+package com.android.weekends.modules.hotels.adapter;
 
 import android.content.Context;
 import android.support.annotation.NonNull;

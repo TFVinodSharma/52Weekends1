@@ -1,6 +1,7 @@
 package com.android.weekends.modules.flights.view;
 
 import android.os.Bundle;
+import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -31,6 +32,7 @@ public class FlightListActivity extends BaseActivity {
 
         RecyclerView RecyclerFlightList=(RecyclerView)findViewById(R.id.recycler_flight_list);
         RecyclerFlightList.setLayoutManager(new LinearLayoutManager(this));
+        RecyclerFlightList.addItemDecoration(new DividerItemDecoration(this,LinearLayoutManager.VERTICAL));
         RecyclerFlightList.setAdapter(new FlightListAdapter(FlightName,FlightStartTime,FlightTotalTime,FlightEndTime,FlightPrice));
     }
 

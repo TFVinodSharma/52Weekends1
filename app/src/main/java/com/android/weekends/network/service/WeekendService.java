@@ -4,6 +4,8 @@ import com.android.weekends.modules.destination.model.DestinationResponse;
 import com.android.weekends.modules.login.model.LoginResponse;
 import com.android.weekends.modules.login.model.SignUpResponse;
 import com.android.weekends.modules.login.model.SignupRequest;
+import com.android.weekends.modules.selectpackage.model.DomesticPackageResponse;
+import com.android.weekends.modules.selectpackage.model.InternationalPackageResponse;
 
 import java.util.Map;
 
@@ -26,6 +28,14 @@ public interface WeekendService {
 
     @GET("api/destinations/destination/")
     Call<DestinationResponse> getDestinations();
+
+    @GET("api/packages/package_domestic/")
+    Call<DomesticPackageResponse> getdomesticpackage();
+
+    @GET("api/packages/package_international/")
+    Call<InternationalPackageResponse> getinternationalpackage();
+
+
 
 
 }

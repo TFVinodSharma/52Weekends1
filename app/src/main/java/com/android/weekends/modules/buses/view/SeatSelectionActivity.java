@@ -10,14 +10,17 @@ import android.widget.TextView;
 
 import com.android.weekends.R;
 import com.android.weekends.base.activity.BaseActivity;
+import com.android.weekends.database.AppState;
 import com.android.weekends.modules.buses.adapter.SeatSelectionAdapter;
+import com.android.weekends.modules.flights.view.FlightDetailsActivity;
 import com.android.weekends.modules.login.view.LoginActivity;
+import com.android.weekends.modules.payments.view.PaymentMethodActivity;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class SeatSelectionActivity extends BaseActivity implements OnSeatSelected  {
-    // public  String[] SeatSelection={"","","","",""};
+
     private static final int COLUMNS = 5;
     private TextView txtSeatSelected;
 
@@ -72,8 +75,14 @@ public class SeatSelectionActivity extends BaseActivity implements OnSeatSelecte
 
     public  void gotopayments(View v)
     {
-        Intent i= new Intent(this,LoginActivity.class);
-        startActivity(i);
+        Intent intent;
+        if (AppState.getInstance(SeatSelectionActivity.this).getUserToken() == null) {
+            intent = new Intent(SeatSelectionActivity.this, LoginActivity.class);
+        } else {
+            intent = new Intent(SeatSelectionActivity.this, PaymentMethodActivity.class);
+        }
+        startActivity(intent);
+
     }
 
 }

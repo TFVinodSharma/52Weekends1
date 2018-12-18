@@ -20,11 +20,11 @@ public class TopDestinationAdapter extends RecyclerView.Adapter<TopDestinationAd
     private int[] ar1;
     private String[] ar2,ar3;
 
-    public TopDestinationAdapter(int[] ar1, String[] ar2, String[] ar3)
+    public TopDestinationAdapter(int[] ar1, String[] ar2/*, String[] ar3*/)
     {
         this.ar1=ar1;
         this.ar2=ar2;
-        this.ar3=ar3;
+        //this.ar3=ar3;
 
 
     }
@@ -43,7 +43,7 @@ public class TopDestinationAdapter extends RecyclerView.Adapter<TopDestinationAd
 
         versionview.Des.setImageResource(ar1[i]);
         versionview.Name.setText(ar2[i]);
-        versionview.Location.setText(ar3[i]);
+       // versionview.Location.setText(ar3[i]);
     }
 
     @Override
@@ -61,8 +61,9 @@ public class TopDestinationAdapter extends RecyclerView.Adapter<TopDestinationAd
             context = itemView.getContext();
             Des=itemView.findViewById(R.id.image);
             Name=itemView.findViewById(R.id.txt_name);
-            Location=itemView.findViewById(R.id.txt_location);
+          //  Location=itemView.findViewById(R.id.txt_location);
 
+/*
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -70,6 +71,7 @@ public class TopDestinationAdapter extends RecyclerView.Adapter<TopDestinationAd
                     context.startActivity(i);
                 }
             });
+*/
 
         }
     }

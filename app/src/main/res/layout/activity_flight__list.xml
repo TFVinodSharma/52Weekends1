@@ -20,30 +20,6 @@
             android:id="@+id/flightlisttoolbar"/>
     </android.support.design.widget.AppBarLayout>
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content">
-
-        <ProgressBar
-            android:id="@id/pb_loading"
-            android:visibility="gone"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:indeterminate="true"
-            style="@style/Widget.AppCompat.ProgressBar.Horizontal" />
-
-        <TextView
-            android:textColor="@color/colorPrimary"
-            android:gravity="center"
-            android:id="@id/txt_sync"
-            android:padding="5.0dip"
-            android:visibility="gone"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="data syncing" />
-
-    </LinearLayout>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycler_flight_list"

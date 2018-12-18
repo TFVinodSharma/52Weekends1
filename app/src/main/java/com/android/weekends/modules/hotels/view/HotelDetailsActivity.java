@@ -4,7 +4,7 @@ import android.support.v4.view.ViewPager;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 
-import com.android.weekends.base.adapter.PagerHotelAdapter;
+import com.android.weekends.modules.hotels.adapter.PagerHotelAdapter;
 import com.android.weekends.R;
 import com.android.weekends.base.activity.BaseActivity;
 

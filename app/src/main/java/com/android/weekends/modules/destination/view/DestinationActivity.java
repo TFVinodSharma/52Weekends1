@@ -19,10 +19,10 @@ import com.android.weekends.modules.home.view.HomePageActivity;
 import com.android.weekends.modules.profile.view.ProfileActivity;
 import com.android.weekends.modules.trip.view.TripActivity;
 
-public class DestinationActivity extends BaseActivity {
+public class DestinationActivity extends BaseActivity implements View.OnClickListener {
     ActivityDestinationBinding activityDestinationBinding;
 
-
+LinearLayout ProfileDestination,img,img1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,43 +34,13 @@ public class DestinationActivity extends BaseActivity {
         setTitle("Destination");
 
 
-        LinearLayout ProfileDestination = (LinearLayout) findViewById(R.id.response);
-        ProfileDestination.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(getApplicationContext(), ProfileActivity.class);
-                startActivity(i);
-            }
-        });
+        ProfileDestination=findViewById(R.id.response);
+        img=findViewById(R.id.homeP);
+        img1=findViewById(R.id.tripP);
+        ProfileDestination.setOnClickListener(this);
+        img.setOnClickListener(this);
+        img1.setOnClickListener(this);
 
-
-        LinearLayout img = findViewById(R.id.homeP);
-        img.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i1 = new Intent(getApplicationContext(), HomePageActivity.class);
-                startActivity(i1);
-            }
-        });
-        LinearLayout img1 = findViewById(R.id.tripP);
-        img1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i1 = new Intent(getApplicationContext(), TripActivity.class);
-                startActivity(i1);
-            }
-        });
-
-/*
-        LinearLayout img3 = findViewById(R.id.response);
-        img3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i1 = new Intent(getApplicationContext(), ProfileActivity.class);
-                startActivity(i1);
-            }
-        });
-*/
 
         showProgressDialogue("Fetching Destinations", "Please Wait ...");
         getDestinations();
@@ -104,5 +74,28 @@ public class DestinationActivity extends BaseActivity {
     public boolean onSupportNavigateUp() {
         onBackPressed();
         return true;
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId())
+        {
+            case R.id.response:
+                Intent intent = new Intent(this, ProfileActivity.class);
+                this.startActivity(intent);
+                break;
+
+            case R.id.homeP:
+                Intent intent1 = new Intent(this, HomePageActivity.class);
+                this.startActivity(intent1);
+                break;
+            case R.id.tripP:
+                Intent intent2 = new Intent(this, TripActivity.class);
+                this.startActivity(intent2);
+                break;
+
+        }
+
+
     }
 }

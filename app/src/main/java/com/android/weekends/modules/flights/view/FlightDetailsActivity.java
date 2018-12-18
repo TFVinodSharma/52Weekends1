@@ -6,7 +6,11 @@ import android.view.View;
 
 import com.android.weekends.R;
 import com.android.weekends.base.activity.BaseActivity;
+import com.android.weekends.database.AppState;
+import com.android.weekends.modules.home.view.HomePageActivity;
 import com.android.weekends.modules.login.view.LoginActivity;
+import com.android.weekends.modules.payments.view.PaymentMethodActivity;
+import com.android.weekends.modules.profile.view.ProfileActivity;
 
 public class FlightDetailsActivity extends BaseActivity {
 
@@ -18,7 +22,13 @@ public class FlightDetailsActivity extends BaseActivity {
 
     public void Gotologinuserflight(View v)
     {
-        Intent i= new Intent(this,LoginActivity.class);
-        startActivity(i);
+        Intent intent;
+        if (AppState.getInstance(FlightDetailsActivity.this).getUserToken() == null) {
+            intent = new Intent(FlightDetailsActivity.this, LoginActivity.class);
+        } else {
+            intent = new Intent(FlightDetailsActivity.this, PaymentMethodActivity.class);
+        }
+        startActivity(intent);
+
     }
 }

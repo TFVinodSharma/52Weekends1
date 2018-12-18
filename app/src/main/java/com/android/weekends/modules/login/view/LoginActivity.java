@@ -128,7 +128,7 @@ public class LoginActivity extends BaseActivity {
 
         TextView Signup = (TextView) findViewById(R.id.gotosignup);
         Signup.setOnClickListener(v -> {
-            Intent i = new Intent(getApplicationContext(), SignupActivity.class);
+            Intent i = new Intent(LoginActivity.this, SignupActivity.class);
             startActivity(i);
         });
 

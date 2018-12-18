@@ -2,6 +2,7 @@ package com.android.weekends.modules.login.view;
 
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.view.View;
@@ -22,6 +23,7 @@ public class SignupActivity extends BaseActivity {
     String[] LArray = {"Select", "Mr.", "Mrs.", "Miss"};
 
     ActivitySignupBinding activitySignupBinding;
+  //  private String SHARED_PREFS_NAME = "com.android.weekends";
 
 
     @Override
@@ -78,7 +80,31 @@ public class SignupActivity extends BaseActivity {
             if (signupResponse == null) {
                 showErrorMessage(getString(R.string.not_valid_response));
             } else if (signupResponse.getStatus()) {
-                startActivity(new Intent(SignupActivity.this, ProfileActivity.class));
+
+                Intent i=new Intent(this,ProfileActivity.class);
+               /* SharedPreferences.Editor editor = getSharedPreferences(SHARED_PREFS_NAME, MODE_PRIVATE).edit();
+                editor.putString("name", activitySignupBinding.edtName.getText().toString());
+                editor.putString("email", activitySignupBinding.edtEmail.getText().toString());
+                editor.putString("address",activitySignupBinding.edtAddress.getText().toString());
+                editor.putString("pincode",activitySignupBinding.edtPincode.getText().toString());
+                editor.putString("phone",activitySignupBinding.edtMobile.getText().toString());
+                editor.putString("city",activitySignupBinding.edtCity.getText().toString());
+                editor.apply();*/
+/*
+                Bundle bundle=new Bundle();
+                bundle.putString("name",activitySignupBinding.edtName.getText().toString());
+                bundle.putString("email",activitySignupBinding.edtEmail.getText().toString());
+                bundle.putString("address",activitySignupBinding.edtAddress.getText().toString());
+                bundle.putString("city",activitySignupBinding.edtCity.getText().toString());
+                bundle.putString("pincode",activitySignupBinding.edtPincode.getText().toString());
+                bundle.putString("phone",activitySignupBinding.edtMobile.getText().toString());
+                i.putExtras(bundle);
+*/
+                startActivity(i);
+
+
+
+                //startActivity(new Intent(SignupActivity.this, ProfileActivity.class));
             } else {
                 showErrorMessage(signupResponse.getMessage());
             }

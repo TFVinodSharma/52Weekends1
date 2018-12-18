@@ -9,6 +9,7 @@ public class AppState {
 
     private static AppState appState;
     private SharedPreferences preferences;
+   // private boolean isLoggingOut;
 
     private String SHARED_PREFS_NAME = "com.android.weekends";
 
@@ -24,6 +25,16 @@ public class AppState {
         }
         return appState;
     }
+
+/*
+    public boolean isLoggingOut() {
+        return isLoggingOut;
+    }
+
+    public void setLoggingOut(boolean isLoggingOut) {
+        this.isLoggingOut = isLoggingOut;
+    }
+*/
 
     public void setIsUserReqistered(boolean isUserReqistered) {
         storeboolean(PrefsKeys.IS_USER_REGISTERED, isUserReqistered);
@@ -63,5 +74,6 @@ public class AppState {
     private String getStoreString(String key) {
         return preferences.getString(key, null);
     }
+
 
 }

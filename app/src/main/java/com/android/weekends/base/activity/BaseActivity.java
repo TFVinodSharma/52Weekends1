@@ -19,7 +19,7 @@ import java.util.Calendar;
 
 public class BaseActivity extends AppCompatActivity {
 
-  //  private DatePickerDialog.OnDateSetListener mDateSetListener;
+    //  private DatePickerDialog.OnDateSetListener mDateSetListener;
     private MaterialDialog materialDialog;
 
 
@@ -35,10 +35,14 @@ public class BaseActivity extends AppCompatActivity {
                 .progress(true, 0).show();
     }
 
+    public void showProgressDialogue() {
+        materialDialog = new MaterialDialog.Builder(this)
+                .progress(true, 0).show();
+    }
+
     public void hideProgressDialgogue() {
         materialDialog.hide();
     }
-
 
 
 }

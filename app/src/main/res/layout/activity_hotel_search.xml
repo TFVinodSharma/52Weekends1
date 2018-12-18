@@ -27,8 +27,6 @@
             >
 
         </android.support.v7.widget.Toolbar>
-       <!--<include android:id="@+id/toolbar"
-            layout="@layout/toolbar" />-->
     </android.support.design.widget.AppBarLayout>
 
     <ScrollView android:id="@id/scrollView"
@@ -289,6 +287,7 @@
                                 android:id="@+id/txt_no_guest"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/text_10dp"
                                 android:text="0 "
                                  />
                           <!--  <TextView
@@ -375,7 +374,8 @@
                         android:layout_marginRight="@dimen/margin_10"
                         android:src="@drawable/ic_add_black" />-->
 
-                    <Button android:textSize="14.0dip"
+                    <Button
+                        android:textSize="14.0dip"
                         android:textStyle="bold"
                         android:textColor="@color/white"
                         android:id="@+id/button_search"

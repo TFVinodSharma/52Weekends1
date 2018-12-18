@@ -11,8 +11,11 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.android.weekends.R;
+import com.android.weekends.database.AppState;
+import com.android.weekends.modules.buses.view.SeatSelectionActivity;
 import com.android.weekends.modules.hotels.view.HotelDetailsActivity;
 import com.android.weekends.modules.login.view.LoginActivity;
+import com.android.weekends.modules.payments.view.PaymentMethodActivity;
 
 public class HotelListAdapter extends RecyclerView.Adapter<HotelListAdapter.Versionview> {
     private String [] data1;
@@ -71,8 +74,14 @@ public class HotelListAdapter extends RecyclerView.Adapter<HotelListAdapter.Vers
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent i= new Intent(context,LoginActivity.class);
-                    context.startActivity(i);
+                    Intent intent;
+                    if (AppState.getInstance(context).getUserToken() == null) {
+                        intent = new Intent(context, LoginActivity.class);
+                    } else {
+                        intent = new Intent(context, PaymentMethodActivity.class);
+                    }
+                    context.startActivity(intent);
+
                 }
             });
             tv3.setOnClickListener(new View.OnClickListener() {
