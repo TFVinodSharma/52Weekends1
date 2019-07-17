@@ -16,7 +16,7 @@ public class DestinationViewModel extends ViewModel {
 
 
     public MutableLiveData<DestinationResponse> getDestinations() {
-        destinationResponseMutableLiveData = new MutableLiveData<DestinationResponse>();
+        destinationResponseMutableLiveData = new MutableLiveData();
         getDestinationsData();
 
         return destinationResponseMutableLiveData;

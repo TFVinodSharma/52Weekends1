@@ -13,12 +13,12 @@ import com.android.weekends.R;
 
 public class PagerHotelAdapter extends PagerAdapter {
     int[] mResources = {
-            R.drawable.temple,
-            R.drawable.temple,
-            R.drawable.temple,
-            R.drawable.temple,
-            R.drawable.temple,
-            R.drawable.temple
+            R.drawable.download,
+            R.drawable.reception,
+            R.drawable.hhimages,
+            R.drawable.hotelimages,
+            R.drawable.hotel1,
+            R.drawable.bedroom
     };
     Context mContext;
     LayoutInflater mLayoutInflater;

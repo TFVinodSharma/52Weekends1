@@ -1,6 +1,7 @@
 package com.android.weekends.modules.selectpackage.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -12,6 +13,7 @@ import android.widget.TextView;
 import com.android.weekends.R;
 import com.android.weekends.base.listener.OnItemSelectionListener;
 import com.android.weekends.modules.selectpackage.model.PackageDetails;
+import com.android.weekends.modules.tourdetails.view.PackageDetailsActivity;
 
 import java.util.ArrayList;
 
@@ -71,13 +73,19 @@ public class InternationalSelectPackageAdapter extends RecyclerView.Adapter<Inte
             Day=itemView.findViewById(R.id.txt_d_time);
             Night=itemView.findViewById(R.id.txt__n_time);
 
+            itemView.setOnClickListener(v -> {
+                Intent i = new Intent(context, PackageDetailsActivity.class);
+                i.putExtra(PackageDetailsActivity.PACKAGE_DETAILS, internationalPackageRequestArrayList.get(getAdapterPosition()));
+                //i.putExtra(PackageDetailsActivity.PACKAGE_DETAILS,domesticPackageRequestArrayList.get(getPosition(Price)));
+                context.startActivity(i);
+            });
 
 
-           /* itemView.setOnClickListener(v -> {
+/*
+            itemView.setOnClickListener(v -> {
                 onItemSelectionListener.onItemSelected(internationalPackageRequestArrayList.get(getAdapterPosition()));
             });
 */
-
         }
     }
 }

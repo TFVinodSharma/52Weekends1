@@ -27,6 +27,7 @@
                     android:contentDescription="@string/app_name"
                     android:scaleType="fitXY"
                     android:src="@drawable/temple" />
+
             </RelativeLayout>
 
             <RelativeLayout
@@ -85,9 +86,12 @@
                 </LinearLayout>
             </RelativeLayout>
 
-            <RelativeLayout
+            <LinearLayout
                 android:layout_width="fill_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+
+                >
 
                 <RatingBar
                     android:id="@+id/ratingbar"
@@ -97,16 +101,48 @@
                     android:layout_alignParentLeft="true"
                     android:isIndicator="true"
                     android:numStars="5"
+                    android:padding="3dp"
                     android:rating="5.0"
                     android:stepSize="0.1" />
 
-                <TextView
-                    android:id="@+id/no_day"
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:text="3 Nights &amp; 4 Days " />
-            </RelativeLayout>
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="120dp"
+                    android:padding="5dp">
+                    <TextView
+                        android:id="@+id/no_nights"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:text="3" />
+
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:padding="3dp"
+                        android:text="Nights" />
+                    <TextView
+                        android:id="@+id/no_day"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="3dp"
+                        android:layout_alignParentRight="true"
+                        android:text="4" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:text="Days"
+                        android:padding="3dp"/>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
 
             <View
                 android:layout_width="fill_parent"
@@ -115,7 +151,7 @@
                 android:padding="@dimen/margin_4" />
 
             <Button
-                android:id="@+id/bookbutton"
+                android:id="@+id/fragmentAboutPlaceBook"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="8.0dip"

@@ -21,6 +21,7 @@ import com.android.weekends.base.activity.BaseActivity;
 import com.android.weekends.modules.login.model.LoginRequest;
 import com.android.weekends.modules.login.viewmodels.LoginViewModel;
 import com.android.weekends.modules.login.viewmodels.SignupViewModel;
+import com.android.weekends.modules.payments.view.InitialScreenActivity;
 import com.android.weekends.modules.profile.view.ProfileActivity;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
@@ -49,7 +50,6 @@ public class LoginActivity extends BaseActivity {
 
     ActivityMainBinding activityMainBinding;
 
-
     private static final String EMAIL = "email";
     private LoginButton loginButton;
     private CallbackManager callbackManager;
@@ -64,8 +64,9 @@ public class LoginActivity extends BaseActivity {
         super.onStart();
         // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = mAuth.getCurrentUser();
-        updateUI(currentUser);
+       // updateUI(currentUser);
     }
+
 
 
     @Override
@@ -105,6 +106,8 @@ public class LoginActivity extends BaseActivity {
                 // App code
 
                 String  accessToken = loginResult.getAccessToken().getToken();
+
+                startActivity(new Intent(LoginActivity.this,HomePageActivity.class));
                //boolean isLoggedIn = accessToken != null && !accessToken.isExpired();
 
             }
@@ -119,6 +122,7 @@ public class LoginActivity extends BaseActivity {
                 // App code
             }
         });
+
 
 
 
@@ -178,8 +182,9 @@ public class LoginActivity extends BaseActivity {
             } catch (ApiException e) {
                 // Google Sign In failed, update UI appropriately
                 Log.w(TAG, "Google sign in failed", e);
-                // ...
+
             }
+
             startActivity( new Intent(this,HomePageActivity.class));
         }
     }
@@ -195,11 +200,11 @@ public class LoginActivity extends BaseActivity {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithCredential:success");
                             FirebaseUser user = mAuth.getCurrentUser();
-                            updateUI(user);
+                            //updateUI(user);
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "signInWithCredential:failure", task.getException());
-                            updateUI(null);
+                           // updateUI(null);
                         }
 
                         // ...
@@ -213,10 +218,10 @@ public class LoginActivity extends BaseActivity {
         startActivityForResult(signInIntent, RC_SIGN_IN);
     }
 
-    private  void updateUI(FirebaseUser v)
+    /*private  void updateUI(FirebaseUser v)
     {
 
     }
-
+*/
 
 }

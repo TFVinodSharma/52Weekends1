@@ -37,6 +37,7 @@ public class PackageDetailsActivity extends BaseActivity {
         if (getIntent().hasExtra(PACKAGE_DETAILS)) {
             packageDetails = (PackageDetails) getIntent().getSerializableExtra(PACKAGE_DETAILS);
             initDomesticDetails();
+            initInternationalDetails();
         }
 
 
@@ -73,6 +74,7 @@ public class PackageDetailsActivity extends BaseActivity {
     }
     private void initDomesticDetails() {
         getSupportActionBar().setTitle(packageDetails.getPack_name());
+        //setTitle(Integer.parseInt(packageDetails.getPrice()));
 
     }
     private void initInternationalDetails() {

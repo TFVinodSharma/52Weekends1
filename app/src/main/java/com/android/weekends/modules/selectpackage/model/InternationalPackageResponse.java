@@ -16,7 +16,7 @@ public class InternationalPackageResponse extends BaseResponse implements Serial
         return internationalPackageRequests;
     }
 
-    public void setdomesticpackage(ArrayList internationalPackageRequests) {
+    public void setInternationalpackage(ArrayList internationalPackageRequests) {
         this.internationalPackageRequests = internationalPackageRequests;
     }
 

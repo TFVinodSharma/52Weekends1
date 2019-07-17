@@ -9,6 +9,7 @@ import com.android.weekends.base.activity.BaseActivity;
 import com.android.weekends.database.AppState;
 import com.android.weekends.modules.home.view.HomePageActivity;
 import com.android.weekends.modules.login.view.LoginActivity;
+import com.android.weekends.modules.payments.view.InitialScreenActivity;
 import com.android.weekends.modules.payments.view.PaymentMethodActivity;
 import com.android.weekends.modules.profile.view.ProfileActivity;
 
@@ -26,7 +27,7 @@ public class FlightDetailsActivity extends BaseActivity {
         if (AppState.getInstance(FlightDetailsActivity.this).getUserToken() == null) {
             intent = new Intent(FlightDetailsActivity.this, LoginActivity.class);
         } else {
-            intent = new Intent(FlightDetailsActivity.this, PaymentMethodActivity.class);
+            intent = new Intent(FlightDetailsActivity.this, InitialScreenActivity.class);
         }
         startActivity(intent);
 

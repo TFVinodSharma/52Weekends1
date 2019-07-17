@@ -15,6 +15,7 @@ import com.android.weekends.database.AppState;
 import com.android.weekends.modules.buses.view.SeatSelectionActivity;
 import com.android.weekends.modules.hotels.view.HotelDetailsActivity;
 import com.android.weekends.modules.login.view.LoginActivity;
+import com.android.weekends.modules.payments.view.InitialScreenActivity;
 import com.android.weekends.modules.payments.view.PaymentMethodActivity;
 
 public class HotelListAdapter extends RecyclerView.Adapter<HotelListAdapter.Versionview> {
@@ -78,7 +79,7 @@ public class HotelListAdapter extends RecyclerView.Adapter<HotelListAdapter.Vers
                     if (AppState.getInstance(context).getUserToken() == null) {
                         intent = new Intent(context, LoginActivity.class);
                     } else {
-                        intent = new Intent(context, PaymentMethodActivity.class);
+                        intent = new Intent(context, InitialScreenActivity.class);
                     }
                     context.startActivity(intent);
 

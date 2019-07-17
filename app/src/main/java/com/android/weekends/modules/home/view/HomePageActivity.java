@@ -64,31 +64,27 @@ public class HomePageActivity extends BaseActivity implements View.OnClickListen
 
         getDestinations();
         getDomesticPackage();
-
         getinternationalpackage();
 
     }
 
 
     private void getDomesticPackage() {
-
         showProgressDialogue();
-
         DomesticPackageViewModel domesticPackageViewModel = ViewModelProviders.of(this).get(DomesticPackageViewModel.class);
-
         domesticPackageViewModel.getdomesticpackage().observe(this, domesticPackageResponse -> {
-
             hideProgressDialgogue();
 
             if (domesticPackageResponse.getdomesticpackage() != null) {
                 DomesticSelectPackageAdapter domesticPackageAdapter = new DomesticSelectPackageAdapter(domesticPackageResponse.getdomesticpackage());
                 RecyclerView recyclerViewDPA = findViewById(R.id.rv_domestic);
-                domesticPackageAdapter.isHorizontal = true;
+               /* domesticPackageAdapter.isHorizontal = true;
 
                 DisplayMetrics displayMetrics = new DisplayMetrics();
                 getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
                 domesticPackageAdapter.widthPixels = displayMetrics.widthPixels;
-                recyclerViewDPA.setAdapter(domesticPackageAdapter);
+               */
+               recyclerViewDPA.setAdapter(domesticPackageAdapter);
             } else {
                 showErrorMessage(domesticPackageResponse.getMessage());
             }
@@ -98,20 +94,14 @@ public class HomePageActivity extends BaseActivity implements View.OnClickListen
     }
 
     private void getinternationalpackage() {
-
         InternationalPackageViewModel internationalPackageViewModel = ViewModelProviders.of(this).get(InternationalPackageViewModel.class);
         internationalPackageViewModel.getinternationalpackage().observe(this, internationalPackageResponse -> {
-
-            //hideProgressDialgogue();
+            hideProgressDialgogue();
 
             if (internationalPackageResponse.getinternationalpackage() != null) {
                 InternationalSelectPackageAdapter internationalPackageAdapter = new InternationalSelectPackageAdapter(internationalPackageResponse.getinternationalpackage());
                 RecyclerView recyclerViewIPA = findViewById(R.id.rv_international);
-
                 recyclerViewIPA.setAdapter(internationalPackageAdapter);
-                recyclerViewIPA.setHasFixedSize(true);
-                recyclerViewIPA.addItemDecoration(new DividerItemDecoration(this,LinearLayoutManager.VERTICAL));
-                recyclerViewIPA.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false));
 
             } else {
                 showErrorMessage(internationalPackageResponse.getMessage());
@@ -126,15 +116,14 @@ public class HomePageActivity extends BaseActivity implements View.OnClickListen
         DestinationViewModel destinationViewModel = ViewModelProviders.of(this).get(DestinationViewModel.class);
 
         destinationViewModel.getDestinations().observe(this, destinationResponse -> {
-
             hideProgressDialgogue();
 
             if (destinationResponse.getDestinations() != null) {
                 DestinationAdapter destinationAdapter = new DestinationAdapter(destinationResponse.getDestinations());
                 RecyclerView destinationrecycler = findViewById(R.id.rv_destinations);
-                destinationrecycler.setHasFixedSize(true);
+               /* destinationrecycler.setHasFixedSize(true);
                 destinationrecycler.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false));
-                destinationrecycler.setAdapter(destinationAdapter);
+               */ destinationrecycler.setAdapter(destinationAdapter);
             } else {
                 showErrorMessage(destinationResponse.getMessage());
             }

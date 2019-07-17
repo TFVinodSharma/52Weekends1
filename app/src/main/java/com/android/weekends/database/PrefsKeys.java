@@ -6,4 +6,6 @@ public interface PrefsKeys {
     String USER = "USER";
     String USER_TOKEN= "USER_TOKEN";
 
+    String USER_LOGOUT="USER_LOGOUT";
+    String IS_FACEBOOK_REGISTERED="IS_FACEBOOK_REGISTERED";
 }

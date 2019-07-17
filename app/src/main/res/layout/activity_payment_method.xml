@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".modules.payments.view.PaymentMethodActivity">
 
-
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -16,5 +15,6 @@
         android:textSize="@dimen/text_25dp"
         android:textStyle="bold"
         android:textColor="@color/black"/>
+
 
 </LinearLayout>

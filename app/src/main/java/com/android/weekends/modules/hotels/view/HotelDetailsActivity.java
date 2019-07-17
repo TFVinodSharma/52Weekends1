@@ -21,7 +21,7 @@ ViewPager mViewPager;
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         setTitle("Hotel Search");
 
-
+// TODO images will come from viewpager adapter
         pagerHotel_adapter = new PagerHotelAdapter(this);
 
         mViewPager = (ViewPager) findViewById(R.id.image_pager);

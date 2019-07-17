@@ -87,6 +87,7 @@ public class DomesticSelectPackageAdapter extends RecyclerView.Adapter<DomesticS
             itemView.setOnClickListener(v -> {
                 Intent i = new Intent(context, PackageDetailsActivity.class);
                 i.putExtra(PackageDetailsActivity.PACKAGE_DETAILS, domesticPackageRequestArrayList.get(getAdapterPosition()));
+               //i.putExtra(PackageDetailsActivity.PACKAGE_DETAILS,domesticPackageRequestArrayList.get(getPosition(Price)));
                 context.startActivity(i);
             });
 

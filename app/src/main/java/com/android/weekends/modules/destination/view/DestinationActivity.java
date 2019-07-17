@@ -56,11 +56,11 @@ LinearLayout ProfileDestination,img,img1;
             hideProgressDialgogue();
 
             if (destinationResponse.getDestinations() != null) {
-                DestinationAdapter adapter111 = new DestinationAdapter(destinationResponse.getDestinations());
-                RecyclerView recyclerView111 = findViewById(R.id.recycler_top_destination);
-                recyclerView111.setHasFixedSize(true);
-                recyclerView111.setLayoutManager(new LinearLayoutManager(this));
-                recyclerView111.setAdapter(adapter111);
+                DestinationAdapter Dadapter = new DestinationAdapter(destinationResponse.getDestinations());
+                RecyclerView recyclerViewDA = findViewById(R.id.recycler_top_destination);
+                recyclerViewDA.setHasFixedSize(true);
+                recyclerViewDA.setLayoutManager(new LinearLayoutManager(this));
+                recyclerViewDA.setAdapter(Dadapter);
             } else {
                 showErrorMessage(destinationResponse.getMessage());
             }
@@ -84,7 +84,6 @@ LinearLayout ProfileDestination,img,img1;
                 Intent intent = new Intent(this, ProfileActivity.class);
                 this.startActivity(intent);
                 break;
-
             case R.id.homeP:
                 Intent intent1 = new Intent(this, HomePageActivity.class);
                 this.startActivity(intent1);

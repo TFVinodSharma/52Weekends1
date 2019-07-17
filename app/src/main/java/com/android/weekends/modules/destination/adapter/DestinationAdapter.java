@@ -36,7 +36,7 @@ public class DestinationAdapter extends RecyclerView.Adapter<DestinationAdapter.
     public void onBindViewHolder(@NonNull MyViewHolder myViewHolder, int index) {
         DestinationModel destinationModel = destinationArrayList.get(index);
         myViewHolder.Name.setText(destinationModel.getName());
-       //myViewHolder.imageView.setImageResource(destinationModel.getMain_image());
+
     }
 
     @Override
@@ -45,9 +45,9 @@ public class DestinationAdapter extends RecyclerView.Adapter<DestinationAdapter.
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        private TextView Name, Loc;
-        private Context context;
-        private ImageView imageView;
+        TextView Name, Loc;
+          private Context context;
+        ImageView imageView;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);

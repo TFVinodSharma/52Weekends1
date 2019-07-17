@@ -77,6 +77,10 @@
         <activity android:name=".modules.payments.view.PaymentMethodActivity" />
         <activity android:name=".modules.selectpackage.view.DomesticPacakgeAcivity" />
         <activity android:name=".modules.selectpackage.view.InternationalPackageActivity"></activity>
+
+        <activity android:name=".modules.payments.view.InitialScreenActivity"></activity>
+        <activity android:name=".modules.payments.view.WebViewActivity"></activity>
+        <activity android:name=".modules.payments.view.StatusActivity"></activity>
     </application>
 
 </manifest>

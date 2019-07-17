@@ -36,6 +36,13 @@ public class AppState {
     }
 */
 
+/*public void  setfacebookRegister(boolean isfacebookRegister) {
+    storeboolean(PrefsKeys.IS_FACEBOOK_REGISTERED,isfacebookRegister);
+}
+public boolean isFacebookRegistered() {
+    return getBoolean(PrefsKeys.IS_FACEBOOK_REGISTERED);
+}*/
+
     public void setIsUserReqistered(boolean isUserReqistered) {
         storeboolean(PrefsKeys.IS_USER_REGISTERED, isUserReqistered);
     }

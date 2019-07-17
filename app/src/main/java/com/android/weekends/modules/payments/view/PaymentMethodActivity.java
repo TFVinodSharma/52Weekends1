@@ -1,9 +1,11 @@
 package com.android.weekends.modules.payments.view;
 
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 
+import android.os.Bundle;
 import com.android.weekends.R;
+
+
+import android.support.v7.app.AppCompatActivity;
 
 public class PaymentMethodActivity extends AppCompatActivity {
 
@@ -13,3 +15,4 @@ public class PaymentMethodActivity extends AppCompatActivity {
         setContentView(R.layout.activity_payment_method);
     }
 }
+

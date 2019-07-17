@@ -16,7 +16,7 @@ public class DomesticPackageViewModel extends ViewModel {
     private MutableLiveData<DomesticPackageResponse> domesticPackageResponseMutableLiveData;
 
     public MutableLiveData<DomesticPackageResponse> getdomesticpackage() {
-        domesticPackageResponseMutableLiveData = new MutableLiveData<DomesticPackageResponse>();
+        domesticPackageResponseMutableLiveData = new MutableLiveData();
         getDomesticPackageData();
 
         return domesticPackageResponseMutableLiveData;

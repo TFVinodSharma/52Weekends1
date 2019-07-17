@@ -14,6 +14,7 @@ import com.android.weekends.database.AppState;
 import com.android.weekends.modules.buses.adapter.SeatSelectionAdapter;
 import com.android.weekends.modules.flights.view.FlightDetailsActivity;
 import com.android.weekends.modules.login.view.LoginActivity;
+import com.android.weekends.modules.payments.view.InitialScreenActivity;
 import com.android.weekends.modules.payments.view.PaymentMethodActivity;
 
 import java.util.ArrayList;
@@ -79,7 +80,7 @@ public class SeatSelectionActivity extends BaseActivity implements OnSeatSelecte
         if (AppState.getInstance(SeatSelectionActivity.this).getUserToken() == null) {
             intent = new Intent(SeatSelectionActivity.this, LoginActivity.class);
         } else {
-            intent = new Intent(SeatSelectionActivity.this, PaymentMethodActivity.class);
+            intent = new Intent(SeatSelectionActivity.this, InitialScreenActivity.class);
         }
         startActivity(intent);
 
