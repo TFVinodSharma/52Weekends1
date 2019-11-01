@@ -9,7 +9,6 @@ public class AppState {
 
     private static AppState appState;
     private SharedPreferences preferences;
-   // private boolean isLoggingOut;
 
     private String SHARED_PREFS_NAME = "com.android.weekends";
 
@@ -26,22 +25,7 @@ public class AppState {
         return appState;
     }
 
-/*
-    public boolean isLoggingOut() {
-        return isLoggingOut;
-    }
 
-    public void setLoggingOut(boolean isLoggingOut) {
-        this.isLoggingOut = isLoggingOut;
-    }
-*/
-
-/*public void  setfacebookRegister(boolean isfacebookRegister) {
-    storeboolean(PrefsKeys.IS_FACEBOOK_REGISTERED,isfacebookRegister);
-}
-public boolean isFacebookRegistered() {
-    return getBoolean(PrefsKeys.IS_FACEBOOK_REGISTERED);
-}*/
 
     public void setIsUserReqistered(boolean isUserReqistered) {
         storeboolean(PrefsKeys.IS_USER_REGISTERED, isUserReqistered);

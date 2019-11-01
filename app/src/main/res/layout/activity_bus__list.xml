@@ -12,7 +12,7 @@
         android:id="@+id/appBarLayout"
         android:visibility="visible"
         android:layout_width="fill_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
          <include layout="@layout/toolbar1"
            android:id="@+id/buslisttoolbar"/>

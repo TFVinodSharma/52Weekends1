@@ -15,6 +15,7 @@ public class DomesticPackageResponse extends BaseResponse implements Serializabl
     public ArrayList getdomesticpackage() {
         return packageDetails;
     }
+    
 
     public void setdomesticpackage(ArrayList domesticPackageRequests) {
         this.packageDetails = domesticPackageRequests;

@@ -49,7 +49,7 @@ public class ActivityDetailDestination extends BaseActivity {
         activityDestinationBinding.accomodations.setText(destinationModel.getAcco());
         activityDestinationBinding.foodtext.setText(destinationModel.getFood());
         //activityDestinationBinding.impactImage.setImageResource(Integer.parseInt(destinationModel.getMain_image()));
-       //activityDestinationBinding.impactImage.setImageResource(Integer.parseInt(destinationModel.getMain_image()));
+        //activityDestinationBinding.impactImage.setImageResource(Integer.parseInt(destinationModel.getMain_image()));
 
 
     }

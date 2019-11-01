@@ -82,30 +82,8 @@ public class SignupActivity extends BaseActivity {
             } else if (signupResponse.getStatus()) {
 
                 Intent i=new Intent(this,ProfileActivity.class);
-               /* SharedPreferences.Editor editor = getSharedPreferences(SHARED_PREFS_NAME, MODE_PRIVATE).edit();
-                editor.putString("name", activitySignupBinding.edtName.getText().toString());
-                editor.putString("email", activitySignupBinding.edtEmail.getText().toString());
-                editor.putString("address",activitySignupBinding.edtAddress.getText().toString());
-                editor.putString("pincode",activitySignupBinding.edtPincode.getText().toString());
-                editor.putString("phone",activitySignupBinding.edtMobile.getText().toString());
-                editor.putString("city",activitySignupBinding.edtCity.getText().toString());
-                editor.apply();*/
-/*
-                Bundle bundle=new Bundle();
-                bundle.putString("name",activitySignupBinding.edtName.getText().toString());
-                bundle.putString("email",activitySignupBinding.edtEmail.getText().toString());
-                bundle.putString("address",activitySignupBinding.edtAddress.getText().toString());
-                bundle.putString("city",activitySignupBinding.edtCity.getText().toString());
-                bundle.putString("pincode",activitySignupBinding.edtPincode.getText().toString());
-                bundle.putString("phone",activitySignupBinding.edtMobile.getText().toString());
-                i.putExtras(bundle);
-*/
                 startActivity(i);
-
-
-
-                //startActivity(new Intent(SignupActivity.this, ProfileActivity.class));
-            } else {
+                } else {
                 showErrorMessage(signupResponse.getMessage());
             }
         });
